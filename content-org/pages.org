@@ -1,0 +1,9 @@
+#+HUGO_BASE_DIR: ../
+#+HUGO_SECTION: posts
+
+* hello world
+:PROPERTIES:
+:EXPORT_FILE_NAME: hello-world
+:EXPORT_DATE: 2024-12-14
+:END:
+hello world. this is being generated using hugo.

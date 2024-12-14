@@ -1,3 +1,16 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://mazzaella.com/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'mazzaella'
+
+[outputs]
+home = ["HTML", "RSS"]
+page = ["HTML", "MARKDOWN", "ORG"]  # enables .md and .org endpoints
+
+[mediaTypes]
+[mediaTypes."text/org"]
+suffixes = ["org"]
+
+[outputFormats]
+[outputFormats.ORG]
+mediaType = "text/org"
+isPlainText = true
