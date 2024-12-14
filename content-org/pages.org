@@ -1,5 +1,6 @@
 #+HUGO_BASE_DIR: ../
 #+HUGO_SECTION: posts
+#+HUGO_PRESERVE_ORGCONTENT: t
 
 * hello world
 :PROPERTIES:
@@ -7,3 +8,19 @@
 :EXPORT_DATE: 2024-12-14
 :END:
 hello world. this is being generated using hugo.
+
+* My First Post
+:PROPERTIES:
+:EXPORT_FILE_NAME: first-post
+:EXPORT_DATE: 2024-12-14
+:END:
+
+Welcome to my first post!
+
+* Second Post
+:PROPERTIES:
+:EXPORT_FILE_NAME: second-post
+:EXPORT_DATE: 2024-12-14
+:END:
+
+This is another post.

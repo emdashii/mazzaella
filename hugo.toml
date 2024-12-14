@@ -1,16 +1,83 @@
-baseURL = 'https://mazzaella.com/'
-languageCode = 'en-us'
-title = 'mazzaella'
+baseURL = "/"
+disqusShortname = ""
+enableGitInfo = true
+enableRobotsTXT = true
+hasCJKLanguage = false
+languageCode = "en"
+rssLimit = 10
+theme = "hugo-texify3"
+title = "mazzaella"
 
-[outputs]
-home = ["HTML", "RSS"]
-page = ["HTML", "MARKDOWN", "ORG"]  # enables .md and .org endpoints
+[pagination]
+pagerSize = 5
 
-[mediaTypes]
-[mediaTypes."text/org"]
-suffixes = ["org"]
+[taxonomies]
+tags = "tags"
+categories = "categories"
+
+[params]
+title = "mazzaella"
+author = "Elliott Claus"
+description = "personal website made with hugo"
+footnote = """
+Powered by  <a class=link href=https://gohugo.io target=_blank rel=noopener>Hugo</a> |
+Theme <a class=link href=https://github.com/michaelneuper/hugo-texify3 target=_blank rel=noopener>TeXify3</a>
+"""
+customCSS = ["css/raw.css"]
+customJS = []
+dateFormat = "2 January 2006"
+emphasisWithDots = true
+toc = true
+rootFontSize = "105%"
+math = false
+enableDuckDuckGoSearchBox = true
+numberedSubtitles = true
+
+[params.commentEngine]
+code = """
+  <script src="https://giscus.app/client.js"
+        data-repo="emdashii/mazzaella"
+        data-repo-id="R_kgDONdiRTg"
+        data-category="Announcements"
+        data-category-id="DIC_kwDONdiRTs4ClOvR"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+  """
+
+
+[params.sharingbuttons]
+facebook = false
+twitter = false
+email = false
+linkedin = false
+reddit = false
+whatsapp = false
+hackernews = false
+telegram = false
 
 [outputFormats]
+[outputFormats.MARKDOWN]
+mediaType = "text/markdown"
+isPlainText = true
+baseName = "index"
+relativeURLs = true
+permalinkable = true
 [outputFormats.ORG]
 mediaType = "text/org"
 isPlainText = true
+baseName = "index"
+relativeURLs = true
+permalinkable = true
+
+[outputs]
+home = ["HTML", "RSS"]
+page = ["HTML", "MARKDOWN", "ORG"]

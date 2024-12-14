@@ -1,0 +1,7 @@
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: monospace;
+  padding: 15px;
+  background: #f5f5f5;
+}
