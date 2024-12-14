@@ -64,6 +64,15 @@ whatsapp = false
 hackernews = false
 telegram = false
 
+[mediaTypes]
+[mediaTypes."text/org"]
+suffixes = ["org"]
+delimiter = "."
+
+[mediaTypes."text/markdown"]
+suffixes = ["md", "markdown"]
+delimiter = "."
+
 [outputFormats]
 [outputFormats.MARKDOWN]
 mediaType = "text/markdown"
