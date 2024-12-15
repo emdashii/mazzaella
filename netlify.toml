@@ -1,11 +1,17 @@
 [build]
-command = "npm install && hugo"
+command = """
+    DART_SASS_VERSION=1.63.6 && \
+    curl -LJO https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz && \
+    tar -xf dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz && \
+    rm dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz && \
+    chmod 755 /opt/build/repo/dart-sass/sass && \
+    export PATH=/opt/build/repo/dart-sass:$PATH && \
+    hugo --gc --minify
+  """
 publish = "public"
 
 [build.environment]
-HUGO_VERSION = "0.139.4"     # use your hugo version
-NODE_VERSION = "18"
-DART_SASS_VERSION = "1.83.0" # use latest stable
+HUGO_VERSION = "0.139.4+extended"
 
 [[redirects]]
 from = "/*/*.md"
@@ -16,6 +22,3 @@ status = 200
 from = "/*/*.org"
 to = "/:splat/index.org"
 status = 200
-
-[build.processing]
-skip_processing = false
