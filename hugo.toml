@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://mazzaella.netlify.app/"
 disqusShortname = ""
 enableGitInfo = true
 enableRobotsTXT = true
