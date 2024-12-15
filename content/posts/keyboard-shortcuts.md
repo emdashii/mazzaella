@@ -1,6 +1,9 @@
 +++
 title = "Keyboard Shortcuts - A Non-exhaustive List"
-date = 2024-12-14
+author = ["Elliott Claus"]
+date = 2022-06-13
+tags = ["keyboard", "shortcuts", "reference"]
+categories = ["notes"]
 draft = false
 +++
 

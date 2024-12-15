@@ -19,19 +19,20 @@ categories = "categories"
 title = "mazzaella"
 author = "Elliott Claus"
 description = "personal website made with hugo"
+homepage = "https://github.com/emdashii"
 footnote = """
 Powered by  <a class=link href=https://gohugo.io target=_blank rel=noopener>Hugo</a> |
 Theme <a class=link href=https://github.com/michaelneuper/hugo-texify3 target=_blank rel=noopener>TeXify3</a>
 """
 customCSS = ["css/raw.css"]
 customJS = []
-dateFormat = "2 January 2006"
+dateFormat = "January 2, 2006"
 emphasisWithDots = true
 toc = true
 rootFontSize = "105%"
 math = false
 enableDuckDuckGoSearchBox = true
-numberedSubtitles = true
+numberedSubtitles = false
 
 [params.commentEngine]
 code = """
@@ -52,6 +53,10 @@ code = """
         async>
 </script>
   """
+
+[params.buymeacoffee]
+code = """
+"""
 
 
 [params.sharingbuttons]

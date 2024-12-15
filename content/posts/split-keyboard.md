@@ -1,6 +1,9 @@
 +++
 title = "Split Keyboard - An Experiment in Workflow"
-date = 2024-12-14
+author = ["Elliott Claus"]
+date = 2022-07-06
+tags = ["keyboard", "split"]
+categories = ["projects"]
 draft = false
 +++
 
@@ -91,14 +94,13 @@ After only a few weeks, I have almost every key memorized on each
 
 This keymap has a few things that I think are really cool. The
               first is called
-
-<a href="https://precondition.github.io/home-row-mods%22" target="_blank" rel="noopener noreferrer">Home Row Mods</a>.
-This allows me to press the windows key, alt, shift, and
-control using the keys on the homerow, rather than having to move
-my fingers to any keys. If I need to shift a key on my left hand,
-I press shift with my right middle finger. If I need to press
-shift with my right hand, I hold down my left ring finger. This is
-amazing. If you want to know more, click the link above.
+              [Home Row Mods](https://precondition.github.io/home-row-mods).
+              This allows me to press the windows key, alt, shift, and
+              control using the keys on the homerow, rather than having to move
+              my fingers to any keys. If I need to shift a key on my left hand,
+              I press shift with my right middle finger. If I need to press
+              shift with my right hand, I hold down my left ring finger. This is
+              amazing. If you want to know more, click the link above.
 
 The second cool thing is that I have a numpad for my right hand.
               Typing numbers on a numpad is more intuitive, though I recognize
@@ -120,8 +122,7 @@ features I designed was how to move between the layers. Most split
 keyboards come with a layer shifting feature that works like a
 shift button. While that key is held down, you are in the layer.
 This is very intuitive and useful, but after watching
-
-<a href="https://www.youtube.com/c/BenVallack" target="_blank" rel="noopener noreferrer">Ben Vallack's YouTube channel</a>,
+[Ben Vallack's YouTube channel](https://www.youtube.com/c/BenVallack),
 I saw that he was trying to avoid “chording”, which is where
 you press multiple keys at once. So I made a second way to access
 the layers. The first way is to hold down space. Space on the left
@@ -149,8 +150,7 @@ it for the past few weeks and enjoy it. I hadn't seen any keyboard
 layouts that did something similar online, and I researched
 multiple before starting to make my own. My keyboard files are
 available on my
-
-<a href="https://github.com/emdashii/qmk_firmware/tree/master/keyboards/crkbd/keymaps/emdashiiAnimation%22" target="_blank" rel="noopener noreferrer">github</a>.
+[github](https://github.com/emdashii/qmk_firmware/tree/master/keyboards/crkbd/keymaps/emdashiiAnimation).
 
 This is my updated keymap. I changed how the layers are accessed a
               bit, to make the navigation layer more prominant. I also added a
@@ -173,39 +173,26 @@ There are many options. If you already have mechanical key
               split keyboards on esty or ebay around that price. For a fully
               assembled professionally made one, expect to pay anywhere from
               $250-up. The
-
-<a href="https://www.zsa.io/moonlander/" target="_blank" rel="noopener noreferrer">ZSA Moonlander</a>
-is well regarded and has very customizable software. If you want
-one that is sculpted to your hand, look for the
-
-<a href="https://kinesis-ergo.com/shop/advantage2/" target="_blank" rel="noopener noreferrer">Kinesis Advantage2</a>
-
-or a
-
-<a href="https://github.com/adereth/dactyl-keyboard" target="_blank" rel="noopener noreferrer">Dactyl Manuform</a>.
-
-These get more pricey. If you want fewer keys, look for a
-
-<a href="https://github.com/davidphilipbarr/Sweep" target="_blank" rel="noopener noreferrer">Ferris Sweep</a>
-
-or
-
-<a href="https://github.com/foostan/crkbd" target="_blank" rel="noopener noreferrer">crkbd Corne</a>,
- like I have. There are almost infinite variations of split
-keyboards that people have come up with. Some have tenting built
-in, and others don't. Some have
-
-<a href="https://github.com/greyhatmiddleman/crkbd-pimoroni-trackball" target="_blank" rel="noopener noreferrer">a</a>
-
-<a href="https://github.com/Bastardkb/Charybdis" target="_blank" rel="noopener noreferrer">trackball</a>
-
-or a
-
-<a href="https://github.com/joric/jorne/wiki/Trackpoint" target="_blank" rel="noopener noreferrer">trackpoint</a>
-
-built into the keyboard. I'd like to build one of those and see
-how I like it, because it would mean that I would have to reach
-for the mouse less than I already do.
+              [ZSA Moonlander](https://www.zsa.io/moonlander/)
+              is well regarded and has very customizable software. If you want
+              one that is sculpted to your hand, look for the
+              [Kinesis Advantage2](https://kinesis-ergo.com/shop/advantage2/)
+              or a
+              [Dactyl Manuform](https://github.com/adereth/dactyl-keyboard).
+              These get more pricey. If you want fewer keys, look for a
+              [Ferris Sweep](https://github.com/davidphilipbarr/Sweep)
+              or
+              [crkbd Corne](https://github.com/foostan/crkbd),
+               like I have. There are almost infinite variations of split
+              keyboards that people have come up with. Some have tenting built
+              in, and others don't. Some have
+              [a](https://github.com/greyhatmiddleman/crkbd-pimoroni-trackball)
+              [trackball](https://github.com/Bastardkb/Charybdis)
+              or a
+              [trackpoint](https://github.com/joric/jorne/wiki/Trackpoint)
+              built into the keyboard. I'd like to build one of those and see
+              how I like it, because it would mean that I would have to reach
+              for the mouse less than I already do.
 
 
 ## Skills demonstrated: {#skills-demonstrated}

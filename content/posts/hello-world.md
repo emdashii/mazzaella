@@ -1,6 +1,8 @@
 +++
 title = "hello world"
+author = ["Elliott Claus"]
 date = 2024-12-14
+categories = ["notes"]
 draft = false
 +++
 

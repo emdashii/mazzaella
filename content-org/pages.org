@@ -1,18 +1,21 @@
 #+HUGO_BASE_DIR: ../
 #+HUGO_SECTION: posts
 #+HUGO_PRESERVE_ORGCONTENT: t
+#+AUTHOR: Elliott Claus
 
 * hello world
 :PROPERTIES:
 :EXPORT_FILE_NAME: hello-world
 :EXPORT_DATE: 2024-12-14
+:EXPORT_HUGO_CATEGORIES: notes
 :END:
 hello world. this is being generated using hugo. this is my first post on the new website.
 
-* split keyboard
+* split keyboard                    :keyboard:split:
 :PROPERTIES:
 :EXPORT_FILE_NAME: split-keyboard
-:EXPORT_DATE: 2024-12-14
+:EXPORT_DATE: 2022-07-06
+:EXPORT_HUGO_CATEGORIES: projects
 :EXPORT_TITLE: Split Keyboard - An Experiment in Workflow
 :END:
 
@@ -100,8 +103,7 @@ After only a few weeks, I have almost every key memorized on each
 
 This keymap has a few things that I think are really cool. The
               first is called
-              #+ATTR_HTML: :target _blank :rel noopener noreferrer
-              [[https://precondition.github.io/home-row-mods"][Home Row Mods]].
+              [[https://precondition.github.io/home-row-mods][Home Row Mods]].
               This allows me to press the windows key, alt, shift, and
               control using the keys on the homerow, rather than having to move
               my fingers to any keys. If I need to shift a key on my left hand,
@@ -129,8 +131,6 @@ The second cool thing is that I have a numpad for my right hand.
               keyboards come with a layer shifting feature that works like a
               shift button. While that key is held down, you are in the layer.
               This is very intuitive and useful, but after watching
-
-              #+ATTR_HTML: :target _blank :rel noopener noreferrer
               [[https://www.youtube.com/c/BenVallack][Ben Vallack's YouTube channel]],
               I saw that he was trying to avoid “chording”, which is where
               you press multiple keys at once. So I made a second way to access
@@ -159,9 +159,7 @@ The second cool thing is that I have a numpad for my right hand.
               layouts that did something similar online, and I researched
               multiple before starting to make my own. My keyboard files are
               available on my
-
-              #+ATTR_HTML: :target _blank :rel noopener noreferrer
-              [[https://github.com/emdashii/qmk_firmware/tree/master/keyboards/crkbd/keymaps/emdashiiAnimation"][github]].
+              [[https://github.com/emdashii/qmk_firmware/tree/master/keyboards/crkbd/keymaps/emdashiiAnimation][github]].
 
 This is my updated keymap. I changed how the layers are accessed a
               bit, to make the navigation layer more prominant. I also added a
@@ -184,44 +182,23 @@ There are many options. If you already have mechanical key
               split keyboards on esty or ebay around that price. For a fully
               assembled professionally made one, expect to pay anywhere from
               $250-up. The
-
-              #+ATTR_HTML: :target _blank :rel noopener noreferrer
               [[https://www.zsa.io/moonlander/][ZSA Moonlander]]
               is well regarded and has very customizable software. If you want
               one that is sculpted to your hand, look for the
-
-              #+ATTR_HTML: :target _blank :rel noopener noreferrer
               [[https://kinesis-ergo.com/shop/advantage2/][Kinesis Advantage2]]
-
               or a
-
-              #+ATTR_HTML: :target _blank :rel noopener noreferrer
               [[https://github.com/adereth/dactyl-keyboard][Dactyl Manuform]].
-
               These get more pricey. If you want fewer keys, look for a
-
-              #+ATTR_HTML: :target _blank :rel noopener noreferrer
               [[https://github.com/davidphilipbarr/Sweep][Ferris Sweep]]
-
               or
-
-              #+ATTR_HTML: :target _blank :rel noopener noreferrer
               [[https://github.com/foostan/crkbd][crkbd Corne]],
                like I have. There are almost infinite variations of split
               keyboards that people have come up with. Some have tenting built
               in, and others don't. Some have
-
-              #+ATTR_HTML: :target _blank :rel noopener noreferrer
               [[https://github.com/greyhatmiddleman/crkbd-pimoroni-trackball][a]]
-
-              #+ATTR_HTML: :target _blank :rel noopener noreferrer
               [[https://github.com/Bastardkb/Charybdis][trackball]]
-
               or a
-
-              #+ATTR_HTML: :target _blank :rel noopener noreferrer
               [[https://github.com/joric/jorne/wiki/Trackpoint][trackpoint]]
-
               built into the keyboard. I'd like to build one of those and see
               how I like it, because it would mean that I would have to reach
               for the mouse less than I already do.
@@ -237,11 +214,12 @@ There are many options. If you already have mechanical key
 - [[/split-keyboard/KeyboardLayoutScreenshotsv2.pdf][My New Keymap, v2]]
 - [[/posts/keyboard-shortcuts][Keyboard Shortcuts]]
 
-* keyboard shortcuts
+* keyboard shortcuts                :keyboard:shortcuts:reference:
 :PROPERTIES:
 :EXPORT_FILE_NAME: keyboard-shortcuts
-:EXPORT_DATE: 2024-12-14
+:EXPORT_DATE: 2022-06-13
 :EXPORT_TITLE: Keyboard Shortcuts - A Non-exhaustive List
+:EXPORT_HUGO_CATEGORIES: notes
 :END:
 
 #+begin_export html
@@ -320,3 +298,158 @@ There are many options. If you already have mechanical key
 ** Definitely Turn Clipboard History On In Windows Settings
 
 [[/images/wincopy.png]]
+
+* card games                         :games:cards:reference:
+:PROPERTIES:
+:EXPORT_FILE_NAME: card-games
+:EXPORT_DATE: 2022-06-14
+:EXPORT_TITLE: card games i've played
+:EXPORT_HUGO_CATEGORIES: notes
+:END:
+
+#+begin_center
+Turns out I've played a lot??
+#+end_center
+
+#+attr_html: :class table-responsive bg-light rounded
+#+attr_html: :class table table-striped table-hover
+| Name (Link to Rules)                                                                                             | My Rating (out of 5) | Ideal Setting                                         | Ideal Player Count                                    |
+|----------------------------------------------------------------------------------------------------------------+--------------------+-----------------------------------------------------+------------------------------------------------------|
+| [[https://en.m.wikipedia.org/wiki/Pitch_(card_game)][pitch]]                                                     | 5.0                | evening w/friends                                     | 4-6                                                  |
+| [[https://en.m.wikipedia.org/wiki/Yaniv_(card_game)][yaniv]]                                                     | 5.0                | camping                                              | 4+                                                   |
+| [[https://en.m.wikipedia.org/wiki/Oh_Hell][up and down the river]]                                              | 4.9                | quick to explain to newbies, still fun               | 3-7                                                  |
+| [[https://gamerules.com/rules/euchre-card-game/][euchre]]                                                        | 4.6                | teams, silent communication, trick taking            | 4 or 6                                              |
+| [[https://gamerules.com/rules/hearts-card-game/][hearts]]                                                        | 4.5                | good trick taking game, best with four people        | 3-6                                                  |
+| [[https://gamerules.com/rules/cribbage-card-game/][cribbage]]                                                    | 4.4                | good two player                                      | 2-3                                                  |
+| [[https://en.m.wikipedia.org/wiki/President_(card_game)][chairman/kings and paupers]]                             | 4.0                | rich get richer, but there's a possibility for upsets| 4-8                                                  |
+| [[https://gamerules.com/rules/nerts-card-game/][nertz]]                                                          | 3.2                | dutch blitz w/cards, fast paced matching            | best w/at least 4, have played teams with 12 ppl total|
+| [[https://en.m.wikipedia.org/wiki/Canasta][hand and foot]]                                                       | 3.1                | a matching game that requires one more deck of cards than # of ppl playing | 2-6                    |
+| [[https://gamerules.com/rules/kings-corner-card-game/][kings (in the) corner]]                                    | 3.1                | multiplayer solitair                                 | 2+                                                   |
+| [[https://gamerules.com/rules/blackjack-card-game/][blackjack]]                                                  | 3.0                | solved betting game                                  | up to 7                                              |
+| [[https://gamerules.com/rules/gin-rummy-card-game/][gin rummy]]                                                  | 3.0                | haven't played in years, but remember enjoying it    | 2                                                    |
+| [[https://gamerules.com/rules/pinochle-card-game/][pinochle]]                                                    | 3.0                | i have good memories playing this game               | 2-4                                                  |
+| [[https://en.m.wikipedia.org/wiki/Poker][poker]]                                                                | 3.0                | bet w/food, may self-restraint win                   | somewhere between 2-8?                               |
+| [[https://gamerules.com/rules/rummy/][rummy]]                                                                    | 3.0                | similar to gin rummy                                 | 2+                                                   |
+| [[https://www.pagat.com/eights/mao.html][mao]]                                                                   | 2.9                | if you like torturing newbies or being angry         | 4+                                                   |
+| [[https://gamerules.com/rules/bullshit-card-game/][bs]]                                                          | 2.8                | how to tell who the *good kids* are                 | 3-10                                                 |
+| [[https://gamerules.com/rules/golf-card-game/][golf]]                                                            | 2.5                | been too long since i played, don't remember         | 4+                                                   |
+| [[https://en.wikipedia.org/wiki/Sheng_ji][sheng ji]]                                                            | 2.5                | ???, have not played, but two teams of two           | 4                                                    |
+| [[https://gamerules.com/rules/spoons-card-game/][spoons]]                                                        | 2.5                | group chaos, slowly eliminates people                | max of 10? 12?                                       |
+| [[https://en.m.wikipedia.org/wiki/Egyptian_Ratscrew][egyptian ratscrew]]                                          | 2.0                | same as slapjack: physical pain                      | 4 ish                                                |
+| [[https://en.m.wikipedia.org/wiki/Slapjack][slapjack]]                                                           | 2.0                | play on trains or ferries                            | 4 ish                                                |
+| [[https://gamerules.com/rules/crazy-eights-card-game/][crazy eights]]                                             | 1.1                | uno, but with cards                                  | 3+                                                   |
+| [[https://en.m.wikipedia.org/wiki/War_(card_game)][war]]                                                          | 1.0                | play with young kids to introduce them to card games | 2+                                                   |
+
+*** Card Games That Don't Use Playing Cards:
+- rook
+- phase 10
+- dutch blitz
+
+*** Games to Learn:
+- [[https://en.m.wikipedia.org/wiki/Belote][belote]]
+- [[https://en.m.wikipedia.org/wiki/Contract_bridge][bridge]]
+- [[https://en.m.wikipedia.org/wiki/Tichu][tichu]]
+- [[https://gamerules.com/rules/spades-card-game/][spades]]
+- [[https://gamerules.com/rules/sergeant-major/][sergeant major]]
+- [[http://www.pagat.com/euchre/500.html][500]]
+- [[http://www.pagat.com/eights/eleusis.html][elusis]]
+- [[https://www.pagat.com/invented/zetema.html][zetema]]
+
+*** Useful Links
+[[https://playingcarddecks.com/blogs/all-in/40-great-card-games-for-all-occasions][Short description of games]]
+
+* about                         :reference:
+:PROPERTIES:
+:EXPORT_FILE_NAME: about
+:EXPORT_DATE: 2022-06-14
+:EXPORT_TITLE: mazzaella? elliott?
+:EXPORT_HUGO_CATEGORIES: notes
+:END:
+
+** why mazzaella?
+
+First, what is Mazzaella? Mazzaella is a genus of a species of
+              seaweed. See this article. Why did I choose the domain name
+              Mazzaella? Because it reminds me of home, the Pacific Northwest.
+              /Mazzaella splendens/ is a beautiful red seaweed. When you
+              view it underwater, it shimmers.
+
+              This is a picture I took of what I hope is of
+              /Mazzaella splendens/. It looks similar to it, but the
+              iridescence did not show up on camera, so I'm not one hundred
+              percent sure.
+
+              ** why am I?
+
+               I, Elliott Claus, am. I grew up on a small island in the Pacific
+              Ocean, Orcas Island, WA. I went to college at Walla Walla
+              University and graduated in 2020 with a Bioengineering degree. I
+              worked a summer construction job through high school and college,
+              and for a bit afterwards. I recently moved to Georgia, as I
+              accepted a junior developer role at AppVizo. I am good at making
+              things happen while keeping cost, time, and quality in mind. You
+              can only have two, but I try to optimize as best I can.
+
+              For fun, I like to play board games, pickleball, and ride my
+              electric unicycle. For entertainment, I default to Twitter and
+              YouTube. For society, I mostly spend time with my family and close
+              friends.
+
+              [[/images/elliottclaus.jpg]]
+
+* photometer
+:PROPERTIES:
+:EXPORT_FILE_NAME: photometer
+:EXPORT_DATE: 2022-05-29
+:EXPORT_TITLE: DIY Photometer
+:EXPORT_HUGO_CATEGORIES: notes
+:END:
+
+** Designing and manufacturing a DIY Photometer
+
+[[/photometer/photometer.jpg]]
+
+[[/photometer/PCB-V1.4.jpg]]
+
+** Photometer and custom PCB
+
+*** What is a photometer?
+
+A photometer is a device that measures the transmission of light
+                through a liquid, from which you can calculate properties of the
+                liquid. The photometer that I designed measures the pH of
+                seawater.
+
+                *** Abstract
+
+                Many professional biologists are doing ocean acidification
+                research, but this requires expensive machinery to monitor pH
+                levels accurately. This project's goal is to make an accessible
+                and accurate DIY photometer to measure ocean pH, with the goal
+                of it being used in high school classrooms. This photometer is
+                upgraded from a design by Yang et al. in their paper, “Seawater
+                PH Measurements in the Field: A DIY Photometer with 0.01 Unit PH
+                Accuracy.” The main improvements involve simplifying the
+                building process using a custom printed circuit board (PCB),
+                having clear building instructions and usage procedures, adding
+                a third LED to make the measurements more accurate, and updating
+                code to calculate the pH on the device. After testing, this DIY
+                photometer design successfully meets the +/- 0.01 pH precision,
+                while being simple and cost effective to build. The total cost
+                is around $80.
+
+                ** Skills demonstrated:
+- Research/reading scientific literature
+- Project management
+- Prototyping and design
+- SolidWorks
+- KiCAD/PCB design
+- Coding for Arduino
+- Experiment design and execution
+- Data analysis
+
+                ** Related links:
+
+- [[/photometer/Building-Instructions.pdf][Build Instructions]]
+- [[/photometer/DIY-Photometer-Sample-Procedure.pdf][Sample Procedure]]
+- [[https://drive.google.com/drive/folders/12e3psiflYahUNBUbpTbVONxisq1LnBot][Google drive folder]] with all project files
