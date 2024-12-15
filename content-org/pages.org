@@ -460,7 +460,7 @@ A photometer is a device that measures the transmission of light
 - [[/photometer/DIY-Photometer-Sample-Procedure.pdf][Sample Procedure]]
 - [[https://drive.google.com/drive/folders/12e3psiflYahUNBUbpTbVONxisq1LnBot][Google drive folder]] with all project files
 
-* junior developer projects                         :reference:c#:code:python:javascript:
+* junior developer projects                         :reference:c__sharp:code:python:javascript:
 :PROPERTIES:
 :EXPORT_FILE_NAME: junior-developer-projects
 :EXPORT_DATE: 2022-07-08

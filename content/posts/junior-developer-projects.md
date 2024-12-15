@@ -2,7 +2,7 @@
 title = "projects overview"
 author = ["Elliott Claus"]
 date = 2022-07-08
-tags = ["reference", "c#", "code", "python", "javascript"]
+tags = ["reference", "c sharp", "code", "python", "javascript"]
 categories = ["projects"]
 draft = false
 +++
