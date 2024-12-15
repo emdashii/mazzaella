@@ -1,10 +1,8 @@
 [build]
 publish = "public"
-command = """
-npm install -g sass &&
-chmod +rx $(which sass) &&
-hugo --gc --minify
-"""
+# command = """
+# hugo --gc --minify
+# """
 
 [build.environment]
 HUGO_VERSION = "0.139.4"
