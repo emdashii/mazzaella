@@ -15,6 +15,10 @@ pagerSize = 5
 tags = "tags"
 categories = "categories"
 
+[services]
+[services.googleAnalytics]
+googleAnalytics = "G-7YWW4K2JNG"
+
 [params]
 title = "mazzaella"
 author = "Elliott Claus"
