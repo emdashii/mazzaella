@@ -1,0 +1,78 @@
+\header {
+title = "does this still work?"
+composer = "Elliott Claus"
+tagline = "Written By Caleb Nelson and Elliott Claus's Counterpoint Generation Program"
+}
+\paper {
+	system-system-spacing #'basic-distance = #16
+}
+
+
+% Phrase 1
+"topPhrase1" = { \clef "treble" \key d \major \time 4/4
+ d'4 a'4 e'4 b'4 fis'4 a'4 cis''4 g'4 d'4 d'4 a'4 cis''4 g'4 b'4 d'4 a'4 e'4 b'4 d''4 a'4 fis'4 cis''4 e''4 g'4 b'4 d''4 a'4 e'4 e'4 g'4 d''4 a''4 e''4 g'4 d'4 fis'4 cis''4 cis''4 g'4 d'4 fis'4 d'4 a'4 cis''4 g'4 b'4 b'4 d'4 fis'4 cis''4 cis''4 e'4 g'4 d'4 fis'4 a'4 cis''4 e'4 g'4 b'4 d'4 fis'4 cis''4 g'4 d'4 b'4 b'4 fis'4 cis''4 g'4 g'4 d'4 a'4 e'4 e'4 b'4 fis'4 a'4 cis''4 d''4\bar "||" }
+"bottomPhrase1" = { \clef "treble" \key d \major \time 4/4
+ d'4 a'4 e'4 b'4 d'4 fis'4 cis''4 g'4 g'4 d4 fis'4 cis''4 e'4 g'4 d4 a'4 e'4 g'4 d'4 b'4 fis'4 a'4 cis''4 e'4 g'4 d'4 a'4 a'4 cis''4 g'4 d''4 a'4 cis''4 g'4 b'4 fis'4 fis'4 cis'4 g'4 b'4 g'4 d4 fis'4 cis'4 e'4 e'4 g'4 b'4 fis'4 fis'4 a4 cis'4 g'4 b4 d4 fis'4 a4 cis'4 e'4 g'4 b'4 fis'4 cis''4 g'4 e'4 e'4 b'4 fis'4 cis''4 cis''4 g'4 d4 a'4 a'4 e'4 b'4 d'4 a'4 e'4 d'4}
+% Phrase 2
+"topPhrase2" = { \clef "treble" \key g \major \time 4/4
+ g'4 d''4 a'4 fis''4 c''4 e''4 g'4 e''4 g'4 d''4 fis''4 a'4 c''4 e''4 b'4 g'4 b'4 fis''4 c'''4 e''4 b''4 d''4 a''4 fis''4 d''4 a'4 e''4 b'4 d''4 a'4 c''4 g'4 d''4 fis''4 a'4 c''4 e''4 g''4 b''4 fis''4 a'4 c''4 g''4 e''4 g''4 d''4 fis''4 g''4\bar "||" }
+"bottomPhrase2" = { \clef "treble" \key g \major \time 4/4
+ g'4 d''4 b'4 fis''4 a'4 c''4 a'4 c''4 g'4 b'4 d''4 fis''4 a'4 e''4 c''4 e''4 b'4 fis''4 a'4 e''4 g'4 d''4 b'4 g'4 d''4 a'4 e''4 g'4 d''4 fis'4 c''4 g4 b'4 d''4 fis''4 a'4 c''4 e''4 b'4 d''4 fis''4 c''4 a'4 c''4 g'4 e''4 a'4 g'4}
+% Phrase 3
+"topPhrase3" = { \clef "treble" \key d \major \time 4/4
+ d''4 a'4 cis''4 cis''4 cis''4 a'4 cis''4 cis''4 cis''4 fis''4 d''4 d'4 a'4 b'4 b'4 d'4 fis'4 cis''4 d'4 e'4 cis''4 g'4 a'4 b'4 fis'4 g'4 a'4 e'4 a'4 cis''4 g'4 b'4 g''4 cis''4 cis''4 b'4 cis''4 g'4 e'4 cis''4 b'4 g'4 e''4 a'4 d'4 d'4 cis''4 d''4\bar "||" }
+"bottomPhrase3" = { \clef "treble" \key d \major \time 4/4
+ d'4 d'4 e'4 fis'4 cis''4 fis'4 a'4 e'4 fis'4 a'4 fis'4 fis'4 fis'4 d'4 e'4 fis'4 d'4 e'4 fis'4 g'4 a'4 e'4 cis''4 d'4 a'4 b'4 fis'4 g'4 d'4 e'4 e'4 g'4 e''4 fis'4 cis''4 g'4 a'4 b'4 cis''4 fis'4 g'4 e'4 g'4 cis''4 fis'4 g'4 e'4 d'4}
+% Phrase 4
+"topPhrase4" = { \clef "treble" \key g \major \time 4/4
+ g''4 a'4 e''4 c''4 g'4 fis''4 b'4 fis''4 d''4 a'4 b'4 e''4 a'4 b'4 c''4 g'4 a'4 g'4 b'4 a'4 c''4 e''4 g'4 fis''4 c''4 fis''4 a''4 c'''4 a'4 g'4 fis''4 a'4 a''4 e'''4 c'''4 fis''4 d''4 a''4 c''4 d''4 g'4 g'4 fis''4 b'4 a'4 b'4 fis''4 g''4\bar "||" }
+"bottomPhrase4" = { \clef "treble" \key g \major \time 4/4
+ g'4 c''4 g'4 a'4 e''4 fis'4 d''4 d''4 fis''4 c''4 e''4 e'4 fis'4 d''4 e''4 b'4 c''4 e''4 b'4 d''4 e''4 c''4 c''4 d''4 e''4 b'4 c''4 e''4 fis''4 c''4 a'4 fis''4 c''4 a''4 e''4 a'4 b'4 c''4 a'4 d''4 e''4 b'4 b'4 d''4 fis''4 b'4 a'4 g'4}
+% Phrase 5
+"topPhrase5" = { \clef "treble" \key d \major \time 4/4
+ d'4 e'4 a'4 b'4 e''4 fis''4 g'4 a'4 b'4 cis''4 fis''4 g''4 a'4 b'4 e'4 fis'4 g'4 a'4 b'4 cis''4 d''4 e''4 a'4 b'4 cis''4 d'4 e'4 fis'4 e'4 fis'4 b'4 cis''4 d'4 e'4 fis'4 g'4 a'4 b'4 cis''4 d'4 cis''4 d'4 g'4 a'4 cis''2 d''2\bar "||" }
+"bottomPhrase5" = { \clef "treble" \key d \major \time 4/4
+ d'2 a'2 cis''2 e'2 b'2 d'2 a'2 cis''2 e'2 g'2 d'2 fis'2 a'2 a'2 e'2 g'2 b'2 d2 fis'2 fis'2 cis'2 e'2 e'2 d'2}
+% Phrase 6
+"topPhrase6" = { \clef "treble" \key g \major \time 4/4
+ g'4 a'4 d''4 e''4 fis''4 g'4 a'4 b'4 e''4 fis''4 g'4 a'4 g'4 a'4 d''4 e''4 fis''4 g'4 c''4 d''4 e''4 fis''4 b'4 c''4 fis''4 g''4 c''4 d''4 a'4 b'4 e''4 fis''4 g''4 a''4 b''4 c'''4 fis''4 g''4 c''4 d''4 e''4 fis''4 b'4 c''4 fis''2 g''2\bar "||" }
+"bottomPhrase6" = { \clef "treble" \key g \major \time 4/4
+ g'2 b'2 d''2 a'2 c''2 c''2 g2 b'2 fis''2 a'2 e''2 b'2 fis''2 d''2 a'2 c''2 e''2 b'2 fis''2 a'2 e''2 b'2 a'2 g'2}
+% Phrase 7
+"topPhrase7" = { \clef "treble" \key a \major \time 3/4
+ a4 e'4 cis'4 a4 e'4 b4 b4 fis'4 cis''4 e'4 cis'4 gis'4 b4 d'4 fis'4 a4 cis'4 gis'4 b4 d'4 a4 cis'4 e'4 gis'4 b4 d'4 fis'4 cis'4 e'4 gis'4 b4 d'4 d'4 fis'4 gis'4 a'4\bar "||" }
+"bottomPhrase7" = { \clef "treble" \key a \major \time 3/4
+ a4 fis'4 d'4 a,4 e'4 e'4 b4 fis'4 a4 fis'4 cis'4 e4 gis4 b4 d'4 fis'4 cis'4 e'4 gis'4 d'4 fis'4 a4 cis'4 e4 gis4 b4 fis'4 a4 cis'4 e'4 gis'4 gis'4 b4 fis'4 b4 a4}
+% Phrase 8
+"topPhrase8" = { \clef "treble" \key d \major \time 4/4
+ d'4 a'4 cis''4 e''4 b'4 d''4 a''4 cis''4 e'4 g'4 b'4 d'4 fis'4 cis''4 cis''4 d''4\bar "||" }
+"bottomPhrase8" = { \clef "treble" \key d \major \time 4/4
+ d'4 fis'4 a'4 e'4 g'4 d''4 fis'4 a'4 cis'4 e'4 g'4 b'4 fis'4 cis'4 e'4 d'4}
+\score {
+	<<
+		<<
+			\new Voice = "one" {
+				\"topPhrase1"
+				\"topPhrase2"
+				\"topPhrase3"
+				\"topPhrase4"
+				\"topPhrase5"
+				\"topPhrase6"
+				\"topPhrase7"
+				\"topPhrase8"
+			}
+			>>
+			\new Voice = "one" {
+				\"bottomPhrase1"
+				\"bottomPhrase2"
+				\"bottomPhrase3"
+				\"bottomPhrase4"
+				\"bottomPhrase5"
+				\"bottomPhrase6"
+				\"bottomPhrase7"
+				\"bottomPhrase8"
+			}
+	>>
+		\layout{}
+		\midi{}
+}

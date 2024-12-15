@@ -69,6 +69,11 @@ whatsapp = false
 hackernews = false
 telegram = false
 
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
+
 [mediaTypes]
 [mediaTypes."text/org"]
 suffixes = ["org"]

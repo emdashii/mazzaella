@@ -2,7 +2,8 @@
 title = "DIY Photometer"
 author = ["Elliott Claus"]
 date = 2022-05-29
-categories = ["notes"]
+tags = ["design"]
+categories = ["projects"]
 draft = false
 +++
 
@@ -19,9 +20,9 @@ draft = false
 ### What is a photometer? {#what-is-a-photometer}
 
 A photometer is a device that measures the transmission of light
-                through a liquid, from which you can calculate properties of the
-                liquid. The photometer that I designed measures the pH of
-                seawater.
+  through a liquid, from which you can calculate properties of the
+  liquid. The photometer that I designed measures the pH of
+  seawater.
 
 
 ### Abstract {#abstract}

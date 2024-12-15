@@ -11,9 +11,9 @@
 :END:
 hello world. this is being generated using hugo. this is my first post on the new website.
 
-* split keyboard                    :keyboard:split:
+* split keyboard                    :split__keyboard:code:keyboard:
 :PROPERTIES:
-:EXPORT_FILE_NAME: split-keyboard
+:EXPORT_FILE_NAME: split-keyboard-v1
 :EXPORT_DATE: 2022-07-06
 :EXPORT_HUGO_CATEGORIES: projects
 :EXPORT_TITLE: Split Keyboard - An Experiment in Workflow
@@ -30,178 +30,180 @@ This is a split keyboard. In fact, this is my split keyboard. It is a crkbd corn
 ** Why would anyone want a split keyboard?
 
 A split keyboard is a significant improvement in ergonomics. Most
-              keyboards have people's arms twisted in and their fingers at
-              awkward angles. This position also scrunches people's shoulders
-              together. When the halves of the keyboard are moved apart, your
-              shoulders open up. Also, in the ergonomics department, you can
-              “tent” the keyboard. When people's hands are palms down in front
-              of them, it puts extra pressure on the forearms. Once you tent the
-              keyboard, which is to raise the edge in the center, it puts your
-              hands into a more neutral position. Some people tent their
-              keyboards so the halves are almost ninety degrees, while others do
-              more like fifteen through thirty degrees.
+keyboards have people's arms twisted in and their fingers at
+awkward angles. This position also scrunches people's shoulders
+together. When the halves of the keyboard are moved apart, your
+shoulders open up. Also, in the ergonomics department, you can
+“tent” the keyboard. When people's hands are palms down in front
+of them, it puts extra pressure on the forearms. Once you tent the
+keyboard, which is to raise the edge in the center, it puts your
+hands into a more neutral position. Some people tent their
+keyboards so the halves are almost ninety degrees, while others do
+more like fifteen through thirty degrees.
 
 The keys on this keyboard are ortholinear, which means they go in
-              vertical rows. This means that each finger has to travel less
-              distance and the finger movement is more natural. Also, because
-              there are fewer keys, a finger only ever has to reach a key that
-              is one key away from the home row. If your hands never leave the
-              home row, then you can have a very accurate mental map of where
-              all the keys are. Part of the design philosophy behind a keyboard
-              with less keys is that when you have less keys, you don't need to
-              stretch your fingers to get to any key. This is something I didn't
-              notice much until I started programming more heavily and was
-              typing ctrl+shift+arrow keys, parentheses, and function keys a
-              lot. Each time I had to type a complicated chord (combination of
-              keys) or move my hands away from the home row, it would take a bit
-              to reset. Using a split keyboard completely eliminates this.
-              Through keyboard shortcuts, I can type, edit text, and swap
-              programs without having to take my hands off the keyboard. I'll
-              include a non-exhaustive list of useful keyboard shortcuts at the
-              bottom of this page. The split keyboard isn't quite like a full
-              fledged vim editor, but it's close. And, when I'm typing and
-              editing, my hands almost never move. It really feels like magic.
+vertical rows. This means that each finger has to travel less
+distance and the finger movement is more natural. Also, because
+there are fewer keys, a finger only ever has to reach a key that
+is one key away from the home row. If your hands never leave the
+home row, then you can have a very accurate mental map of where
+all the keys are. Part of the design philosophy behind a keyboard
+with less keys is that when you have less keys, you don't need to
+stretch your fingers to get to any key. This is something I didn't
+notice much until I started programming more heavily and was
+typing ctrl+shift+arrow keys, parentheses, and function keys a
+lot. Each time I had to type a complicated chord (combination of
+keys) or move my hands away from the home row, it would take a bit
+to reset. Using a split keyboard completely eliminates this.
+Through keyboard shortcuts, I can type, edit text, and swap
+programs without having to take my hands off the keyboard. I'll
+include a non-exhaustive list of useful keyboard shortcuts at the
+bottom of this page. The split keyboard isn't quite like a full
+fledged vim editor, but it's close. And, when I'm typing and
+editing, my hands almost never move. It really feels like magic.
 
-              Split keyboards are fun! You can design your own keymap and
-              layout, and program the LEDs and screens to do exactly what you
-              want. This allows a ton of creativity and people have come up with
-              clever keymaps.
+Split keyboards are fun! You can design your own keymap and
+layout, and program the LEDs and screens to do exactly what you
+want. This allows a ton of creativity and people have come up with
+clever keymaps.
 
-              Split keyboards allow you to use your thumb more effectively. An
-              opposable thumb is a genius of engineering, and for input we only
-              use it to hit the spacebar. Split keyboards often give multiple
-              keys to the thumb, so that another digit can be used effectively.
-              This is something that I can't believe I've never thought of
-              before. Why have my thumbs been so underutilized on all keyboards
-              before this?
+Split keyboards allow you to use your thumb more effectively. An
+opposable thumb is a genius of engineering, and for input we only
+use it to hit the spacebar. Split keyboards often give multiple
+keys to the thumb, so that another digit can be used effectively.
+This is something that I can't believe I've never thought of
+before. Why have my thumbs been so underutilized on all keyboards
+before this?
 
-              Finally, split keyboards are more portable than full sized
-              keyboards. This is great when some days I work from home and some
-              days I go into the office. I can easily transport my keyboard
-              between places.
+Finally, split keyboards are more portable than full sized
+keyboards. This is great when some days I work from home and some
+days I go into the office. I can easily transport my keyboard
+between places.
 
-              ** How can you type/program with so few keys?
+** How can you type/program with so few keys?
 
-              Aha, this is really the crux of the question. This keyboard uses
-              layers to easily access every key. In fact, I would argue that
-              it's easier to type any key than on a 100% keyboard. (Mine is a
-              40% keyboard.) Everyone already uses at least one layer on any
-              keyboard, the shift layer. A key will output a lowercase letter,
-              unless shift is held down or capslock is on. This functionally
-              doubles the number of characters a keyboard can output. Not
-              counting shift as a layer, this keyboard has three layers. The
-              first contains all the letters. The second contains all symbols
-              and numbers. The third contains all navigation keys and function
-              keys. With a keyboard like this, you can program as many layers as
-              you want. Here is a map of my keyboard layers.
+Aha, this is really the crux of the question. This keyboard uses
+layers to easily access every key. In fact, I would argue that
+it's easier to type any key than on a 100% keyboard. (Mine is a
+40% keyboard.) Everyone already uses at least one layer on any
+keyboard, the shift layer. A key will output a lowercase letter,
+unless shift is held down or capslock is on. This functionally
+doubles the number of characters a keyboard can output. Not
+counting shift as a layer, this keyboard has three layers. The
+first contains all the letters. The second contains all symbols
+and numbers. The third contains all navigation keys and function
+keys. With a keyboard like this, you can program as many layers as
+you want. Here is a map of my keyboard layers.
 
 [[/split-keyboard/keymap.jpg]]
 
 After only a few weeks, I have almost every key memorized on each
-              layer. This is way better than on the standard keyboard, where I
-              always have had to look down to know what symbol I want to type.
+layer. This is way better than on the standard keyboard, where I
+always have had to look down to know what symbol I want to type.
 
 This keymap has a few things that I think are really cool. The
-              first is called
-              [[https://precondition.github.io/home-row-mods][Home Row Mods]].
-              This allows me to press the windows key, alt, shift, and
-              control using the keys on the homerow, rather than having to move
-              my fingers to any keys. If I need to shift a key on my left hand,
-              I press shift with my right middle finger. If I need to press
-              shift with my right hand, I hold down my left ring finger. This is
-              amazing. If you want to know more, click the link above.
+first is called
+[[https://precondition.github.io/home-row-mods][Home Row Mods]].
+This allows me to press the windows key, alt, shift, and
+control using the keys on the homerow, rather than having to move
+my fingers to any keys. If I need to shift a key on my left hand,
+I press shift with my right middle finger. If I need to press
+shift with my right hand, I hold down my left ring finger. This is
+amazing. If you want to know more, click the link above.
 
 The second cool thing is that I have a numpad for my right hand.
-              Typing numbers on a numpad is more intuitive, though I recognize
-              that basically everyone has gotten used to the number row. I hold
-              down one key with my left thumb, and I'm in my symbols layer. Then
-              I can type all the numbers I want, and when I release that key,
-              I'm back to typing letters.
+Typing numbers on a numpad is more intuitive, though I recognize
+that basically everyone has gotten used to the number row. I hold
+down one key with my left thumb, and I'm in my symbols layer. Then
+I can type all the numbers I want, and when I release that key,
+I'm back to typing letters.
 
-              The other keyboard feature that I like a lot is having arrow keys
-              right where my left hand naturally rests. I have gotten used to
-              using WASD playing many games, but when I was making the keymap, I
-              realized that while typing, my hand naturally rests on ESDF, which
-              I still think of as WASD, just shifted over one key. This way,
-              when I'm in my navigation layer, I don't have to move my left hand
-              over a key to get to the arrow keys.
+The other keyboard feature that I like a lot is having arrow keys
+right where my left hand naturally rests. I have gotten used to
+using WASD playing many games, but when I was making the keymap, I
+realized that while typing, my hand naturally rests on ESDF, which
+I still think of as WASD, just shifted over one key. This way,
+when I'm in my navigation layer, I don't have to move my left hand
+over a key to get to the arrow keys.
 
-              If you're still with me, one of the final cool keyboard layer
-              features I designed was how to move between the layers. Most split
-              keyboards come with a layer shifting feature that works like a
-              shift button. While that key is held down, you are in the layer.
-              This is very intuitive and useful, but after watching
-              [[https://www.youtube.com/c/BenVallack][Ben Vallack's YouTube channel]],
-              I saw that he was trying to avoid “chording”, which is where
-              you press multiple keys at once. So I made a second way to access
-              the layers. The first way is to hold down space. Space on the left
-              side takes you to the symbols and numbers layer. Space on the
-              right side takes you to the arrow keys and function keys layer.
-              The second way is to tap the button next to space. When you tap
-              it, it will take you to the layer for one keypress. This is
-              useful, for example, when you want to hit a function key at a
-              specific time. You can tap the button next to space and know that
-              your keyboard will interpret the next keypress as that layer. But
-              now, what if you want to stay in that layer? If you tap the button
-              a second time, it'll keep you in the layer. A third key has been
-              programmed to always take you to the alphabet layer, no matter
-              what layer you are on, and when you are on the alphabet layer, it
-              does nothing. This way, if I need to do a lot of arrow key
-              movements, I can double tap my layer switch key, do the movements,
-              and if I want to go home, I can tap the alphabet layer key. I
-              think that this system is pretty intuitive, and better than if the
-              key took you to the layer and the same key took you back home.
-              There is minimal visual feedback with this keyboard, and you often
-              want to be very sure you know what keys you are pressing. If you
-              followed all of that, good for you! This system is not perfect,
-              and I'm still thinking of ways to improve it, but I've been using
-              it for the past few weeks and enjoy it. I hadn't seen any keyboard
-              layouts that did something similar online, and I researched
-              multiple before starting to make my own. My keyboard files are
-              available on my
-              [[https://github.com/emdashii/qmk_firmware/tree/master/keyboards/crkbd/keymaps/emdashiiAnimation][github]].
+If you're still with me, one of the final cool keyboard layer
+features I designed was how to move between the layers. Most split
+keyboards come with a layer shifting feature that works like a
+shift button. While that key is held down, you are in the layer.
+This is very intuitive and useful, but after watching
+[[https://www.youtube.com/c/BenVallack][Ben Vallack's YouTube channel]],
+I saw that he was trying to avoid “chording”, which is where
+you press multiple keys at once. So I made a second way to access
+the layers. The first way is to hold down space. Space on the left
+side takes you to the symbols and numbers layer. Space on the
+right side takes you to the arrow keys and function keys layer.
+The second way is to tap the button next to space. When you tap
+it, it will take you to the layer for one keypress. This is
+useful, for example, when you want to hit a function key at a
+specific time. You can tap the button next to space and know that
+your keyboard will interpret the next keypress as that layer. But
+now, what if you want to stay in that layer? If you tap the button
+a second time, it'll keep you in the layer. A third key has been
+programmed to always take you to the alphabet layer, no matter
+what layer you are on, and when you are on the alphabet layer, it
+does nothing. This way, if I need to do a lot of arrow key
+movements, I can double tap my layer switch key, do the movements,
+and if I want to go home, I can tap the alphabet layer key. I
+think that this system is pretty intuitive, and better than if the
+key took you to the layer and the same key took you back home.
+There is minimal visual feedback with this keyboard, and you often
+want to be very sure you know what keys you are pressing. If you
+followed all of that, good for you! This system is not perfect,
+and I'm still thinking of ways to improve it, but I've been using
+it for the past few weeks and enjoy it. I hadn't seen any keyboard
+layouts that did something similar online, and I researched
+multiple before starting to make my own. My keyboard files are
+available on my
+[[https://github.com/emdashii/qmk_firmware/tree/master/keyboards/crkbd/keymaps/emdashiiAnimation][github]].
 
 This is my updated keymap. I changed how the layers are accessed a
-              bit, to make the navigation layer more prominant. I also added a
-              few keys that I ended up needed. This is the 8th varient of this
-              keymap, but I think it'll be the last. I'm currently working on a
-              new keymap that uses more layers, to put frequently used keys in
-              easy to reach spots. Also, this keymap is totally full. I wanted
-              more keys, and I figured I may as well redesign it from the ground
-              up. When I have the new keymap working, I'll add it to this
-              website. :) <br />Also, the fourth layer is specifically for
-              playing Minecraft :P
+bit, to make the navigation layer more prominant. I also added a
+few keys that I ended up needed. This is the 8th varient of this
+keymap, but I think it'll be the last. I'm currently working on a
+new keymap that uses more layers, to put frequently used keys in
+easy to reach spots. Also, this keymap is totally full. I wanted
+more keys, and I figured I may as well redesign it from the ground
+up. When I have the new keymap working, I'll add it to this
+website. :)
+
+Also, the fourth layer is specifically for
+playing Minecraft :P
 
 [[/split-keyboard/crkbdV8-1.jpg]]
 
 There are many options. If you already have mechanical key
-              switches and caps, the cheapest is probably to build your own.
-              This would cost around $30 (if you have a 3D printer) to $80 (if
-              you don't). If you just want to assemble the parts and not do any
-              soldering, expect to pay around $200. You can also sometimes find
-              split keyboards on esty or ebay around that price. For a fully
-              assembled professionally made one, expect to pay anywhere from
-              $250-up. The
-              [[https://www.zsa.io/moonlander/][ZSA Moonlander]]
-              is well regarded and has very customizable software. If you want
-              one that is sculpted to your hand, look for the
-              [[https://kinesis-ergo.com/shop/advantage2/][Kinesis Advantage2]]
-              or a
-              [[https://github.com/adereth/dactyl-keyboard][Dactyl Manuform]].
-              These get more pricey. If you want fewer keys, look for a
-              [[https://github.com/davidphilipbarr/Sweep][Ferris Sweep]]
-              or
-              [[https://github.com/foostan/crkbd][crkbd Corne]],
-               like I have. There are almost infinite variations of split
-              keyboards that people have come up with. Some have tenting built
-              in, and others don't. Some have
-              [[https://github.com/greyhatmiddleman/crkbd-pimoroni-trackball][a]]
-              [[https://github.com/Bastardkb/Charybdis][trackball]]
-              or a
-              [[https://github.com/joric/jorne/wiki/Trackpoint][trackpoint]]
-              built into the keyboard. I'd like to build one of those and see
-              how I like it, because it would mean that I would have to reach
-              for the mouse less than I already do.
+switches and caps, the cheapest is probably to build your own.
+This would cost around $30 (if you have a 3D printer) to $80 (if
+you don't). If you just want to assemble the parts and not do any
+soldering, expect to pay around $200. You can also sometimes find
+split keyboards on esty or ebay around that price. For a fully
+assembled professionally made one, expect to pay anywhere from
+$250-up. The
+[[https://www.zsa.io/moonlander/][ZSA Moonlander]]
+is well regarded and has very customizable software. If you want
+one that is sculpted to your hand, look for the
+[[https://kinesis-ergo.com/shop/advantage2/][Kinesis Advantage2]]
+or a
+[[https://github.com/adereth/dactyl-keyboard][Dactyl Manuform]].
+These get more pricey. If you want fewer keys, look for a
+[[https://github.com/davidphilipbarr/Sweep][Ferris Sweep]]
+or
+[[https://github.com/foostan/crkbd][crkbd Corne]],
+ like I have. There are almost infinite variations of split
+keyboards that people have come up with. Some have tenting built
+in, and others don't. Some have
+[[https://github.com/greyhatmiddleman/crkbd-pimoroni-trackball][a]]
+[[https://github.com/Bastardkb/Charybdis][trackball]]
+or a
+[[https://github.com/joric/jorne/wiki/Trackpoint][trackpoint]]
+built into the keyboard. I'd like to build one of those and see
+how I like it, because it would mean that I would have to reach
+for the mouse less than I already do.
 
 ** Skills demonstrated:
 - Reading documentation
@@ -362,47 +364,51 @@ Turns out I've played a lot??
 :PROPERTIES:
 :EXPORT_FILE_NAME: about
 :EXPORT_DATE: 2022-06-14
-:EXPORT_TITLE: mazzaella? elliott?
+:EXPORT_TITLE: about me
 :EXPORT_HUGO_CATEGORIES: notes
 :END:
+
+** mazzaella? elliott?
+
+[[/images/mazz.jpg]]
 
 ** why mazzaella?
 
 First, what is Mazzaella? Mazzaella is a genus of a species of
-              seaweed. See this article. Why did I choose the domain name
-              Mazzaella? Because it reminds me of home, the Pacific Northwest.
-              /Mazzaella splendens/ is a beautiful red seaweed. When you
-              view it underwater, it shimmers.
+seaweed. See [[https://www.seaweedsofalaska.com/species.asp?SeaweedID=224][this]] article. Why did I choose the domain name
+Mazzaella? Because it reminds me of home, the Pacific Northwest.
+/Mazzaella splendens/ is a beautiful red seaweed. When you
+view it underwater, it shimmers.
 
-              This is a picture I took of what I hope is of
-              /Mazzaella splendens/. It looks similar to it, but the
-              iridescence did not show up on camera, so I'm not one hundred
-              percent sure.
+The photo above is a picture I took of what I hope is of
+/Mazzaella splendens/. It looks similar to it, but the
+iridescence did not show up on camera, so I'm not one hundred
+percent sure.
 
-              ** why am I?
+** why am I?
 
-               I, Elliott Claus, am. I grew up on a small island in the Pacific
-              Ocean, Orcas Island, WA. I went to college at Walla Walla
-              University and graduated in 2020 with a Bioengineering degree. I
-              worked a summer construction job through high school and college,
-              and for a bit afterwards. I recently moved to Georgia, as I
-              accepted a junior developer role at AppVizo. I am good at making
-              things happen while keeping cost, time, and quality in mind. You
-              can only have two, but I try to optimize as best I can.
+ I, Elliott Claus, am. I grew up on a small island in the Pacific
+Ocean, Orcas Island, WA. I went to college at Walla Walla
+University and graduated in 2020 with a Bioengineering degree. I
+worked a summer construction job through high school and college,
+and for a bit afterwards. I recently moved to Georgia, as I
+accepted a junior developer role at AppVizo. I am good at making
+things happen while keeping cost, time, and quality in mind. You
+can only have two, but I try to optimize as best I can.
 
-              For fun, I like to play board games, pickleball, and ride my
-              electric unicycle. For entertainment, I default to Twitter and
-              YouTube. For society, I mostly spend time with my family and close
-              friends.
+For fun, I like to play board games, pickleball, and ride my
+electric unicycle. For entertainment, I default to Twitter and
+YouTube. For society, I mostly spend time with my family and close
+friends.
 
-              [[/images/elliottclaus.jpg]]
+[[/images/elliottclaus.jpg]]
 
-* photometer
+* photometer                                        :design:
 :PROPERTIES:
 :EXPORT_FILE_NAME: photometer
 :EXPORT_DATE: 2022-05-29
 :EXPORT_TITLE: DIY Photometer
-:EXPORT_HUGO_CATEGORIES: notes
+:EXPORT_HUGO_CATEGORIES: projects
 :END:
 
 ** Designing and manufacturing a DIY Photometer
@@ -416,29 +422,29 @@ First, what is Mazzaella? Mazzaella is a genus of a species of
 *** What is a photometer?
 
 A photometer is a device that measures the transmission of light
-                through a liquid, from which you can calculate properties of the
-                liquid. The photometer that I designed measures the pH of
-                seawater.
+  through a liquid, from which you can calculate properties of the
+  liquid. The photometer that I designed measures the pH of
+  seawater.
 
-                *** Abstract
+  *** Abstract
 
-                Many professional biologists are doing ocean acidification
-                research, but this requires expensive machinery to monitor pH
-                levels accurately. This project's goal is to make an accessible
-                and accurate DIY photometer to measure ocean pH, with the goal
-                of it being used in high school classrooms. This photometer is
-                upgraded from a design by Yang et al. in their paper, “Seawater
-                PH Measurements in the Field: A DIY Photometer with 0.01 Unit PH
-                Accuracy.” The main improvements involve simplifying the
-                building process using a custom printed circuit board (PCB),
-                having clear building instructions and usage procedures, adding
-                a third LED to make the measurements more accurate, and updating
-                code to calculate the pH on the device. After testing, this DIY
-                photometer design successfully meets the +/- 0.01 pH precision,
-                while being simple and cost effective to build. The total cost
-                is around $80.
+  Many professional biologists are doing ocean acidification
+  research, but this requires expensive machinery to monitor pH
+  levels accurately. This project's goal is to make an accessible
+  and accurate DIY photometer to measure ocean pH, with the goal
+  of it being used in high school classrooms. This photometer is
+  upgraded from a design by Yang et al. in their paper, “Seawater
+  PH Measurements in the Field: A DIY Photometer with 0.01 Unit PH
+  Accuracy.” The main improvements involve simplifying the
+  building process using a custom printed circuit board (PCB),
+  having clear building instructions and usage procedures, adding
+  a third LED to make the measurements more accurate, and updating
+  code to calculate the pH on the device. After testing, this DIY
+  photometer design successfully meets the +/- 0.01 pH precision,
+  while being simple and cost effective to build. The total cost
+  is around $80.
 
-                ** Skills demonstrated:
+  ** Skills demonstrated:
 - Research/reading scientific literature
 - Project management
 - Prototyping and design
@@ -448,8 +454,331 @@ A photometer is a device that measures the transmission of light
 - Experiment design and execution
 - Data analysis
 
-                ** Related links:
+  ** Related links:
 
 - [[/photometer/Building-Instructions.pdf][Build Instructions]]
 - [[/photometer/DIY-Photometer-Sample-Procedure.pdf][Sample Procedure]]
 - [[https://drive.google.com/drive/folders/12e3psiflYahUNBUbpTbVONxisq1LnBot][Google drive folder]] with all project files
+
+* junior developer projects                         :reference:c#:code:python:javascript:
+:PROPERTIES:
+:EXPORT_FILE_NAME: junior-developer-projects
+:EXPORT_DATE: 2022-07-08
+:EXPORT_TITLE: projects overview
+:EXPORT_HUGO_CATEGORIES: projects
+:END:
+
+** projects overview
+
+*** coding projects
+
+**** Junior Developer at [[https:appvizo.com/][AppVizo]]
+
+**** Started February 2022 | Projects I've worked on:
+
+Note from future me: My junior role ended when I took a fulltime position at BenefitFirst September 2022.
+
+*** Movement Measures.
+
+This project was written using C# and WPF.
+
+wrote a program in C# using WPF
+
+**** Project Intro:
+
+This client asked for a desktop app that could overlay any zoom or
+other type of conference call. Physical therapists are doing more
+of their work online, and as part of that, they need to measure
+angles to see if a client is improving in flexibility. This is
+especially difficult over zoom. Physical therapists had been using
+protractors on the computer screen to get angles.
+
+**** What I did:
+
+What I did: I built a wpf app that lets you place and drag three
+points, and displays the angle between the points. This was my
+first project during my internship at AppVizo. The client was
+happy with this, and has asked for more work, so he can get a
+patent. I am currently adding features that will make the app
+patentable.
+
+*tl;dr* I wrote a WPF app for a physical therapy client.
+
+**** Skills demonstrated:
+
+- Working with clients
+- App design sessions
+- Code reviews
+- Building a WPF app, using C# and XAML
+
+*** Kraken ServiceNow
+
+This project was written in JavaScript, inside ServiceNow.
+
+wrote javascript scripts to edit servicenow records
+
+**** Project Overview:
+
+ServiceNow is a behemoth platform. They provide templates to
+create enterprise apps, mostly for detailing organizations.
+AppVizo was contracted to build a networking app. This app tracks
+and details people, events, equipment, and connections between
+everything. It provides a detailed picture of the organization, so
+if something goes wrong, a user can find the problem and fix it
+easily. It tracks the status of networking equipment, and the
+connections between different pieces of equipment.
+
+As part of building this application on the ServiceNow platform,
+we put in dummy data, so that the client can see what it would
+look like if they were using the application. This dummy data
+included multiple sites, each of which consisted of buildings,
+which contain rooms (specifically server rooms), which contain
+racks, which contain networking equipment. Every server and router
+communicates with at least one piece of the network. Each is
+powered redundantly. All this is modeled in the ServiceNow app.
+
+**** What I did:
+
+A lot of what I did involved entering data. ServiceNow provides a
+couple of ways to enter data. One is to format an excel document
+to be precisely the way they will recognize it, and then upload
+it. This way, unfortunately, does not allow for any connections
+between different pieces of data. So instead, ServiceNow has an
+Xplore page, where you can write JavaScript (in ES5) that can
+access and update tables in their database. With this method, you
+can call up two different tables, and find specific items in each
+to reference in a third table.
+
+For example, say you have a router and a server that are linked.
+You could search the router table, the server table, and then link
+them in the CMDB, which is a specific third table. In the linking,
+you can specify which port and IP address each uses. That way, if
+something goes wrong with the server, you can easily look up where
+it gets its data, and find fixes easier.
+
+With Javascript, I have probably made over five thousand
+records/changes to records in AppVizo's ServiceNow developer
+instance. Some of these were creating records from scratch and
+generating random data. Some of these, the data was already
+generated, and I had to enter it in a way where every record
+connected to the correct thing.
+
+*tl;dr* I wrote lots of JavaScript to update ServiceNow's
+database.
+
+**** Skills demonstrated:
+
+- Detailed data entry
+- Understanding a complex network
+- ServiceNow server calls using GlideRecords
+- Referencing different types of elements using JavaScript
+- Code base: JavaScript ES5
+
+[[/junior-developer-projects/xplore.png]]
+
+*** P1Moto
+This project involved code refactoring in Python.
+refactored a client's python codebase
+
+**** Project Overview:
+
+AppVizo had previously written a webscraper for this client. It
+scraped a website, edited the returned data, and then outputted a
+csv file. This ran daily on a server. The client added
+functionality, scraping multiple other websites. This added
+complexity, until it was difficult to tell what part of the
+program did what. There were multiple files hundreds of lines of
+code long. Some of them were redundant, but it was unclear what
+was actually used and important.
+
+The client came back to AppVizo and asked for additional
+functionality, scraping another website, as well as combining all
+the different scrapes into a single file. (Each one was outputting
+a separate csv file.)
+
+**** What I did:
+
+I read through all the current code and figured out what each
+piece did, and which pieces were copies of functions from other
+files. I added a
+
+            ~def main()~
+
+and
+
+~if __name__ == "__main__":
+    main()~
+
+to each file, and then called the relevant ones from a main.py
+file. This added clarity to what ran when.
+
+One of the other programmers added SQLite to the program. After
+that was done, I added that functionality to all the other files,
+so that everything outputted to a SQLite file, which at the end
+put out a single csv file. This helped the code to run faster, and
+made it easier to debug if any of the web scrapes failed. It also
+helped to format each scrape into a similar data format, which the
+client needed.
+
+*tl;dr* Refactored a client's python code and added
+additional functionality using pandas and SQLite.
+
+**** Skills demonstrated:
+
+- Managing complexity as projects get bigger and expand in scope
+- Refactoring an existing codebase
+- Python pandas and SQLite integration
+- Working with a client when what they ask for requires more work than they realize
+- Working with other programmers, integrating other people's code
+- Git: merging, branches, and pull/push
+- Code base: Python
+
+* counterpoint generator                         :lilypond:music:code:c++:
+:PROPERTIES:
+:EXPORT_FILE_NAME: sheet-music-generator
+:EXPORT_DATE: 2022-06-01
+:EXPORT_TITLE: counterpoint generator
+:EXPORT_HUGO_CATEGORIES: projects
+:END:
+
+** counterpoint sheet music generator
+
+using c++ and lilypond
+
+*** What is counterpoint and why does it make a good candidate for using code to generate music?
+
+Counterpoint is a specific style of music, where one melody is
+generated based on the note that came before, using specific
+rules. This means that if you can write a melody, the program can
+write a counterpoint to go along with it.
+
+[[/lilypond/image1.png]]
+
+These images are from Burstein, L. Poundie., and Joseph Nathan.
+Straus.
+/Concise Introduction to Tonal Harmony./
+W.W. Norton, 2016. The top image demonstrates a counterpoint
+melody, and the numbers represent the intervals between the notes.
+The bottom image shows some of the rules for what counterpoint
+melodies cannot do.
+
+** What were the requirements and challenges for this project?
+
+*** Writing Music:
+
+- Translating music theory to code
+- Saving music notes
+- Using logic to check for errors
+- Deciding which part of the program does what
+
+*** Exporting sheet music:
+
+- Understanding basic music rules
+- Integrating with LilyPond
+- Exporting different lengths
+- Exporting in different keys
+- Exporting with difrferent time signatures
+
+** Proejct details:
+
+This program was written in C++, and was designed to export text
+that fit the .ly file format. Here is the class hierarchy diagram.
+
+[[/lilypond/image2.png]]
+
+The goal for this project is to build a program that generates
+correct two-voice counterpoint.
+
+This project has four distinct parts: a note class, a
+class/function that combines all the rules, classes of rules, and
+a class/function that outputs a .ly file.
+
+*** Key Features
+
+- User chooses length, time signature, and species type
+- Follows all the rules for counterpoint
+- Outputs a LilyPond file with the generated music
+
+*** Assumptions
+
+- The users are good actors
+- The user will not want to write counterpoint in a minor key
+- The user cannot choose what specific notes they want
+
+Note: Caleb N. and I worked on this project together.
+
+The code still runs, though there are now build errors. I ran it,
+and this is what the program looked like:
+
+[[/lilypond/image3.png]]
+
+ It created a file, which, once I found it, imports into LilyPond
+correctly and plays. You can copy the outputted text and put it
+into hacklily.org (also linked below) to see the sheet music. I
+generated the first two phrases in style 0, then in style 1, then
+style 2, then finally style 0 again.
+
+Here is the first bit
+of the output:
+
+[[/lilypond/image4.png]]
+
+I am very impressed that it still runs. It looks like there are
+some notes for which the logic may be wrong, given the large jumps
+up and down occasionally, and when I listened to it I heard at
+least one major second, which I don't think should be there (the
+last note in measure five). Still, I haven't looked at this code
+in three years, and I'm kinda impressed with my past self. What a
+cool project xD
+
+I uploaded all the project files to
+[[https://github.com/emdashii/counterpoint_generator][github]],
+as they were being hosted somewhere else, so at least I'll have
+a copy of the code.
+
+Here is a bonus image of what the program looked like when it ran:
+[[/lilypond/image5.png]]
+super impressive xD
+
+*** music generated by the program:
+
+[[/lilypond/program_output.txt][outputted .txt file]]
+
+*** some counterpoint I wrote:
+
+[[/lilypond/Project1.final.pdf][sheetmusic pdf]]
+
+*** the corresponding .ly file:
+
+[[/lilypond/Project1.final.ly][.ly file]]
+
+** links
+
+- [[https://www.hacklily.org/][hacklily.org]] preview .ly files online (and listen to them, in the wrongkey)
+- [[http://lilypond.org/][lilypond.org]] main lilypond site
+- [[https://www.mutopiaproject.org/][mutopiaproject.org]] free classical sheetmusic with .ly format available
+- [[https://frescobaldi.org/][frescobaldi.org]] downloadable lilypond editor
+
+* about the site                         :code:org__mode:
+:PROPERTIES:
+:EXPORT_FILE_NAME: about-site
+:EXPORT_DATE: 2024-12-15
+:EXPORT_TITLE: about site
+:EXPORT_HUGO_CATEGORIES: notes
+:END:
+
+** about this website
+
+note: TODO
+
+[[https://github.com/emdashii/mazzaella][mazzaella]] - code for this website. it's a hugo site, built with org-mode, and hosted on netlify.
+fun fact: after each page, if you put /index.md or /index.org at the end of the url, it will show the raw markdown/org file.
+
+** other TODOs
+
+- hammock-suspension
+- hours-calculator
+- xplore-scripts
+- split keyboard v2
+- board games i own/reviews of them
+- soft shackle intro
