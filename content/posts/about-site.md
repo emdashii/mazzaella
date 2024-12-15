@@ -17,9 +17,6 @@ fun fact: after each page, if you put /index.md or /index.org at the end of the 
 
 ## other TODOs {#other-todos}
 
--   hammock-suspension
--   hours-calculator
--   xplore-scripts
 -   split keyboard v2
 -   board games i own/reviews of them
 -   soft shackle intro

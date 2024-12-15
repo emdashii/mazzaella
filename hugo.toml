@@ -17,7 +17,7 @@ categories = "categories"
 
 [services]
 [services.googleAnalytics]
-googleAnalytics = "G-7YWW4K2JNG"
+googleAnalytics = "G-2YMZ21XB88"
 
 [params]
 title = "mazzaella"

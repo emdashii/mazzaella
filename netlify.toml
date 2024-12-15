@@ -14,11 +14,11 @@ publish = "public"
 HUGO_VERSION = "0.139.4"
 
 [[redirects]]
-from = "/posts/:slug.md"
-to = "/posts/:splat/index.md"
+from = "/posts/*.md"
+to = "/posts/*/index.md"
 status = 301
 
 [[redirects]]
-from = "/posts/:slug.org"
-to = "/posts/:splat/index.org"
+from = "/posts/*.org"
+to = "/posts/*/index.org"
 status = 301

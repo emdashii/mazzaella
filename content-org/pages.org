@@ -759,6 +759,201 @@ super impressive xD
 - [[https://www.mutopiaproject.org/][mutopiaproject.org]] free classical sheetmusic with .ly format available
 - [[https://frescobaldi.org/][frescobaldi.org]] downloadable lilypond editor
 
+* xplore scripts                         :code:javascript:reference:
+:PROPERTIES:
+:EXPORT_FILE_NAME: xplore-scripts
+:EXPORT_DATE: 2022-05-30
+:EXPORT_TITLE: xplore scripts
+:EXPORT_HUGO_CATEGORIES: notes
+:END:
+
+** basic script
+
+#+begin_src javascript
+var count = 0;
+var gr = new GlideRecord('incident');
+gr.query();
+while (gr.next()) {
+    count++;
+    gr.update();
+}
+gs.log('count: ' + count);
+gr
+#+end_src
+
+** Useful Commands
+#+begin_src javascript
+gr.deleteRecord();
+gr.addQuery('active',false);
+gr.addNotNullQuery('short_description');
+#+end_src
+
+** Create a New Record
+#+begin_src javascript
+gr.initialize();
+gr.insert();
+#+end_src
+
+** Count Records in a Query
+#+begin_src javascript
+var gr = new GlideRecord('elements');
+gr.addQuery('hierarchy', 'sys_id');
+gr.query();
+gs.log('Incident count: ' + gr.getRowCount());
+gr
+#+end_src
+
+** Useful Links
+
+- [[https://servicenowguru.com/scripting/gliderecord-query-cheat-sheet/][GlideRecord Cheat Sheet]]
+- [[https://therockethq.gitbooks.io/servicenow1/content/index/index/fundamentals/fundamentals-concepts/cmdb/dependency-view.html][Dependency View]]
+
+* hours calculator                       :code:javascript:reference:
+:PROPERTIES:
+:EXPORT_FILE_NAME: hours-calculator
+:EXPORT_DATE: 2024-09-10
+:EXPORT_TITLE: hours calculator
+:EXPORT_HUGO_CATEGORIES: notes
+:END:
+
+** a touch of motivation to see if i'm on track
+
+*** Calculator Form
+
+#+begin_export html
+<form id="workHoursForm" class="test-container">
+  <label for="workedHours">Monthly Hours Worked:</label>
+  <input type="number" id="workedHours" required />
+  <br />
+  <label for="hourlyGoal">Monthly Hourly Goal:</label>
+  <input type="number" id="hourlyGoal" required />
+  <br />
+  <label for="dailyGoal">Ideal Hours/Day:</label>
+  <input type="number" id="dailyGoal" required />
+  <br />
+  <label for="hourlyRate">Hourly Rate:</label>
+  <input type="number" id="hourlyRate" />
+  <br />
+  <input type="submit" value="Calculate" />
+</form>
+#+end_export
+
+*** Results
+
+#+begin_export html
+<div id="results" class="test-container"></div>
+<script src="../../js/hours-calculator.js"></script>
+#+end_export
+
+* hammock suspension                         :reference:ideas:hammock:
+:PROPERTIES:
+:EXPORT_FILE_NAME: hammock-suspension
+:EXPORT_DATE: 2024-10-24
+:EXPORT_TITLE: hammock suspension calculator
+:EXPORT_HUGO_CATEGORIES: notes
+:END:
+
+** idea: calculate all the lengths you can have with fixed length suspension
+
+*** suspension lengths combined
+
+this page is a calculator for idea seven of the image below (sorry
+for the bad quality). i tried three times to make a UCR
+suspension, but i think i got cheap UHMWPE rope and it was too
+slippery. so i looked up many suspension ideas and then iterated
+on iterlocking loops.
+
+[[/images/hammock_suspension.png]]
+
+the reason that i like the loops is that there is no chance for
+them to let me down (assuming i made them correctly). i connect
+them together by sliding one through the other. calculating how
+much adjustibility i could get with four loops was difficult, so i
+made this page to run the calculation for me.
+
+if you want to know what the options are without folding a loop
+(idea four), then put a number bigger than half of your biggest
+loop in "minimum fold lenght". the "dogbone" vs "continuous loop"
+and "minimum bury lenght" are there to calculate the total rope
+needed for the suspension.
+
+*** conclusions???
+
+an interesting thing about the numbers i ended up with is that
+there is no way to get the same length using two different
+combinations of rope, as long as the minimum fold length is big
+enough that the two smallest lengths cannot be folded. (though now
+that i'm thinking about it, this may not be a special propery, as
+long as you don't double or quadruple your lengths)
+
+the other interesting thing is that i built this suspension, and
+used it once. then i realized what a hassel it was to set it up,
+and i bought a $5 set of non-ratcheting straps, cut off the ends,
+and used a beckett hitch to tie off. and it works great! classic
+case of overthinking a problem when a $5 solution exists.
+
+** suspension calculator
+
+#+begin_export html
+<button id="custom_input" onclick="customInput()"> custom input for my suspension</button>
+<form id="suspensionDefinitionForm" class="test-container">
+  <label for="minBuryLength">minimum bury length:</label>
+  <input type="number" id="minBuryLength" required />
+  <br />
+  <label for="minFoldLength">minimum fold length:</label>
+  <input type="number" id="minFoldLength" required />
+  <br /><br />
+  <div class="numbers">
+    <div class="numbers">
+      <label for="length1">suspension length 1:</label>
+      <input type="number" id="length1" required />
+      <br />
+      <label for="length1type">length 1 type:</label>
+      <select id="length1type">
+        <option value="loop" default>continuous loop</option>
+        <option value="dogbone">dogbone</option>
+      </select>
+    </div>
+    <div class="numbers">
+      <label for="length2">suspension length 2:</label>
+      <input type="number" id="length2" required />
+      <br />
+      <label for="length2type">length 2 type:</label>
+      <select id="length2type">
+        <option value="loop">continuous loop</option>
+        <option value="dogbone" default>dogbone</option>
+      </select>
+    </div>
+    <div class="numbers">
+      <label for="length3">suspension length 3:</label>
+      <input type="number" id="length3" required />
+      <br />
+      <label for="length3type">length 3 type:</label>
+      <select id="length3type">
+        <option value="loop">continuous loop</option>
+        <option value="dogbone" default>dogbone</option>
+      </select>
+    </div>
+    <div class="numbers">
+      <label for="length4">suspension length 4:</label>
+      <input type="number" id="length4" required />
+      <br />
+      <label for="length4type">length 4 type:</label>
+      <select id="length4type">
+        <option value="loop">continuous loop</option>
+        <option value="dogbone" default>dogbone</option>
+      </select>
+    </div>
+  </div>
+  <br /><br />
+  <input type="submit" value="Calculate" />
+</form>
+<div class="row">
+  <div id="results" class="test-container"></div>
+</div>
+<script src="../../js/hammock-suspension.js"></script>
+#+end_export
+
 * about the site                         :code:org__mode:
 :PROPERTIES:
 :EXPORT_FILE_NAME: about-site
@@ -776,9 +971,6 @@ fun fact: after each page, if you put /index.md or /index.org at the end of the 
 
 ** other TODOs
 
-- hammock-suspension
-- hours-calculator
-- xplore-scripts
 - split keyboard v2
 - board games i own/reviews of them
 - soft shackle intro
