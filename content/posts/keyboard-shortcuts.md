@@ -1,5 +1,5 @@
 +++
-title = "Keyboard Shortcuts - A Non-exhaustive List"
+title = "keyboard shortcuts – a non-exhaustive list"
 author = ["Elliott Claus"]
 date = 2022-06-13
 tags = ["keyboard", "shortcuts", "reference"]

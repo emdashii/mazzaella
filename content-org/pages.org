@@ -16,7 +16,7 @@ hello world. this is being generated using hugo. this is my first post on the ne
 :EXPORT_FILE_NAME: split-keyboard-v1
 :EXPORT_DATE: 2022-07-06
 :EXPORT_HUGO_CATEGORIES: projects
-:EXPORT_TITLE: Split Keyboard - An Experiment in Workflow
+:EXPORT_TITLE: split keyboard -- an experiment in workflow
 :END:
 
 An experiment in workflow
@@ -220,7 +220,7 @@ for the mouse less than I already do.
 :PROPERTIES:
 :EXPORT_FILE_NAME: keyboard-shortcuts
 :EXPORT_DATE: 2022-06-13
-:EXPORT_TITLE: Keyboard Shortcuts - A Non-exhaustive List
+:EXPORT_TITLE: keyboard shortcuts -- a non-exhaustive list
 :EXPORT_HUGO_CATEGORIES: notes
 :END:
 
@@ -403,11 +403,11 @@ friends.
 
 [[/images/elliottclaus.jpg]]
 
-* photometer                                        :design:
+* photometer                                        :design:diy:
 :PROPERTIES:
 :EXPORT_FILE_NAME: photometer
 :EXPORT_DATE: 2022-05-29
-:EXPORT_TITLE: DIY Photometer
+:EXPORT_TITLE: diy photometer
 :EXPORT_HUGO_CATEGORIES: projects
 :END:
 
@@ -845,7 +845,7 @@ gr
 <script src="../../js/hours-calculator.js"></script>
 #+end_export
 
-* hammock suspension                         :reference:ideas:hammock:
+* hammock suspension                         :reference:ideas:hammock:diy:
 :PROPERTIES:
 :EXPORT_FILE_NAME: hammock-suspension
 :EXPORT_DATE: 2024-10-24
@@ -954,7 +954,7 @@ case of overthinking a problem when a $5 solution exists.
 <script src="../../js/hammock-suspension.js"></script>
 #+end_export
 
-* how to make a soft shackle          :reference:soft__shackle:how__to:knots:
+* how to make a soft shackle          :reference:soft__shackle:how__to:knots:diy:
 :PROPERTIES:
 :EXPORT_FILE_NAME: soft-shackle-how-to
 :EXPORT_DATE: 2024-12-16
@@ -964,7 +964,7 @@ case of overthinking a problem when a $5 solution exists.
 
 ** create the noose
 
-1. fold your braided cord in half.
+1. start with at least 20-30 inches of braided rope. fold your it in half.
 
   [[/soft-shackle/noose1.jpg]]
 
@@ -992,29 +992,35 @@ case of overthinking a problem when a $5 solution exists.
 
    [[/soft-shackle/button2.jpg]]
 
-[[/soft-shackle/button3.jpg]]
+3. tie a two strand wall knot.
 
-[[/soft-shackle/button4.jpg]]
+  [[/soft-shackle/button3.jpg]]
 
-nothing changed from the above image to the below image other than tightening the knot.
+4. tie a half knot. this will be what you pass the tails through on the last step.
 
-[[/soft-shackle/button5.jpg]]
+  [[/soft-shackle/button4.jpg]]
 
-again nothing changed, but see how i opened the middle of the knot to make space for the tails to go down.
+5. look at the picture carefully and copy it. this is the most difficult step to explain, but once you understand it, it becomes simple. nothing changed from the image above to the image below other than tightening the knot.
 
-[[/soft-shackle/button6.jpg]]
+  [[/soft-shackle/button5.jpg]]
 
-after you tuck the tails through those holes and clean up the knot, it will look like this:
+6. open the half knot. again nothing changed with the knot, but see how i opened the middle of the knot to make space for the tails to go down.
 
-[[/soft-shackle/bury1.jpg]]
+  [[/soft-shackle/button6.jpg]]
 
-here is a photo of the top of the knot, if you tied it correctly.
+7. pass the tails through the holes, one on either side of the center of the knot. after you tuck the tails through those holes and clean up the knot, it will look like this:
+
+  [[/soft-shackle/bury1.jpg]]
+
+here is a photo of the top of the knot, if you tied it correctly. one of the ways to tell if you tied it correctly is that
+everything is symmetrical. another is that if you follow a strand, it should go under two other strands, pop out, then
+under under two strands, pop out, and so on for four times.
 
 [[/soft-shackle/top.jpg]]
 
 ** burying the tails
 
-1. before you do this, tighten the knot. i like to do this by hanging from the soft shackle, or by using pliers to pull each strand of the knot tight.
+1. before you bury the tails, tighten the knot. i like to do this by hanging from the soft shackle (close it and put my body weight on it, using the noose to pull the knot tight), or by using pliers to pull each strand of the knot tight.
 
    [[/soft-shackle/bury1.jpg]]
 
@@ -1038,6 +1044,8 @@ here is a photo of the top of the knot, if you tied it correctly.
 
   [[/soft-shackle/bury6.jpg]]
 
+7. milk the bury (this is the most satisfying part!). from the button knot, unbunch the rope by sliding your fingers down it. if you did it corrently, the tails should be completely inside of the braid. if not, unbury them and enter the braid lower next time.
+
 ** completed soft shackle
 
 [[/soft-shackle/bury7.jpg]]
@@ -1048,14 +1056,14 @@ here is a photo of the top of the knot, if you tied it correctly.
 :PROPERTIES:
 :EXPORT_FILE_NAME: soft-shackle-info
 :EXPORT_DATE: 2024-12-16
-:EXPORT_TITLE: soft shackle -- info
+:EXPORT_TITLE: soft shackle -- intro/faq
 :EXPORT_HUGO_CATEGORIES: notes
 :END:
 
 ** soft shackle!
 
 I've had a lot of fun this year learning new knots. Making soft shackles was one of the things I learned this year, and I enjoy
- making them as gifts to give to others.
+ making them as gifts to give to others, as well as for myself. I most frequently use them to put up tarps and on the end of my hammocks.
 
 Soft shackles can have many knots at the end. I particularly like to make them with a button knot, but you can do a diamond knot or a double overhand knot.
 (In fact, if you tie the double overhand knot correctly, it can be close to as strong as the button knot. See [[https://www.youtube.com/watch?v=jU_mmdbQeCQ][this video]].)
@@ -1070,7 +1078,8 @@ Think of it like a carabiner (except made of rope). To use it, widen the noose (
  ** why are soft shackles great?
 
  Soft shackles are incredible, particularly because they are much stronger for the weight compared to a carabiner.
- They can be tri-loaded without losing strength. They are very handy for connecting two (or more) static things together.
+ They can be tri-loaded without losing strength. If you need more strength, you can wrap it around twice. You cannot cross-load a soft shackle.
+ They are very handy for connecting two (or more) static things together.
  A soft shackle can be very quick to make, if you need to just connect two things together. Tie a knot in the end of a loop of rope,
  flip a larks head into the loop side, and put it over the knot. These are great for quick soft shackles, especially out of paracord, but
  I enjoy making them out of dyneema.
@@ -1080,19 +1089,26 @@ Think of it like a carabiner (except made of rope). To use it, widen the noose (
 They are common in vehicle recovery kits, because if something breaks and goes flying, the rope is soft, compared to a
   metal bow shackle. They are common in sailing for the same reason. I first heard about soft shackles from the [[https://www.youtube.com/@HowNOT2][HowNOT2 YouTuble channel]] , where they
   are used for rigging highlines, as well as to test other gear,
- because when made with a thicker rope, they are stronger than almost all climbing and rescue parts (over 100 kn).
+ because when made with a thicker rope, they are stronger than almost all climbing and rescue parts (over 100 kn breaking strength).
 
  ** how strong are soft shackles?
 
  When the noose is closed around the button knot, there are effectively two strands of rope going around whatever objects are being held together,
- which doubles the breaking strength of the soft shackle.
+ which doubles the breaking strength of the soft shackle compared to the strength of the rope it is made of.
  Knots typically reduce the strength of the rope, but the button knot does not! (Why is this knot so strong? I'd love to write about it, but I think Allen Edwards
   did a good job of it at the link below, if you're curious.) A diamond knot soft shackle will have roughly 170% of the original line strength.
   Button knot soft shackles break at roughly 230% of the line strength. (Numbers from [[https://l-36.com/high_strength_soft_shackle.php][l-36.com]])
+  So, soft shackles are very strong!
 
   ** how to tie a soft shackle?
 
   I wrote about it [[/posts/soft-shackle-how-to][here]], though there are many better guides on the internet, such as [[https://www.animatedknots.com/stopper-loop-knot][this]] one.
+
+** are there any downsides to using a soft shackle?
+
+Not many, but there are a few. First, they cannot take as much abrasion as a carabiner. Second, you cannot undo them if they are under load.
+Third, they are more fiddly than a carabiner. But I think that all the upsides outweight the downsides. They are much cheaper than carabiners (if you make them yourself),
+they are stronger and lighter, and you can make them the exact size that you need for a specific situation.
 
 * split keyboard, revisited                        :code:split__keyboard:totem:keyboard:how__to:
 :PROPERTIES:

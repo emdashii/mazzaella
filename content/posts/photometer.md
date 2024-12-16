@@ -1,8 +1,8 @@
 +++
-title = "DIY Photometer"
+title = "diy photometer"
 author = ["Elliott Claus"]
 date = 2022-05-29
-tags = ["design"]
+tags = ["design", "diy"]
 categories = ["projects"]
 draft = false
 +++
