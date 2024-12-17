@@ -20,4 +20,3 @@ fun fact: after each page, if you put _.md or /.org at the end of the url, it wi
 ## other TODOs {#other-todos}
 
 -   board games i own/reviews of them
--   wedding website

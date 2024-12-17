@@ -56,6 +56,7 @@ this is elliott's personal website, built from org-mode files using hugo
 
 -   [worship songs](https://worship.mazzaella.com/) - a list of worship songs with links to chords and lyrics
 -   [soda](https://soda.mazzaella.com/) - silly site for selling soda
+-   [the knot](https://theknot.clausclan.com/) - our wedding website (work in progress, the knot doesn't make it easy)
 -   [rosario cabins](https://rosario-cabins.mazzaella.com/) - a list of cabins at rosario, used for planning my wedding
 -   [v2 of this website](https://v2.mazzaella.com/) - the previous version of this site
 
