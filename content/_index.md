@@ -32,20 +32,23 @@ body.darkmode .theme-aware-image .dark-mode {
 
 ### _Mazzaella splendens_ -- this site's namesake
 
+---
+
 ## welcome!
 
-this is elliott's personal website, built from org-mode using hugo
+this is elliott's personal website, built from org-mode files using hugo
 
 ---
 
 ## projects
 
--   [about me](/posts/about/)
--   [about this website](/posts/about-site/)
+-   [split keyboard v1](/posts/split-keyboard-v1/)
+-   [split keyboard v2](/posts/split-keyboard-v2/)
+-   [junior developer projects](/posts/junior-developer-projects/)
 -   [photometer](/posts/photometer/)
 -   [sheet music generator](/posts/sheet-music-generator/)
--   [split keyboard v1](/posts/split-keyboard-v1/)
--   [junior developer projects](/posts/junior-developer-projects/)
+-   [about me](/posts/about/)
+-   [about this website](/posts/about-site/)
 
 ---
 
@@ -53,8 +56,8 @@ this is elliott's personal website, built from org-mode using hugo
 
 -   [worship songs](https://worship.mazzaella.com/) - a list of worship songs with links to chords and lyrics
 -   [soda](https://soda.mazzaella.com/) - silly site for selling soda
--   [v2 of this website](https://v2.mazzaella.com/) - the previous version of this site
 -   [rosario cabins](https://rosario-cabins.mazzaella.com/) - a list of cabins at rosario, used for planning my wedding
+-   [v2 of this website](https://v2.mazzaella.com/) - the previous version of this site
 
 ---
 

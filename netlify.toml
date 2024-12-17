@@ -13,12 +13,163 @@ publish = "public"
 [build.environment]
 HUGO_VERSION = "0.139.4"
 
+# this will not work, see https://docs.netlify.com/routing/redirects/redirect-options/
+# [[redirects]]
+# from = "/posts/*.md"
+# to = "/posts/:splat/.md"
+# status = 301
+
+# [[redirects]]
+# from = "/posts/*.org"
+# to = "/posts/:splat/.org"
+# status = 301
+
 [[redirects]]
-from = "/posts/*.md"
-to = "/posts/*/index.md"
+from = "/posts/about.md"
+to = "/posts/about/.md"
 status = 301
 
 [[redirects]]
-from = "/posts/*.org"
-to = "/posts/*/index.org"
+from = "/posts/about.org"
+to = "/posts/about/.org"
+status = 301
+
+[[redirects]]
+from = "/posts/about-site.md"
+to = "/posts/about-site/.md"
+status = 301
+
+[[redirects]]
+from = "/posts/about-site.org"
+to = "/posts/about-site/.org"
+status = 301
+
+[[redirects]]
+from = "/posts/hammock-suspension.md"
+to = "/posts/hammock-suspension/.md"
+status = 301
+
+[[redirects]]
+from = "/posts/hammock-suspension.org"
+to = "/posts/hammock-suspension/.org"
+status = 301
+
+[[redirects]]
+from = "/posts/hello-world.md"
+to = "/posts/hello-world/.md"
+status = 301
+
+[[redirects]]
+from = "/posts/hello-world.org"
+to = "/posts/hello-world/.org"
+status = 301
+
+[[redirects]]
+from = "/posts/hours-calculator.md"
+to = "/posts/hours-calculator/.md"
+status = 301
+
+[[redirects]]
+from = "/posts/hours-calculator.org"
+to = "/posts/hours-calculator/.org"
+status = 301
+
+[[redirects]]
+from = "/posts/junior-developer-projects.md"
+to = "/posts/junior-developer-projects/.md"
+status = 301
+
+[[redirects]]
+from = "/posts/junior-developer-projects.org"
+to = "/posts/junior-developer-projects/.org"
+status = 301
+
+[[redirects]]
+from = "/posts/keyboard-shortcuts.md"
+to = "/posts/keyboard-shortcuts/.md"
+status = 301
+
+[[redirects]]
+from = "/posts/keyboard-shortcuts.org"
+to = "/posts/keyboard-shortcuts/.org"
+status = 301
+
+[[redirects]]
+from = "/posts/photometer.md"
+to = "/posts/photometer/.md"
+status = 301
+
+[[redirects]]
+from = "/posts/photometer.org"
+to = "/posts/photometer/.org"
+status = 301
+
+[[redirects]]
+from = "/posts/sheet-music-generator.md"
+to = "/posts/sheet-music-generator/.md"
+status = 301
+
+[[redirects]]
+from = "/posts/sheet-music-generator.org"
+to = "/posts/sheet-music-generator/.org"
+status = 301
+
+[[redirects]]
+from = "/posts/soft-shackle-how-to.md"
+to = "/posts/soft-shackle-how-to/.md"
+status = 301
+
+[[redirects]]
+from = "/posts/soft-shackle-how-to.org"
+to = "/posts/soft-shackle-how-to/.org"
+status = 301
+
+[[redirects]]
+from = "/posts/soft-shackle-info.md"
+to = "/posts/soft-shackle-info/.md"
+status = 301
+
+[[redirects]]
+from = "/posts/soft-shackle-info.org"
+to = "/posts/soft-shackle-info/.org"
+status = 301
+
+[[redirects]]
+from = "/posts/split-keyboard-v1.md"
+to = "/posts/split-keyboard-v1/.md"
+status = 301
+
+[[redirects]]
+from = "/posts/split-keyboard-v1.org"
+to = "/posts/split-keyboard-v1/.org"
+status = 301
+
+[[redirects]]
+from = "/posts/split-keyboard-v2.md"
+to = "/posts/split-keyboard-v2/.md"
+status = 301
+
+[[redirects]]
+from = "/posts/split-keyboard-v2.org"
+to = "/posts/split-keyboard-v2/.org"
+status = 301
+
+[[redirects]]
+from = "/posts/xplore-scripts.md"
+to = "/posts/xplore-scripts/.md"
+status = 301
+
+[[redirects]]
+from = "/posts/xplore-scripts.org"
+to = "/posts/xplore-scripts/.org"
+status = 301
+
+[[redirects]]
+from = "/posts/:slug.md"
+to = "/posts/:slug/.md"
+status = 301
+
+[[redirects]]
+from = "/posts/:slug.org"
+to = "/posts/:slug/.org"
 status = 301

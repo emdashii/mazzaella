@@ -12,7 +12,7 @@ draft = false
 (written in 2023)
 
 I have previously written about my split keyboard, why I use it, how it works, and the thinking behind
-why I planned it the way it is. See that at my website.
+why I planned it the way it is. That post is [here](/posts/split-keyboard-v1).
 
 In the last year and a half, I have enjoyed using the split keyboard, and used it almost every day. At some
 point, I realized that I wanted it to be smaller. I felt like I could relatively easily reduce the number of
@@ -46,6 +46,11 @@ graduated to the full keyboard lifestyle yet.)
 
 ### The Finger Keys {#the-finger-keys}
 
+
+#### Layer 0 (QWERTY) {#layer-0--qwerty}
+
+{{< figure src="/split-keyboard/corne36/layer1.png" >}}
+
 At one point, I tried having lots of layers, with each dedicated to something specific, and many blank keys. I
 was thinking that I could use tapping of thumb keys to quickly travel between lots of layers, but it turned out
 this was just confusing. Also, once I removed the six outer keys, I didn't have the thumb keys available to use
@@ -57,11 +62,21 @@ It also has the delete, tab, enter, space, and backspace keys accessible on the 
 hold keys down, the home row becomes windows, alt, shift, and ctrl, mapped to a, s, d, f, and that is mirrored for
 the right hand. (ctrl, shift, alt, windows on j, k, l, and ;). I've already described how the thumb keys work.
 
+
+#### Layer 1 (Navigation) {#layer-1--navigation}
+
+{{< figure src="/split-keyboard/corne36/layer2.png" >}}
+
 On the navigation layer, the left hand has the arrow keys (e s d f) and page up, page down, home, and end. It also
 has the \`, ', and " keys on the pinky. (This has worked way better than I thought it would, since I was used to using
 my right pinky for the ' and " keys.) The right hand has a dedicated ctrl, shift, alt, and gui/windows key on the home
 row, for combining with the arrow keys for shortcuts. Then it also has insert, escape, and the ^, &amp;, \*, +, ~, and \_.
 (These didn't fit on my number/symbol layer)
+
+
+#### Layer 2 (Numbers/Symbols) {#layer-2--numbers-symbols}
+
+{{< figure src="/split-keyboard/corne36/layer4.png" >}}
 
 On the number/symbol layer, I have the numbers arranged in a numpad layout for the right hand. Around it I have the
 symbols related to math and time, \*, =, :, +, -, /, ., 0. For the left hand, I have the brackets with the open bracket
@@ -69,10 +84,24 @@ on the home row, and the corresponding close bracket right underneath it, ordere
 most programs where I type brackets, it will auto type the close bracket for me, so I just put the open one on the home
 row. Then I have the 1-5 shifted keys above, !, @, #, $, and %. Lastly, I included the \\ and | keys. So it's like LH symbols, RH numbers.
 
+
+#### Layer 3 (Function/Mouse) {#layer-3--function-mouse}
+
+{{< figure src="/split-keyboard/corne36/layer5.png" >}}
+
 On the function/mouse layer, for the left hand I put the mouse keys. I rarely use these, but technically I don't need a
 mouse at all. I can do most window navigation with shortcuts, and eventually I may like to get rid of the mouse, but for
 now I still use it a ton. The left hand has all the function keys, arranged in a numpad format, and then the column to the
 right of them has F10, F11, and F12 going down. That's pretty much it for that layer.
+
+
+#### Layer 4 (Gaming) and Layer 5 (Adjustment) {#layer-4--gaming--and-layer-5--adjustment}
+
+{{< figure src="/split-keyboard/corne36/layer3.png" >}}
+
+{{< figure src="/split-keyboard/corne36/layer6.png" >}}
+
+These two layers are less interesting, but I am posting the screenshots of them for my own future reference. (Note: Technically layer 4 is actually layer 2, but that is for layer switching purposes.)
 
 
 ## TOTEM Keyboard and beyond (2024) {#totem-keyboard-and-beyond--2024}
@@ -86,6 +115,10 @@ away from my keyboard, which is a program called Kanata.
 
 ### TOTEM Build {#totem-build}
 
+{{< figure src="/split-keyboard/totem/totemWireless.jpg" >}}
+
+My wireless TOTEM keyboard.
+
 Building the TOTEM was a lot of fun! I was debating between building a TOTEM and building the Charybdis Nano, which has curved
 keywells and a trackball built into the right hand near the thumb. I settled on the TOTEM because it is much smaller, and will
 travel better. Also, being a 38 key keyboard, it has one extra key on each side for the pinky, which I thought might be useful
@@ -94,6 +127,8 @@ and is designed to be as thin as possible. You can build it in a wired or wirele
 integrated into my keyboard, and I like the trackball, but after having used both finger and thumb trackballs, I like the finger
 ones much better. My thumb ends up being sore after a few weeks of the thumb ball, whereas the finger ones have not had that issue
 for me. Also because the Charybdis has a trackball, it cannot be wireless, and I really wanted to try a wireless keyboard.
+
+{{< figure src="/split-keyboard/totem/totemPCB.jpg" >}}
 
 I ordered all the parts and the PCBs, and got to work building it! Here are a few tips that I remember from my time building:
 
@@ -107,6 +142,10 @@ I ordered all the parts and the PCBs, and got to work building it! Here are a fe
 3.  Be careful with the on/off switch on the BLE version. On one of my boards, it wasn't charging because the on/off switch was broken. I tried to replace it and damaged the PCB, leading to the board working if it was plugged in, but
     not from the battery. On the other board, I wasn't careful turning it on/off, and broke the switch in the on position. This isn't the
     worst, as it lasts around a month on battery power, and has an auto-standby mode, but it's annoying.
+
+{{< figure src="/split-keyboard/totem/totemWiredPinks.jpg" >}}
+
+My wired TOTEM keyboard.
 
 I built two TOTEM keyboards, a wired and wireless version. When ordering parts, most of the cost is in shipping, so going from one board
 to two added $20 in parts, not counting switches. (Ordering switches for this board is annoying, because it uses the choc v1 switches and
@@ -134,8 +173,32 @@ I added was putting a shift for one word key on my pinky. This has worked out sl
 switching which shift key I hit. I am good at using the shift on the opposite side from where I'm typing, but because shift is on my middle finger, it
 blocks the d and k keys, depending on which hand is holding down the key.
 
+{{< figure src="/split-keyboard/totem/layer0.png" >}}
 
-### And Beyond! {#and-beyond}
+-   Layer 0 (QWERTY)
+
+{{< figure src="/split-keyboard/totem/layer1.png" >}}
+
+-   Layer 1 (Navigation/Symbols)
+
+{{< figure src="/split-keyboard/totem/layer3.png" >}}
+
+-   Layer 2 (Numbers/Function)
+
+{{< figure src="/split-keyboard/totem/layer4.png" >}}
+
+-   Layer 3 (Adjustment)
+
+These photos are from the ZMK layout, but I copied it over to a QMK layout for both the TOTEM and the Corne. The photos are missing all the
+secondary functions when you tap and hold a key, as well as the key combos.
+
+{{< figure src="/split-keyboard/totem/layer0wMods.png" >}}
+
+That's what the layers look like if you also visualize the home row mods, but I think it's more confusing if you don't know what you're looking at.
+I got the image from a [ZMK Keymap Editor](https://nickcoutsos.github.io/keymap-editor/) with a GUI, which was very handy to help me learn ZMK and copy over my QMK keymap.
+
+
+### And Beyond! (Kanata) {#and-beyond--kanata}
 
 Since switching to the TOTEM keyboard, I have not used any tenting features. Not that I don't like them, but I have been packing up my keyboard every
 day, and getting the keyboard tenting set nicely takes more time to configure than just laying the keyboard flat. This led to me typing on my laptop
