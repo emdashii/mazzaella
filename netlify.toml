@@ -16,7 +16,7 @@ HUGO_VERSION = "0.139.4"
 # this will not work, see https://docs.netlify.com/routing/redirects/redirect-options/
 # [[redirects]]
 # from = "/posts/*.md"
-# to = "/posts/:splat/.md"
+# to = "/posts/:splat/index.md"
 # status = 301
 
 # [[redirects]]
@@ -26,7 +26,7 @@ HUGO_VERSION = "0.139.4"
 
 [[redirects]]
 from = "/posts/about.md"
-to = "/posts/about/.md"
+to = "/posts/about/index.md"
 status = 301
 
 [[redirects]]
@@ -36,7 +36,7 @@ status = 301
 
 [[redirects]]
 from = "/posts/about-site.md"
-to = "/posts/about-site/.md"
+to = "/posts/about-site/index.md"
 status = 301
 
 [[redirects]]
@@ -46,7 +46,7 @@ status = 301
 
 [[redirects]]
 from = "/posts/hammock-suspension.md"
-to = "/posts/hammock-suspension/.md"
+to = "/posts/hammock-suspension/index.md"
 status = 301
 
 [[redirects]]
@@ -56,7 +56,7 @@ status = 301
 
 [[redirects]]
 from = "/posts/hello-world.md"
-to = "/posts/hello-world/.md"
+to = "/posts/hello-world/index.md"
 status = 301
 
 [[redirects]]
@@ -66,7 +66,7 @@ status = 301
 
 [[redirects]]
 from = "/posts/hours-calculator.md"
-to = "/posts/hours-calculator/.md"
+to = "/posts/hours-calculator/index.md"
 status = 301
 
 [[redirects]]
@@ -76,7 +76,7 @@ status = 301
 
 [[redirects]]
 from = "/posts/junior-developer-projects.md"
-to = "/posts/junior-developer-projects/.md"
+to = "/posts/junior-developer-projects/index.md"
 status = 301
 
 [[redirects]]
@@ -86,7 +86,7 @@ status = 301
 
 [[redirects]]
 from = "/posts/keyboard-shortcuts.md"
-to = "/posts/keyboard-shortcuts/.md"
+to = "/posts/keyboard-shortcuts/index.md"
 status = 301
 
 [[redirects]]
@@ -96,7 +96,7 @@ status = 301
 
 [[redirects]]
 from = "/posts/photometer.md"
-to = "/posts/photometer/.md"
+to = "/posts/photometer/index.md"
 status = 301
 
 [[redirects]]
@@ -106,7 +106,7 @@ status = 301
 
 [[redirects]]
 from = "/posts/sheet-music-generator.md"
-to = "/posts/sheet-music-generator/.md"
+to = "/posts/sheet-music-generator/index.md"
 status = 301
 
 [[redirects]]
@@ -116,7 +116,7 @@ status = 301
 
 [[redirects]]
 from = "/posts/soft-shackle-how-to.md"
-to = "/posts/soft-shackle-how-to/.md"
+to = "/posts/soft-shackle-how-to/index.md"
 status = 301
 
 [[redirects]]
@@ -126,7 +126,7 @@ status = 301
 
 [[redirects]]
 from = "/posts/soft-shackle-info.md"
-to = "/posts/soft-shackle-info/.md"
+to = "/posts/soft-shackle-info/index.md"
 status = 301
 
 [[redirects]]
@@ -136,7 +136,7 @@ status = 301
 
 [[redirects]]
 from = "/posts/split-keyboard-v1.md"
-to = "/posts/split-keyboard-v1/.md"
+to = "/posts/split-keyboard-v1/index.md"
 status = 301
 
 [[redirects]]
@@ -146,7 +146,7 @@ status = 301
 
 [[redirects]]
 from = "/posts/split-keyboard-v2.md"
-to = "/posts/split-keyboard-v2/.md"
+to = "/posts/split-keyboard-v2/index.md"
 status = 301
 
 [[redirects]]
@@ -156,7 +156,7 @@ status = 301
 
 [[redirects]]
 from = "/posts/xplore-scripts.md"
-to = "/posts/xplore-scripts/.md"
+to = "/posts/xplore-scripts/index.md"
 status = 301
 
 [[redirects]]
@@ -166,7 +166,7 @@ status = 301
 
 [[redirects]]
 from = "/posts/:slug.md"
-to = "/posts/:slug/.md"
+to = "/posts/:slug/index.md"
 status = 301
 
 [[redirects]]

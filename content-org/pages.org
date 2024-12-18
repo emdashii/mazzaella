@@ -1346,9 +1346,10 @@ note: TODO
 
 [[https://github.com/emdashii/mazzaella][mazzaella]] - code for this website. it's a hugo site, built with org-mode, and hosted on netlify.
 
-fun fact: after each page, if you put /.md or /.org at the end of the url, it will show the raw markdown/org file. like
-[[/posts/about-site/.md][this]] or [[/posts/about-site/.org][this]].
+fun fact: after each page, if you put /index.md or /index.org at the end of the url, it will show the raw markdown/org file. like
+[[/posts/about-site/index.md][this]] or [[/posts/about-site/index.org][this]].
 
 ** other TODOs
 
 - board games i own/reviews of them
+- hledger intro???

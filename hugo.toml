@@ -91,14 +91,14 @@ delimiter = "."
 [outputFormats.MARKDOWN]
 mediaType = "text/markdown"
 isPlainText = true
-baseName = ""
+baseName = "index"
 relativeURLs = true
 permalinkable = true
 
 [outputFormats.ORG]
 mediaType = "text/org"
 isPlainText = true
-baseName = ""
+baseName = "index"
 relativeURLs = true
 permalinkable = true
 
