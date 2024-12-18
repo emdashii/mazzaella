@@ -68,3 +68,8 @@ this is elliott's personal website, built from org-mode files using hugo
 -   [my github](https://github.com/emdashii) - to see my code
 -   [diy photometer](https://diyphotometer.carrd.co/) - a carrd page for my diy photometer project
 -   [elliott claus](https://elliottclaus.carrd.co/) - a personal carrd page
+
+---
+
+fun fact: if you append .md or .org to any post url, you can view the raw markdown/org file that created that page.
+(alternate usage: /index.md or /index.org) embracing [[https://x.com/kepano/status/1675626836821409792][file over app]]

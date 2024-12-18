@@ -45,6 +45,16 @@ to = "/posts/about-site/.org"
 status = 301
 
 [[redirects]]
+from = "/posts/card-games.md"
+to = "/posts/card-games/index.md"
+status = 301
+
+[[redirects]]
+from = "/posts/card-games.org"
+to = "/posts/card-games/.org"
+status = 301
+
+[[redirects]]
 from = "/posts/hammock-suspension.md"
 to = "/posts/hammock-suspension/index.md"
 status = 301
@@ -164,12 +174,12 @@ from = "/posts/xplore-scripts.org"
 to = "/posts/xplore-scripts/.org"
 status = 301
 
-[[redirects]]
-from = "/posts/:slug.md"
-to = "/posts/:slug/index.md"
-status = 301
+# [[redirects]]
+# from = "/posts/:slug.md"
+# to = "/posts/:slug/index.md"
+# status = 301
 
-[[redirects]]
-from = "/posts/:slug.org"
-to = "/posts/:slug/.org"
-status = 301
+# [[redirects]]
+# from = "/posts/:slug.org"
+# to = "/posts/:slug/.org"
+# status = 301
