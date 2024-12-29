@@ -1,5 +1,5 @@
 +++
-title = "projects overview"
+title = "junior developer projects, an overview"
 author = ["Elliott Claus"]
 date = 2022-07-08
 tags = ["reference", "c sharp", "code", "python", "javascript"]

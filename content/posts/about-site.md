@@ -11,7 +11,8 @@ draft = false
 
 note: TODO
 
-[mazzaella](https://github.com/emdashii/mazzaella) - code for this website. it's a hugo site, built with org-mode, and hosted on netlify.
+[mazzaella](https://github.com/emdashii/mazzaella) - code for this website. it's a [hugo](https://gohugo.io/) site, written in org-mode (with [ox-hugo](https://ox-hugo.scripter.co/)), and hosted on [netlify](https://www.netlify.com/).
+the theme is [hugo-texify3](https://github.com/michaelneuper/hugo-texify3).
 
 fun fact: after each page, if you put /index.md or /index.org at the end of the url, it will show the raw markdown/org file. like
 [this](/posts/about-site/index.md) or [this]({{< relref "index" >}}).

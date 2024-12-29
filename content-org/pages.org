@@ -301,6 +301,27 @@ for the mouse less than I already do.
 
 [[/images/wincopy.png]]
 
+** doom emacs
+#+attr_html: :class shortcuts-table
+| Keys | Effect |
+|------+---------|
+| =C-c C-a= | save a file |
+| =SPC f s= | save a file |
+| =C-c C-e H A= | export to md |
+| =SPC b k= | exit a file |
+| =SPC g g= | open git |
+| =SPC p a= | add a project |
+| =SPC p p= | open a project |
+| =SPC .= | find and open a file |
+| =SPC s s= | search current buffer |
+| =SPC w= | window management |
+| =SPC h= | help |
+| =SPC u= | visual undo history |
+| =ctrl+shift+-= | undo |
+| =alt+shift+-= | redo |
+| =C-g= | swich undo direction |
+| =C-/= | undo |
+
 * card games                         :games:cards:reference:
 :PROPERTIES:
 :EXPORT_FILE_NAME: card-games
@@ -464,7 +485,7 @@ A photometer is a device that measures the transmission of light
 :PROPERTIES:
 :EXPORT_FILE_NAME: junior-developer-projects
 :EXPORT_DATE: 2022-07-08
-:EXPORT_TITLE: projects overview
+:EXPORT_TITLE: junior developer projects, an overview
 :EXPORT_HUGO_CATEGORIES: projects
 :END:
 
@@ -1344,7 +1365,8 @@ my keymaps, from oldest to newest:
 
 note: TODO
 
-[[https://github.com/emdashii/mazzaella][mazzaella]] - code for this website. it's a hugo site, built with org-mode, and hosted on netlify.
+[[https://github.com/emdashii/mazzaella][mazzaella]] - code for this website. it's a [[https://gohugo.io/][hugo]] site, written in org-mode (with [[https://ox-hugo.scripter.co/][ox-hugo]]), and hosted on [[https://www.netlify.com/][netlify]].
+the theme is [[https://github.com/michaelneuper/hugo-texify3][hugo-texify3]].
 
 fun fact: after each page, if you put /index.md or /index.org at the end of the url, it will show the raw markdown/org file. like
 [[/posts/about-site/index.md][this]] or [[/posts/about-site/index.org][this]].

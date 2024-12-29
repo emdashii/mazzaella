@@ -36,7 +36,7 @@ body.darkmode .theme-aware-image .dark-mode {
 
 ## welcome!
 
-this is elliott's personal website, built from org-mode files using hugo
+this is elliott's personal website, built from org-mode using hugo
 
 ---
 
