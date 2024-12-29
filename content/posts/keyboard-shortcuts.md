@@ -94,9 +94,37 @@ draft = false
 </div>
 
 
-## Definitely Turn Clipboard History On In Windows Settings {#definitely-turn-clipboard-history-on-in-windows-settings}
+## turn clipboard history on! {#turn-clipboard-history-on}
+
+change this setting if you are using windows. it makes life so much better.
 
 {{< figure src="/images/wincopy.png" >}}
+
+
+## [organice](https://organice.200ok.ch/) shortcuts {#organice-shortcuts}
+
+my current notes app
+
+<div class="ox-hugo-table shortcuts-table">
+
+| Keys           | Effect                 |
+|----------------|------------------------|
+| `^down arrow`  | select next header     |
+| `^up arrow`    | select previous header |
+| `tab`          | toggle header opened   |
+| `C-t`          | advance todo state     |
+| `^-h`          | edit title             |
+| `^-d`          | edit description       |
+| `C-enter`      | exit edit mode         |
+| `^-enter`      | add header             |
+| `backspace`    | remove header          |
+| `C-up arrow`   | move header up         |
+| `C-down arrow` | move header down       |
+| `C-up-left`    | move header left       |
+| `C-up-right`   | move header right      |
+| `^-/`          | undo                   |
+
+</div>
 
 
 ## doom emacs {#doom-emacs}

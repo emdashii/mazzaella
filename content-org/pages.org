@@ -243,6 +243,7 @@ for the mouse less than I already do.
 #+end_export
 
 ** Visual Studio/VS Code
+
 #+attr_html: :class shortcuts-table
 | Keys | Effect |
 |------+---------|
@@ -264,6 +265,7 @@ for the mouse less than I already do.
 | =ctrl+shift+space= | trigger parameter hints |
 
 ** Web Browser
+
 #+attr_html: :class shortcuts-table
 | Keys | Effect |
 |------+---------|
@@ -285,6 +287,7 @@ for the mouse less than I already do.
 | =ctrl+shift+t= | restores closed tabs |
 
 ** Editing Text
+
 #+attr_html: :class shortcuts-table
 | Keys | Effect |
 |------+---------|
@@ -297,11 +300,36 @@ for the mouse less than I already do.
 | =gui+;= | opens emoji menu |
 | =shift+F10= | opens spellcheck selection (right clicks) |
 
-** Definitely Turn Clipboard History On In Windows Settings
+** turn clipboard history on!
+
+change this setting if you are using windows. it makes life so much better.
 
 [[/images/wincopy.png]]
 
+** [[https://organice.200ok.ch/][organice]] shortcuts
+
+my current notes app
+
+#+attr_html: :class shortcuts-table
+| Keys | Effect |
+|------+---------|
+| =^down arrow= | select next header |
+| =^up arrow= | select previous header |
+| =tab= | toggle header opened |
+| =C-t= | advance todo state |
+| =^-h= | edit title |
+| =^-d= | edit description |
+| =C-enter= | exit edit mode |
+| =^-enter= | add header |
+| =backspace= | remove header |
+| =C-up arrow= | move header up |
+| =C-down arrow= | move header down |
+| =C-up-left= | move header left |
+| =C-up-right= | move header right |
+| =^-/= | undo |
+
 ** doom emacs
+
 #+attr_html: :class shortcuts-table
 | Keys | Effect |
 |------+---------|
@@ -1373,5 +1401,13 @@ fun fact: after each page, if you put /index.md or /index.org at the end of the 
 
 ** other TODOs
 
+*** pages to create
+
 - board games i own/reviews of them
 - hledger intro???
+- other websites i admire/that inspired this site
+   - [[https://yannesposito.com/index.html][yannesposito]]
+   - [[https://gwern.net/][gwern]]
+   - [[https://stephango.com/][stephango]]
+   - [[https://kizu.dev/#Everything][kizu]]
+   - [[https://joodaloop.com/][joodaloop]]

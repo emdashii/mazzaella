@@ -20,5 +20,14 @@ fun fact: after each page, if you put /index.md or /index.org at the end of the 
 
 ## other TODOs {#other-todos}
 
+
+### pages to create {#pages-to-create}
+
 -   board games i own/reviews of them
 -   hledger intro???
+-   other websites i admire/that inspired this site
+    -   [yannesposito](https://yannesposito.com/index.html)
+    -   [gwern](https://gwern.net/)
+    -   [stephango](https://stephango.com/)
+    -   [kizu](https://kizu.dev/#Everything)
+    -   [joodaloop](https://joodaloop.com/)

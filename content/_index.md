@@ -42,13 +42,14 @@ this is elliott's personal website, built from org-mode using hugo
 
 ## projects
 
--   [split keyboard v1](/posts/split-keyboard-v1/)
--   [split keyboard v2](/posts/split-keyboard-v2/)
--   [junior developer projects](/posts/junior-developer-projects/)
--   [photometer](/posts/photometer/)
--   [sheet music generator](/posts/sheet-music-generator/)
--   [about me](/posts/about/)
--   [about this website](/posts/about-site/)
+-   [split keyboard v1](/posts/split-keyboard-v1/) - an intro to split keyboards
+-   [split keyboard v2](/posts/split-keyboard-v2/) - an update after two years of split keyboard use
+-   [junior developer projects](/posts/junior-developer-projects/) - an overview of what i worked on as a junior
+    developer
+-   [photometer](/posts/photometer/) - my seminar project from undergrad at Walla Walla University
+-   [sheet music generator](/posts/sheet-music-generator/) - counterpoint generator using lilypond
+-   [about me](/posts/about/) - bio from 2022
+-   [about this website](/posts/about-site/) - work in progress
 
 ---
 
@@ -56,7 +57,8 @@ this is elliott's personal website, built from org-mode using hugo
 
 -   [worship songs](https://worship.mazzaella.com/) - a list of worship songs with links to chords and lyrics
 -   [soda](https://soda.mazzaella.com/) - silly site for selling soda
--   [the knot](https://theknot.clausclan.com/) - our wedding website (work in progress, the knot doesn't make it easy)
+-   [the knot](https://theknot.clausclan.com/) - our wedding website, originally hosted by the knot, but now rehosted by
+    me
 -   [rosario cabins](https://rosario-cabins.clausclan.com/) - a list of cabins at rosario, used for planning my wedding
 -   [v2 of this website](https://v2.mazzaella.com/) - the previous version of this site
 
