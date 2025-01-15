@@ -23,7 +23,6 @@ fun fact: after each page, if you put /index.md or /index.org at the end of the 
 
 ### pages to create {#pages-to-create}
 
--   board games i own/reviews of them
 -   hledger intro???
 -   other websites i admire/that inspired this site
     -   [yannesposito](https://yannesposito.com/index.html)

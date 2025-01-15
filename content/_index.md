@@ -42,8 +42,8 @@ this is elliott's personal website, built from org-mode using hugo
 
 ## projects
 
--   [split keyboard v1](/posts/split-keyboard-v1/) - an intro to split keyboards
 -   [split keyboard v2](/posts/split-keyboard-v2/) - an update after two years of split keyboard use
+-   [split keyboard v1](/posts/split-keyboard-v1/) - an intro to split keyboards
 -   [junior developer projects](/posts/junior-developer-projects/) - an overview of what i worked on as a junior
     developer
 -   [photometer](/posts/photometer/) - my seminar project from undergrad at Walla Walla University

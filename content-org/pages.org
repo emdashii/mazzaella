@@ -1403,7 +1403,6 @@ fun fact: after each page, if you put /index.md or /index.org at the end of the 
 
 *** pages to create
 
-- board games i own/reviews of them
 - hledger intro???
 - other websites i admire/that inspired this site
    - [[https://yannesposito.com/index.html][yannesposito]]
@@ -1411,3 +1410,167 @@ fun fact: after each page, if you put /index.md or /index.org at the end of the 
    - [[https://stephango.com/][stephango]]
    - [[https://kizu.dev/#Everything][kizu]]
    - [[https://joodaloop.com/][joodaloop]]
+
+* board games                         :reference:board__games:
+:PROPERTIES:
+:EXPORT_FILE_NAME: board-games
+:EXPORT_DATE: 2025-01-15
+:EXPORT_TITLE: board games
+:EXPORT_HUGO_CATEGORIES: notes
+:END:
+
+** board games
+
+#+BEGIN_export html
+<div class="collection-table-wrapper">
+  <div class="column-toggle" id="columnToggle"></div>
+  <div class="collection-table-container">
+    <table class="collection-table" id="collectionTable">
+      <thead>
+        <tr></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+#+end_export
+#+BEGIN_export html
+<script>
+const config1 = {
+  file: "/csv/collection.csv",
+  columns: {
+    objectname: {
+      label: "game",
+      visible: true
+    },
+    yearpublished: {
+      label: "published",
+      visible: false
+    },
+    comment: {
+      label: "description",
+      visible: true
+    },
+    rating: {
+      label: "my rating (1-10)",
+      visible: true
+    },
+    average: {
+      label: "average bgg rating (1-10)",
+      visible: false
+    },
+    avgweight: {
+      label: "complexity (1-5)",
+      visible: false
+    },
+    playingtime: {
+      label: "playtime (min)",
+      visible: false
+    },
+    bggbestplayers: {
+      label: "recommended players",
+      visible: false
+    },
+    bggrecagerange: {
+      label: "recommended age range",
+      visible: false
+    },
+    rank: {
+      label: "bgg rank",
+      visible: false
+    }
+  }
+};
+</script>
+<script src="../../js/csv-table.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  initializeTable(config1);
+});
+</script>
+#+end_export
+
+(additional note: ratings of 1.0 mean the game is unrated)
+
+data from [[https://boardgamegeek.com/collection/user/defexx][my game collection]] on bgg
+
+additional data from [[https://boardgamegeek.com/][board game geek]]
+
+* board game wishlist                         :reference:board__games:
+:PROPERTIES:
+:EXPORT_FILE_NAME: board-games-wishlist
+:EXPORT_DATE: 2025-01-15
+:EXPORT_TITLE: board game wishlist
+:EXPORT_HUGO_CATEGORIES: notes
+:END:
+
+** wishlist
+
+#+BEGIN_export html
+<div class="collection-table-wrapper">
+  <div class="column-toggle" id="columnToggle"></div>
+  <div class="collection-table-container">
+    <table class="collection-table" id="collectionTable">
+      <thead>
+        <tr></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+#+end_export
+#+BEGIN_export html
+<script>
+const config2 = {
+  file: "/csv/bgwishlist.csv",
+  columns: {
+    objectname: {
+      label: "game",
+      visible: true
+    },
+    yearpublished: {
+      label: "published",
+      visible: true
+    },
+    average: {
+      label: "average bgg rating (1-10)",
+      visible: true
+    },
+    avgweight: {
+      label: "complexity (1-5)",
+      visible: true
+    },
+    playingtime: {
+      label: "playtime (min)",
+      visible: true
+    },
+    bggbestplayers: {
+      label: "recommended players",
+      visible: true
+    },
+    bggrecagerange: {
+      label: "recommended age range",
+      visible: true
+    },
+    bgglanguagedependence: {
+      label: "language dependency",
+      visible: false
+    },
+    rank: {
+      label: "bgg rank",
+      visible: false
+    }
+  }
+};
+</script>
+<script src="../../js/csv-table.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  initializeTable(config2);
+});
+</script>
+#+end_export
+
+data from [[https://boardgamegeek.com/collection/user/defexx][my game collection]] on bgg
+
+additional data from [[https://boardgamegeek.com/][board game geek]]
