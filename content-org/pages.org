@@ -342,6 +342,11 @@ my current notes app
 | =C-c C-e H A= | export to md |
 | =SPC b k= | exit a file |
 | =SPC g g= | open git |
+| =q= | close buffer or window |
+| =S= | stage all changes |
+| =c c= | create a commit |
+| =C-c C-c= | finalize the commit |
+| =p p= | push to default remote |
 | =SPC p a= | add a project |
 | =SPC p p= | open a project |
 | =SPC .= | find and open a file |

@@ -131,23 +131,28 @@ my current notes app
 
 <div class="ox-hugo-table shortcuts-table">
 
-| Keys           | Effect                |
-|----------------|-----------------------|
-| `C-c C-a`      | save a file           |
-| `SPC f s`      | save a file           |
-| `C-c C-e H A`  | export to md          |
-| `SPC b k`      | exit a file           |
-| `SPC g g`      | open git              |
-| `SPC p a`      | add a project         |
-| `SPC p p`      | open a project        |
-| `SPC .`        | find and open a file  |
-| `SPC s s`      | search current buffer |
-| `SPC w`        | window management     |
-| `SPC h`        | help                  |
-| `SPC u`        | visual undo history   |
-| `ctrl+shift+-` | undo                  |
-| `alt+shift+-`  | redo                  |
-| `C-g`          | swich undo direction  |
-| `C-/`          | undo                  |
+| Keys           | Effect                 |
+|----------------|------------------------|
+| `C-c C-a`      | save a file            |
+| `SPC f s`      | save a file            |
+| `C-c C-e H A`  | export to md           |
+| `SPC b k`      | exit a file            |
+| `SPC g g`      | open git               |
+| `q`            | close buffer or window |
+| `S`            | stage all changes      |
+| `c c`          | create a commit        |
+| `C-c C-c`      | finalize the commit    |
+| `p p`          | push to default remote |
+| `SPC p a`      | add a project          |
+| `SPC p p`      | open a project         |
+| `SPC .`        | find and open a file   |
+| `SPC s s`      | search current buffer  |
+| `SPC w`        | window management      |
+| `SPC h`        | help                   |
+| `SPC u`        | visual undo history    |
+| `ctrl+shift+-` | undo                   |
+| `alt+shift+-`  | redo                   |
+| `C-g`          | swich undo direction   |
+| `C-/`          | undo                   |
 
 </div>
