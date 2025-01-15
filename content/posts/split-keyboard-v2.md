@@ -2,7 +2,7 @@
 title = "split keyboard – updates"
 author = ["Elliott Claus"]
 date = 2024-10-17
-tags = ["code", "split keyboard", "totem", "keyboard", "how to"]
+tags = ["code", "split keyboard", "keyboard", "how to", "diy", "ideas", "design"]
 categories = ["notes"]
 draft = false
 +++

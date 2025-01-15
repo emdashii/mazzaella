@@ -3,7 +3,7 @@
 #+HUGO_PRESERVE_ORGCONTENT: t
 #+AUTHOR: Elliott Claus
 
-* hello world
+* hello world                                     :design:code:
 :PROPERTIES:
 :EXPORT_FILE_NAME: hello-world
 :EXPORT_DATE: 2024-12-14
@@ -11,7 +11,7 @@
 :END:
 hello world. this is being generated using hugo. this is my first post on the new website.
 
-* split keyboard                    :split__keyboard:code:keyboard:
+* split keyboard                    :split__keyboard:code:keyboard:design:
 :PROPERTIES:
 :EXPORT_FILE_NAME: split-keyboard-v1
 :EXPORT_DATE: 2022-07-06
@@ -350,7 +350,7 @@ my current notes app
 | =C-g= | swich undo direction |
 | =C-/= | undo |
 
-* card games                         :games:cards:reference:
+* card games                         :games:reference:
 :PROPERTIES:
 :EXPORT_FILE_NAME: card-games
 :EXPORT_DATE: 2022-06-14
@@ -509,7 +509,7 @@ A photometer is a device that measures the transmission of light
 - [[/photometer/DIY-Photometer-Sample-Procedure.pdf][Sample Procedure]]
 - [[https://drive.google.com/drive/folders/12e3psiflYahUNBUbpTbVONxisq1LnBot][Google drive folder]] with all project files
 
-* junior developer projects                         :reference:c__sharp:code:python:javascript:
+* junior developer projects                         :reference:code:javascript:
 :PROPERTIES:
 :EXPORT_FILE_NAME: junior-developer-projects
 :EXPORT_DATE: 2022-07-08
@@ -682,7 +682,7 @@ additional functionality using pandas and SQLite.
 - Git: merging, branches, and pull/push
 - Code base: Python
 
-* counterpoint generator                         :lilypond:music:code:c++:
+* counterpoint generator                         :music:code:design:
 :PROPERTIES:
 :EXPORT_FILE_NAME: sheet-music-generator
 :EXPORT_DATE: 2022-06-01
@@ -894,7 +894,7 @@ gr
 <script src="../../js/hours-calculator.js"></script>
 #+end_export
 
-* hammock suspension                         :reference:ideas:hammock:diy:
+* hammock suspension                         :reference:ideas:hammock:diy:knots:design:
 :PROPERTIES:
 :EXPORT_FILE_NAME: hammock-suspension
 :EXPORT_DATE: 2024-10-24
@@ -1007,7 +1007,7 @@ case of overthinking a problem when a $5 solution exists.
 :PROPERTIES:
 :EXPORT_FILE_NAME: soft-shackle-how-to
 :EXPORT_DATE: 2024-12-16
-:EXPORT_TITLE: soft shackle -- how to
+:EXPORT_TITLE: soft shackle -- how to make your own
 :EXPORT_HUGO_CATEGORIES: notes
 :END:
 
@@ -1159,7 +1159,7 @@ Not many, but there are a few. First, they cannot take as much abrasion as a car
 Third, they are more fiddly than a carabiner. But I think that all the upsides outweight the downsides. They are much cheaper than carabiners (if you make them yourself),
 they are stronger and lighter, and you can make them the exact size that you need for a specific situation.
 
-* split keyboard, revisited                        :code:split__keyboard:totem:keyboard:how__to:
+* split keyboard, revisited                        :code:split__keyboard:keyboard:how__to:diy:ideas:design:
 :PROPERTIES:
 :EXPORT_FILE_NAME: split-keyboard-v2
 :EXPORT_DATE: 2024-10-17
@@ -1381,7 +1381,7 @@ my keymaps, from oldest to newest:
 - [[https://github.com/emdashii/qmk_firmware/blob/master/keyboards/totem/keymaps/emdashii/keymap.c][qmk totem keymap]] - my qmk totem keymap
 - [[https://github.com/emdashii/kanata/blob/main/kanata.kbd][kanata.kbd]] - my kanata keymap
 
-* about the site                         :code:org__mode:
+* about the site                         :code:org__mode:design:
 :PROPERTIES:
 :EXPORT_FILE_NAME: about-site
 :EXPORT_DATE: 2024-12-15
@@ -1411,11 +1411,11 @@ fun fact: after each page, if you put /index.md or /index.org at the end of the 
    - [[https://kizu.dev/#Everything][kizu]]
    - [[https://joodaloop.com/][joodaloop]]
 
-* board games                         :reference:board__games:
+* board games                         :reference:games:
 :PROPERTIES:
 :EXPORT_FILE_NAME: board-games
 :EXPORT_DATE: 2025-01-15
-:EXPORT_TITLE: board games
+:EXPORT_TITLE: board games i own
 :EXPORT_HUGO_CATEGORIES: notes
 :END:
 
@@ -1496,15 +1496,15 @@ data from [[https://boardgamegeek.com/collection/user/defexx][my game collection
 
 additional data from [[https://boardgamegeek.com/][board game geek]]
 
-* board game wishlist                         :reference:board__games:
+* wishlist                         :reference:games:ideas:
 :PROPERTIES:
-:EXPORT_FILE_NAME: board-games-wishlist
+:EXPORT_FILE_NAME: wishlist
 :EXPORT_DATE: 2025-01-15
-:EXPORT_TITLE: board game wishlist
+:EXPORT_TITLE: wishlist
 :EXPORT_HUGO_CATEGORIES: notes
 :END:
 
-** wishlist
+** board game wishlist
 
 #+BEGIN_export html
 <div class="collection-table-wrapper">

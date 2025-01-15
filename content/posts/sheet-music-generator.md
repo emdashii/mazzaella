@@ -2,6 +2,7 @@
 title = "counterpoint generator"
 author = ["Elliott Claus"]
 date = 2022-06-01
+tags = ["music", "code", "design"]
 categories = ["projects"]
 draft = false
 +++

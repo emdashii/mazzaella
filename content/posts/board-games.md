@@ -1,8 +1,8 @@
 +++
-title = "board games"
+title = "board games i own"
 author = ["Elliott Claus"]
 date = 2025-01-15
-tags = ["reference", "board games"]
+tags = ["reference", "games"]
 categories = ["notes"]
 draft = false
 +++

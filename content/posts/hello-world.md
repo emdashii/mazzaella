@@ -2,6 +2,7 @@
 title = "hello world"
 author = ["Elliott Claus"]
 date = 2024-12-14
+tags = ["design", "code"]
 categories = ["notes"]
 draft = false
 +++

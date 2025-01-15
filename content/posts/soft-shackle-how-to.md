@@ -1,5 +1,5 @@
 +++
-title = "soft shackle – how to"
+title = "soft shackle – how to make your own"
 author = ["Elliott Claus"]
 date = 2024-12-16
 tags = ["reference", "soft shackle", "how to", "knots", "diy"]

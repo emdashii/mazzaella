@@ -2,7 +2,7 @@
 title = "hammock suspension calculator"
 author = ["Elliott Claus"]
 date = 2024-10-24
-tags = ["reference", "ideas", "hammock", "diy"]
+tags = ["reference", "ideas", "hammock", "diy", "knots", "design"]
 categories = ["notes"]
 draft = false
 +++

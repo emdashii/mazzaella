@@ -2,7 +2,7 @@
 title = "split keyboard – an experiment in workflow"
 author = ["Elliott Claus"]
 date = 2022-07-06
-tags = ["split keyboard", "code", "keyboard"]
+tags = ["split keyboard", "code", "keyboard", "design"]
 categories = ["projects"]
 draft = false
 +++

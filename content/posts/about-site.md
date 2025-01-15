@@ -2,7 +2,7 @@
 title = "about site"
 author = ["Elliott Claus"]
 date = 2024-12-15
-tags = ["code", "org mode"]
+tags = ["code", "org mode", "design"]
 categories = ["notes"]
 draft = false
 +++

@@ -2,7 +2,7 @@
 title = "card games i've played"
 author = ["Elliott Claus"]
 date = 2022-06-14
-tags = ["games", "cards", "reference"]
+tags = ["games", "reference"]
 categories = ["notes"]
 draft = false
 +++

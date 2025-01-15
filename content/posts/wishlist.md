@@ -1,13 +1,13 @@
 +++
-title = "board game wishlist"
+title = "wishlist"
 author = ["Elliott Claus"]
 date = 2025-01-15
-tags = ["reference", "board games"]
+tags = ["reference", "games", "ideas"]
 categories = ["notes"]
 draft = false
 +++
 
-## wishlist {#wishlist}
+## board game wishlist {#board-game-wishlist}
 
 <div class="collection-table-wrapper">
   <div class="column-toggle" id="columnToggle"></div>
