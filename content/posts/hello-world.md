@@ -7,4 +7,9 @@ categories = ["notes"]
 draft = false
 +++
 
-hello world. this is being generated using hugo. this is my first post on the new website.
+## hello world. {#hello-world-dot}
+
+this is being generated using hugo. this is my first post on the new website.
+
+
+## "this is just a test" {#this-is-just-a-test}

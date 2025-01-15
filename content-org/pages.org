@@ -9,7 +9,11 @@
 :EXPORT_DATE: 2024-12-14
 :EXPORT_HUGO_CATEGORIES: notes
 :END:
-hello world. this is being generated using hugo. this is my first post on the new website.
+*** hello world.
+
+this is being generated using hugo. this is my first post on the new website.
+
+*** "this is just a test"
 
 * split keyboard                    :split__keyboard:code:keyboard:design:
 :PROPERTIES:
