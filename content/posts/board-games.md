@@ -37,6 +37,10 @@ const config1 = {
       label: "description",
       visible: true
     },
+    numplays: {
+        label: "times played",
+        visible: false
+        },
     rating: {
       label: "my rating (1-10)",
       visible: true
