@@ -58,9 +58,21 @@ const config1 = {
       visible: false
     },
     bggbestplayers: {
-      label: "recommended players",
+      label: "best plays",
       visible: false
     },
+    bggrecplayers: {
+        label: "recommended players",
+        visible: false
+        },
+    minplayers: {
+        label: "min players",
+        visible: false
+        },
+    maxplayers: {
+        label: "max players",
+        visible: false
+        },
     bggrecagerange: {
       label: "recommended age range",
       visible: false
@@ -68,6 +80,14 @@ const config1 = {
     rank: {
       label: "bgg rank",
       visible: false
+    },
+    numowned: {
+        label: "number of copies owned",
+        visible: false
+        },
+    bgglanguagedependence: {
+     label: "reading required",
+     visible: false
     }
   }
 };
