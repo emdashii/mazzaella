@@ -114,3 +114,125 @@
 		padding: 0.5rem;
 	}
 }
+
+/* General layout and container styling */
+.plays-table-wrapper {
+	margin: 1rem 0;
+}
+
+.plays-controls {
+	margin-bottom: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	align-items: center;
+}
+
+/* Year filter dropdown styling */
+.plays-controls label {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.25rem 0.5rem;
+	border-radius: 4px;
+	background: var(--bg1);
+	color: var(--fg);
+	cursor: pointer;
+	transition: background-color 0.2s;
+}
+
+.plays-controls label:hover {
+	background: var(--bg_h);
+}
+
+.plays-controls select {
+	appearance: none;
+	-webkit-appearance: none;
+	background-color: var(--bg);
+	color: var(--fg);
+	border: 2px solid var(--fg3);
+	border-radius: 3px;
+	padding: 0.25rem 2rem 0.25rem 0.5rem;
+	cursor: pointer;
+	transition: all 0.2s;
+}
+
+/* We'll use a custom select wrapper to add the arrow */
+.plays-controls .select-wrapper {
+	position: relative;
+	display: inline-block;
+	margin-bottom: 0.1rem;
+}
+
+.plays-controls .select-wrapper::after {
+	content: '';
+	position: absolute;
+	right: 0.75rem;
+	top: 50%;
+	transform: translateY(-25%);
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid var(--fg);
+	pointer-events: none;
+}
+
+.plays-controls select:hover {
+	border-color: var(--fg1);
+}
+
+.plays-controls select:focus {
+	outline: 2px solid var(--fg3);
+	outline-offset: 2px;
+	border-color: var(--fg1);
+}
+
+/* Refresh button styling */
+.plays-controls button {
+	background: var(--bg1);
+	color: var(--fg);
+	border: 2px solid var(--fg3);
+	border-radius: 4px;
+	padding: 0.375rem 0.75rem;
+	cursor: pointer;
+	font-size: 0.75rem;
+	font-family: inherit;
+	transition: background-color 0.2s, transform 0.1s;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 1;
+}
+
+.plays-controls button:hover {
+	background: var(--bg_h);
+}
+
+.plays-controls button:active {
+	transform: translateY(1px);
+}
+
+.plays-controls button:focus {
+	outline: 2px solid var(--fg3);
+	outline-offset: 2px;
+}
+
+/* Summary statistics styling */
+.plays-summary {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin-bottom: 1rem;
+}
+
+.plays-summary > div {
+	padding: 0.5rem 0.75rem;
+	background: var(--bg1);
+	border-radius: 4px;
+	color: var(--fg);
+}
+
+.plays-summary > div:last-child {
+	margin-bottom: 1rem;
+}

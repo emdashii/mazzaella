@@ -9,6 +9,9 @@ draft = false
 
 ## board games {#board-games}
 
+
+### collection table {#collection-table}
+
 <div class="collection-table-wrapper">
   <div class="column-toggle" id="columnToggle"></div>
   <div class="collection-table-container">
@@ -98,8 +101,12 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeTable(config1);
 });
 </script>
+<script src="../../js/bgg-collection-updater.js"></script>
 
 (additional note: ratings of 1.0 mean the game is unrated)
+
+
+### links {#links}
 
 data from [my game collection](https://boardgamegeek.com/collection/user/defexx) on bgg
 

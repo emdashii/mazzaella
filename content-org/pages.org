@@ -1430,6 +1430,8 @@ fun fact: after each page, if you put /index.md or /index.org at the end of the 
 
 ** board games
 
+*** collection table
+
 #+BEGIN_export html
 <div class="collection-table-wrapper">
   <div class="column-toggle" id="columnToggle"></div>
@@ -1521,10 +1523,126 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeTable(config1);
 });
 </script>
+<script src="../../js/bgg-collection-updater.js"></script>
 #+end_export
 
 (additional note: ratings of 1.0 mean the game is unrated)
 
+*** links
+
 data from [[https://boardgamegeek.com/collection/user/defexx][my game collection]] on bgg
 
 additional data from [[https://boardgamegeek.com/][board game geek]]
+
+* games played                         :reference:games:
+:PROPERTIES:
+:EXPORT_FILE_NAME: games-played
+:EXPORT_DATE: 2025-04-07
+:EXPORT_TITLE: board games i have played
+:EXPORT_HUGO_CATEGORIES: notes
+:END:
+** games played
+
+*** summary
+
+#+BEGIN_export html
+<div class="plays-table-wrapper">
+  <div class="plays-summary">
+    <div id="totalPlays">Total Plays: Loading...</div>
+    <div id="uniqueGames">Unique Games: Loading...</div>
+    <div id="lastUpdated">Last Updated: Never</div>
+  </div>
+</div>
+#+END_export
+
+*** details
+
+#+BEGIN_export html
+<div class="plays-table-wrapper">
+  <div class="plays-controls">
+    <label for="yearFilter">Year: </label>
+    <div class="select-wrapper">
+      <select id="yearFilter">
+        <option value="all">All</option>
+      </select>
+    </div>
+    <button id="refreshPlays">Refresh Data</button>
+  </div>
+  <div class="column-toggle" id="playsColumnToggle"></div>
+  <div class="collection-table-container">
+    <table class="collection-table" id="playsTable">
+      <thead>
+        <tr></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+#+end_export
+#+BEGIN_export html
+<script>
+const playsConfig = {
+  username: "defexx",
+  columns: {
+    name: {
+      label: "Game",
+      visible: true
+    },
+    quantity: {
+      label: "Times Played",
+      visible: true
+    },
+    yearpublished: {
+      label: "Published",
+      visible: false
+    },
+    mostRecentPlay: {
+      label: "Last Played",
+      visible: true
+    },
+    averageRating: {
+      label: "BGG Rating",
+      visible: false
+    },
+    rating: {
+      label: "My Rating",
+      visible: true
+    },
+    avgweight: {
+      label: "Complexity (1-5)",
+      visible: false
+    },
+    playingtime: {
+      label: "Playtime (min)",
+      visible: false
+    },
+    minplayers: {
+      label: "Min Players",
+      visible: false
+    },
+    maxplayers: {
+      label: "Max Players",
+      visible: false
+    },
+    rank: {
+      label: "BGG Rank",
+      visible: false
+    }
+  }
+};
+</script>
+<script src="../../js/bgg-plays.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  initializePlaysTable(playsConfig);
+});
+</script>
+#+end_export
+
+*** notes
+
+data from [[https://boardgamegeek.com/plays/bymonth/user/defexx/subtype/boardgame][my play history]] on bgg
+
+additional data from [[https://boardgamegeek.com/][board game geek]]
+
+(additional note: ratings of 1.0 mean the game is unrated)
