@@ -383,6 +383,7 @@ Turns out I've played a lot??
 | [[https://gamerules.com/rules/cribbage-card-game/][cribbage]]                                                    | 4.4                | good two player                                      | 2-3                                                  |
 | [[https://en.m.wikipedia.org/wiki/President_(card_game)][chairman/kings and paupers]]                             | 4.0                | rich get richer, but there's a possibility for upsets| 4-8                                                  |
 | [[https://gamerules.com/rules/nerts-card-game/][nertz]]                                                          | 3.2                | dutch blitz w/cards, fast paced matching            | best w/at least 4, have played teams with 12 ppl total|
+| [[https://en.wikipedia.org/wiki/Big_two][big two]]                                                               | 3.1                | similar to chairman, but with poker hands            | 2-4                                                  |
 | [[https://en.m.wikipedia.org/wiki/Canasta][hand and foot]]                                                       | 3.1                | a matching game that requires one more deck of cards than # of ppl playing | 2-6                    |
 | [[https://gamerules.com/rules/kings-corner-card-game/][kings (in the) corner]]                                    | 3.1                | multiplayer solitair                                 | 2+                                                   |
 | [[https://gamerules.com/rules/blackjack-card-game/][blackjack]]                                                  | 3.0                | solved betting game                                  | up to 7                                              |
@@ -401,9 +402,11 @@ Turns out I've played a lot??
 | [[https://en.m.wikipedia.org/wiki/War_(card_game)][war]]                                                          | 1.0                | play with young kids to introduce them to card games | 2+                                                   |
 
 *** Card Games That Don't Use Playing Cards:
-- rook
-- phase 10
-- dutch blitz
+- [[https://boardgamegeek.com/boardgame/1260/rook][rook]]
+- [[https://boardgamegeek.com/boardgame/1258/phase-10][phase 10]]
+- [[https://boardgamegeek.com/boardgame/148203/dutch-blitz][dutch blitz]]
+- [[https://boardgamegeek.com/boardgame/291453/scout][scout]]
+- [[https://boardgamegeek.com/boardgame/22950/play-nine][play nine]]
 
 *** Games to Learn:
 - [[https://en.m.wikipedia.org/wiki/Belote][belote]]
@@ -417,6 +420,9 @@ Turns out I've played a lot??
 
 *** Useful Links
 [[https://playingcarddecks.com/blogs/all-in/40-great-card-games-for-all-occasions][Short description of games]]
+
+*** updated 4/23/2025
+- added big two
 
 * about                         :reference:
 :PROPERTIES:

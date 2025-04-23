@@ -27,6 +27,7 @@ Turns out I've played a lot??
 | [cribbage](https://gamerules.com/rules/cribbage-card-game/)                         | 4.4                  | good two player                                                            | 2-3                                                    |
 | [chairman/kings and paupers](https://en.m.wikipedia.org/wiki/President_(card_game)) | 4.0                  | rich get richer, but there's a possibility for upsets                      | 4-8                                                    |
 | [nertz](https://gamerules.com/rules/nerts-card-game/)                               | 3.2                  | dutch blitz w/cards, fast paced matching                                   | best w/at least 4, have played teams with 12 ppl total |
+| [big two](https://en.wikipedia.org/wiki/Big_two)                                    | 3.1                  | similar to chairman, but with poker hands                                  | 2-4                                                    |
 | [hand and foot](https://en.m.wikipedia.org/wiki/Canasta)                            | 3.1                  | a matching game that requires one more deck of cards than # of ppl playing | 2-6                                                    |
 | [kings (in the) corner](https://gamerules.com/rules/kings-corner-card-game/)        | 3.1                  | multiplayer solitair                                                       | 2+                                                     |
 | [blackjack](https://gamerules.com/rules/blackjack-card-game/)                       | 3.0                  | solved betting game                                                        | up to 7                                                |
@@ -49,9 +50,11 @@ Turns out I've played a lot??
 
 ## Card Games That Don't Use Playing Cards: {#card-games-that-don-t-use-playing-cards}
 
--   rook
--   phase 10
--   dutch blitz
+-   [rook](https://boardgamegeek.com/boardgame/1260/rook)
+-   [phase 10](https://boardgamegeek.com/boardgame/1258/phase-10)
+-   [dutch blitz](https://boardgamegeek.com/boardgame/148203/dutch-blitz)
+-   [scout](https://boardgamegeek.com/boardgame/291453/scout)
+-   [play nine](https://boardgamegeek.com/boardgame/22950/play-nine)
 
 
 ## Games to Learn: {#games-to-learn}
@@ -69,3 +72,8 @@ Turns out I've played a lot??
 ## Useful Links {#useful-links}
 
 [Short description of games](https://playingcarddecks.com/blogs/all-in/40-great-card-games-for-all-occasions)
+
+
+## updated 4/23/2025 {#updated-4-23-2025}
+
+-   added big two
