@@ -152,7 +152,7 @@ my current notes app
 | `SPC u`        | visual undo history    |
 | `ctrl+shift+-` | undo                   |
 | `alt+shift+-`  | redo                   |
-| `C-g`          | swich undo direction   |
+| `C-g`          | switch undo direction  |
 | `C-/`          | undo                   |
 
 </div>

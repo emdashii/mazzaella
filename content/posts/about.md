@@ -26,14 +26,13 @@ iridescence did not show up on camera, so I'm not one hundred
 percent sure.
 
 
-## why am I? {#why-am-i}
+## who am I? {#who-am-i}
 
- I, Elliott Claus, am. I grew up on a small island in the Pacific
+I, Elliott Claus, am. I grew up on a small island in the Pacific
 Ocean, Orcas Island, WA. I went to college at Walla Walla
 University and graduated in 2020 with a Bioengineering degree. I
 worked a summer construction job through high school and college,
-and for a bit afterwards. I recently moved to Georgia, as I
-accepted a junior developer role at AppVizo. I am good at making
+and for a bit afterwards. I moved to Georgia to start my career as a software engineer. Currently, I am living in Chattanooga, TN working remotely. I am good at making
 things happen while keeping cost, time, and quality in mind. You
 can only have two, but I try to optimize as best I can.
 
@@ -43,3 +42,5 @@ YouTube. For society, I mostly spend time with my family and close
 friends.
 
 {{< figure src="/images/elliottclaus.jpg" >}}
+
+(photo from 2021)
