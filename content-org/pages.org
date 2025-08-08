@@ -910,7 +910,7 @@ gr
 <script src="../../js/hours-calculator.js"></script>
 #+end_export
 
-* hammock suspension                         :reference:ideas:hammock:diy:knots:design:
+* hammock suspension                         :reference:ideas:hammock:diy:knots:design:tools:
 :PROPERTIES:
 :EXPORT_FILE_NAME: hammock-suspension
 :EXPORT_DATE: 2024-10-24
@@ -1685,3 +1685,108 @@ at the same time, if the problem is novel or obscure, it is a big waste of time 
 ** sidenote
 
 today I saw a [[https://x.com/metr_evals/status/1943360399220388093?s=46&t=YsEkATyIP79Jd4vuXawMaw][tweet]] about a study where they showed that software engineers were slower at writing code using ai than they were without it. that's crazy to me. the engineers thought they were 20% faster and were actually 20% slower. I am sure that more people will study this, given how much money is wrapped up in software engineering. it looks like a big part of the slowdown was from waiting for the output to generate, and context switching in and out of the problem during that time.
+
+* driveway scraping calculator                    :code:tools:
+:PROPERTIES:
+:EXPORT_FILE_NAME: driveway-calculator
+:EXPORT_DATE: 2025-08-08
+:EXPORT_TITLE: driveway scraping calculator
+:EXPORT_HUGO_CATEGORIES: tools
+:END:
+
+** driveway scraping analysis
+
+this tool calculates whether a car will scrape on a steep driveway transition and visualizes the car's movement through the slope.
+I wrote it because I wanted to have an easy way to calculate and visualize if a car would scrape on my driveway. it was mostly built for fun with claude.
+
+*** calculator inputs
+
+#+BEGIN_export html
+<div class="driveway-calculator">
+  <div class="input-section">
+    <h3>car specifications</h3>
+    <div class="input-group">
+      <label for="wheelbase">wheelbase (inches):</label>
+      <input type="number" id="wheelbase" value="108" min="80" max="180" step="1">
+    </div>
+    <div class="input-group">
+      <label for="clearance">ground clearance (inches):</label>
+      <input type="number" id="clearance" value="10" min="3" max="28" step="0.5">
+    </div>
+    <h3>driveway specifications</h3>
+    <div class="input-group">
+      <label for="angle">slope angle (degrees):</label>
+      <input type="number" id="angle" value="13" min="5" max="30" step="0.5">
+    </div>
+    <div class="input-group">
+      <label for="transition">transition distance (inches):</label>
+      <input type="number" id="transition" value="0" min="0" max="60" step="6">
+      <small>distance over which the slope gradually changes from flat</small>
+    </div>
+  </div>
+  <div class="results-section">
+    <h3>analysis results</h3>
+    <div id="results">
+      <div class="result-item">
+        <span class="label">will scrape:</span>
+        <span id="willScrape" class="value">calculating...</span>
+      </div>
+      <div class="result-item">
+        <span class="label">clearance at center:</span>
+        <span id="centerClearance" class="value">calculating...</span>
+      </div>
+      <div class="result-item">
+        <span class="label">max safe distance:</span>
+        <span id="maxDistance" class="value">calculating...</span>
+      </div>
+    </div>
+  </div>
+</div>
+#+END_export
+
+*** interactive visualization
+
+#+BEGIN_export html
+<div class="visualization-section">
+  <h3>car movement simulation</h3>
+  <div class="controls">
+    <label for="carPosition">car position:</label>
+    <input type="range" id="carPosition" min="-180" max="30" value="-50" step="2">
+    <span id="positionValue">-50</span> inches
+  </div>
+
+  <div class="canvas-container">
+    <canvas id="drivewayCanvas" width="800" height="400"></canvas>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-color" style="background: #333;"></div>
+      <span>ground profile</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background: #4a90e2;"></div>
+      <span>car body</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background: #e74c3c;"></div>
+      <span>scraping zone</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background: #27ae60;"></div>
+      <span>safe clearance</span>
+    </div>
+  </div>
+</div>
+
+#+END_export
+
+#+BEGIN_export html
+<script src="../../js/driveway.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  initializeDrivewayCalculator();
+});
+</script>
+#+END_export
+
