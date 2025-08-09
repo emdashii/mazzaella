@@ -30,3 +30,10 @@ fun fact: after each page, if you put /index.md or /index.org at the end of the 
     -   [stephango](https://stephango.com/)
     -   [kizu](https://kizu.dev/#Everything)
     -   [joodaloop](https://joodaloop.com/)
+
+
+### notes {#notes}
+
+to export the org file to markdown, run "emacs" to start emacs, open the file, the run "C-c C-e H A" to export to md
+to work on the website, start hugo with "hugo -D serve"
+push to github to update the website

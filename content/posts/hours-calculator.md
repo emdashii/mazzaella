@@ -2,7 +2,7 @@
 title = "hours calculator"
 author = ["Elliott Claus"]
 date = 2024-09-10
-tags = ["code", "javascript", "reference"]
+tags = ["code", "javascript", "reference", "tools"]
 categories = ["notes"]
 draft = false
 +++
