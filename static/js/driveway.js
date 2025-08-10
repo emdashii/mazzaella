@@ -365,6 +365,7 @@ class DrivewayCalculator {
 
 	calculate() {
 		const { wheelbase, clearance, angle, radius } = this.getValues();
+		this.wheelRadius = clearance;
 
 		// Test car at current slider position
 		const currentCarPosition = this.getValues().carPosition;
@@ -608,14 +609,8 @@ class DrivewayCalculator {
 		this.ctx.strokeStyle = '#4a90e2';
 		this.ctx.lineWidth = 4;
 		this.ctx.beginPath();
-		this.ctx.moveTo(
-			this.offsetX + rearWheelCenter.x * this.scale,
-			this.offsetY - (rearWheelCenter.y + clearance) * this.scale,
-		);
-		this.ctx.lineTo(
-			this.offsetX + frontWheelCenter.x * this.scale,
-			this.offsetY - (frontWheelCenter.y + clearance) * this.scale,
-		);
+		this.ctx.moveTo(this.offsetX + rearWheelCenter.x * this.scale, this.offsetY - rearWheelCenter.y * this.scale);
+		this.ctx.lineTo(this.offsetX + frontWheelCenter.x * this.scale, this.offsetY - frontWheelCenter.y * this.scale);
 		this.ctx.stroke();
 
 		// Car bottom (dashed line)
