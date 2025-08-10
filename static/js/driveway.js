@@ -49,6 +49,136 @@ class DrivewayCalculator {
 		};
 	}
 
+	// Calculation for any point on the circle given one of the other points
+	// note: for this function, theta should be the slope of the line.
+	angleToSlope(theta, degOrRad) {
+		if (degOrRad === 'deg') {
+			return Math.tan((theta * Math.PI) / 180);
+		} else {
+			return Math.tan(theta);
+		}
+	}
+	circle(theta, r, x, y) {
+		if (theta === 0) {
+			return { x: x, y: y };
+		}
+		if (y === null) {
+			const t2 = theta * theta;
+			const r2 = r * r;
+			const discriminant = t2 * (r2 * t2 - r2 + 2 * r * theta * x - t2 * x * x);
+			if (discriminant < 0) {
+				return { x: x, y: 0 };
+			}
+			const y1 = (-Math.sqrt(discriminant) - r * t2) / t2;
+			// based on the geometry of this specific problem, y is always negative
+			return { x: x, y: y1 };
+		}
+		if (x === null) {
+			const t4 = theta * theta * theta * theta;
+			const discriminant = -t4 * y * (2 * r + y);
+			if (discriminant < 0) {
+				return { x: 0, y: y };
+			}
+			const x1 = (r * theta - Math.sqrt(discriminant)) / (theta * theta);
+			const x2 = (r * theta + Math.sqrt(discriminant)) / (theta * theta);
+			return { x: x1 > x2 ? x1 : x2, y: y }; // based on the geometry of this specific problem, return the bigger x
+		}
+		return { x: x, y: y };
+	}
+
+	calculateHorizontalCircleEdge(radius, m) {
+		// Y = 0
+		if (m === 0) {
+			console.log('m is 0');
+			return null;
+		}
+		return radius / m;
+	}
+
+	findPerpendicularPoint(m, r, h, k) {
+		// The line is y = mx (passes through origin)
+		// We need to find point (x, y) on this line that is distance r from (h, k)
+
+		// The perpendicular from (h, k) to line y = mx has slope -1/m
+		// The foot of perpendicular is where these two lines intersect
+
+		// Distance from point (h, k) to line y = mx is |mh - k| / sqrt(1 + m²)
+		// But we want a point that's distance r from (h, k)
+
+		// The foot of perpendicular from (h, k) to y = mx:
+		// x_foot = (h + mk) / (1 + m²)
+		// y_foot = m * x_foot = m(h + mk) / (1 + m²)
+
+		const x_foot = (h + m * k) / (1 + m * m);
+		const y_foot = (m * (h + m * k)) / (1 + m * m);
+
+		// Vector from (h, k) to foot of perpendicular
+		const dx_to_foot = x_foot - h;
+		const dy_to_foot = y_foot - k;
+
+		// Distance from (h, k) to foot of perpendicular
+		const dist_to_foot = Math.sqrt(dx_to_foot * dx_to_foot + dy_to_foot * dy_to_foot);
+
+		// We need to move distance r from (h, k) toward the line
+		// Unit vector from (h, k) toward foot of perpendicular
+		const unit_x = dx_to_foot / dist_to_foot;
+		const unit_y = dy_to_foot / dist_to_foot;
+
+		// Point that is distance r from (h, k) toward the line
+		const x = h + r * unit_x;
+		const y = k + r * unit_y;
+
+		return { x: x, y: y };
+	}
+	calculatePerpendicularLine(originalPoint, originalSlope, newPoint) {
+		// Extract coordinates
+		const [x1, y1] = originalPoint;
+		const [x2, y2] = newPoint;
+
+		// Handle special cases
+		if (originalSlope === 0) {
+			// Original line is horizontal, perpendicular is vertical
+			return {
+				perpendicularSlope: Infinity,
+				perpendicularYIntercept: null,
+				perpendicularEquation: `x = ${x2}`,
+				intersection: { x: x2, y: y2 },
+			};
+		}
+
+		if (!isFinite(originalSlope)) {
+			// Original line is vertical, perpendicular is horizontal
+			return {
+				perpendicularSlope: 0,
+				perpendicularYIntercept: y2,
+				perpendicularEquation: `y = ${y2}`,
+				intersection: { x: x1, y: y2 },
+			};
+		}
+
+		// Calculate perpendicular slope (negative reciprocal)
+		const perpSlope = -1 / originalSlope;
+
+		// Calculate y-intercept of perpendicular line: b = y - mx
+		const perpYIntercept = y2 - perpSlope * x2;
+
+		// Calculate y-intercept of original line
+		const origYIntercept = y1 - originalSlope * x1;
+
+		// Find intersection point by solving the system:
+		// y = originalSlope * x + origYIntercept
+		// y = perpSlope * x + perpYIntercept
+		const intersectionX = (perpYIntercept - origYIntercept) / (originalSlope - perpSlope);
+		const intersectionY = originalSlope * intersectionX + origYIntercept;
+
+		return {
+			perpendicularSlope: perpSlope,
+			perpendicularYIntercept: perpYIntercept,
+			perpendicularEquation: `y = ${perpSlope}x + ${perpYIntercept}`,
+			intersection: { x: intersectionX, y: intersectionY },
+		};
+	}
+
 	// Calculate ground height at given x position
 	// Positive x = on road (flat), negative x = down the driveway (sloped down)
 	groundHeight(x, angle, radius) {
@@ -64,59 +194,47 @@ class DrivewayCalculator {
 			}
 		}
 
-		// With radius: create a circle tangent to both lines
-		// The center must be at perpendicular distance 'radius' from both lines
+		// slope for the circle center
+		const m = this.angleToSlope((180 - angle) / 2, 'deg');
+		// slope for the line
+		const m1 = Math.tan(angleRad);
 
-		// For a horizontal line (y = 0) and a sloped line through origin with angle θ:
-		// The center lies on the angle bisector at angle θ/2 from horizontal
-		// Distance from center to each line must equal radius
+		// Correct circle center calculation from Desmos
+		const h = radius / m;
+		const k = -radius;
 
-		// The center is offset from the corner (0,0) along the bisector
-		// Bisector angle from horizontal = θ/2
-		const bisectorAngle = angleRad / 2;
+		// Calculate tangent points
+		// Right tangent point (where circle meets horizontal line y = 0)
+		const rightTangentX = h;
 
-		// Distance along bisector from corner to center
-		// Using geometry: distance = radius / sin(θ/2)
-		const distanceToCenter = radius / Math.sin(angleRad / 2);
+		// Left tangent point (where circle meets the slope line)
+		// Solve for intersection of circle with slope line y = x * tan(angleRad)
+		// circle equation is y = +/- sqrt(r^2 - (x - h)^2) + k, where (h, k) is the circle center
+		// there is an easier way to do this, get the line perpendicular to m1, that goes through (h, k). then find where the two lines intersect.
+		const info = this.calculatePerpendicularLine([0, 0], m1, [h, k]);
 
-		// Center coordinates
-		const centerX = -distanceToCenter * Math.cos(bisectorAngle);
-		const centerY = -distanceToCenter * Math.sin(bisectorAngle);
+		const leftTangentX = info.intersection.x;
 
-		// Find tangent points
-		// For horizontal line: perpendicular from center to y=0
-		const tangentX1 = centerX;
-
-		// For sloped line: perpendicular from center to line
-		// Using perpendicular projection formula
-		const slopeNormalX = Math.sin(angleRad);
-		const slopeNormalY = -Math.cos(angleRad);
-		const t = -(centerX * slopeNormalX + centerY * slopeNormalY);
-		const tangentX2 = centerX + t * slopeNormalX;
-		const tangentY2 = centerY + t * slopeNormalY;
-
-		if (x >= tangentX1) {
+		if (x >= rightTangentX) {
 			// On flat road
 			return 0;
-		} else if (x <= tangentX2) {
+		} else if (x <= leftTangentX) {
 			// On sloped section
 			return x * Math.tan(angleRad);
 		} else {
-			// On circular arc
-			const dx = x - centerX;
-			const discriminant = radius * radius - dx * dx;
-			if (discriminant < 0) {
-				// Outside circle bounds
-				return x < 0 ? x * Math.tan(angleRad) : 0;
-			}
-			// Upper arc of circle (taking the higher y value)
-			return centerY + Math.sqrt(discriminant);
+			// On circular arc - solve circle equation for y
+			// (x - h)² + (y - k)² = r²
+			// y = k ± sqrt(r² - (x - h)²)
+			// Take the upper solution (closer to surface)
+			const underSqrt = radius * radius - (x - h) * (x - h);
+			if (underSqrt < 0) return x * Math.tan(angleRad); // Shouldn't happen in valid range
+			return k + Math.sqrt(underSqrt);
 		}
 	}
-
 	// Get ground slope at given x position (in radians)
 	getGroundSlope(x, angle, radius) {
 		const angleRad = (angle * Math.PI) / 180;
+		const m = this.angleToSlope((180 - angle) / 2, 'deg');
 
 		if (radius === 0) {
 			// Sharp corner
@@ -125,36 +243,32 @@ class DrivewayCalculator {
 			}
 			return 0; // on flat road
 		} else {
-			// With radius - recalculate center and tangent points
-			const bisectorAngle = angleRad / 2;
-			const distanceToCenter = radius / Math.sin(angleRad / 2);
-			const centerX = -distanceToCenter * Math.cos(bisectorAngle);
-			const centerY = -distanceToCenter * Math.sin(bisectorAngle);
+			// With radius - using the formula center at (r/θ, -r)
+			const centerX = radius / m;
+			const centerY = -radius;
 
-			const tangentX1 = centerX;
+			// Get tangent points
+			const rightEdge = this.calculateHorizontalCircleEdge(radius, m);
+			const leftEdge = this.calculatePerpendicularLine([centerX, centerY], Math.tan(angleRad), [0, 0]);
 
-			const slopeNormalX = Math.sin(angleRad);
-			const slopeNormalY = -Math.cos(angleRad);
-			const t = -(centerX * slopeNormalX + centerY * slopeNormalY);
-			const tangentX2 = centerX + t * slopeNormalX;
-
-			if (x >= tangentX1) {
+			if (x >= rightEdge) {
 				// On flat road
 				return 0;
-			} else if (x <= tangentX2) {
+			} else if (x <= leftEdge.intersection.x) {
 				// On sloped section
 				return angleRad;
 			} else {
-				// On circular arc - calculate tangent slope
+				// On circular arc - calculate tangent slope using derivative
+				// For implicit circle equation, dy/dx = -(x - centerX)/(y - centerY)
+				const y = this.circle(m, radius, x, null).y;
 				const dx = x - centerX;
-				const discriminant = radius * radius - dx * dx;
-				if (discriminant <= 0) {
-					return x < centerX ? angleRad : 0;
+				const dy = y - centerY;
+				if (Math.abs(dy) < 0.001) {
+					// Near vertical tangent
+					return Math.PI / 2;
 				}
-				const dy = Math.sqrt(discriminant);
-				// Tangent slope to circle at this point
-				// For upper arc: dy/dx = -dx/dy
-				return Math.atan(dx / dy);
+				// Tangent slope
+				return Math.atan(-dx / dy);
 			}
 		}
 	}
@@ -327,10 +441,14 @@ class DrivewayCalculator {
 		// Draw radius circle visualization if radius > 0
 		if (radius > 0) {
 			const angleRad = (angle * Math.PI) / 180;
-			const bisectorAngle = angleRad / 2;
-			const distanceToCenter = radius / Math.sin(angleRad / 2);
-			const centerX = -distanceToCenter * Math.cos(bisectorAngle);
-			const centerY = -distanceToCenter * Math.sin(bisectorAngle);
+			const m = this.angleToSlope((180 - angle) / 2, 'deg');
+
+			// slope for the line of the angled road
+			const m1 = Math.tan(angleRad);
+
+			// Center at (r/m, -r) based on your formula, where m is in radians
+			const h = radius / m;
+			const k = -radius;
 
 			// Draw the transition circle (dashed)
 			this.ctx.strokeStyle = '#666';
@@ -338,8 +456,8 @@ class DrivewayCalculator {
 			this.ctx.setLineDash([3, 3]);
 			this.ctx.beginPath();
 			this.ctx.arc(
-				this.offsetX + centerX * this.scale,
-				this.offsetY - centerY * this.scale,
+				this.offsetX + h * this.scale,
+				this.offsetY - k * this.scale,
 				radius * this.scale,
 				0,
 				2 * Math.PI,
@@ -349,21 +467,21 @@ class DrivewayCalculator {
 
 			// Mark tangent points
 			this.ctx.fillStyle = '#e74c3c';
-			// Tangent on flat road
+			// Tangent on flat road (y = 0)
+			const tangentPoint1 = this.calculateHorizontalCircleEdge(radius, m);
 			this.ctx.beginPath();
-			this.ctx.arc(this.offsetX + centerX * this.scale, this.offsetY, 3, 0, 2 * Math.PI);
+			this.ctx.arc(this.offsetX + tangentPoint1 * this.scale, this.offsetY, 3, 0, 2 * Math.PI);
 			this.ctx.fill();
 
 			// Tangent on slope
-			const slopeNormalX = Math.sin(angleRad);
-			const slopeNormalY = -Math.cos(angleRad);
-			const t = -(centerX * slopeNormalX + centerY * slopeNormalY);
-			const tangentX2 = centerX + t * slopeNormalX;
-			const tangentY2 = centerY + t * slopeNormalY;
+			const angleCircleEdge = this.calculatePerpendicularLine([0, 0], m1, [h, k]);
+			console.log('angleCircleEdge');
+			console.log(angleCircleEdge);
+
 			this.ctx.beginPath();
 			this.ctx.arc(
-				this.offsetX + tangentX2 * this.scale,
-				this.offsetY - tangentY2 * this.scale,
+				this.offsetX + angleCircleEdge.intersection.x * this.scale,
+				this.offsetY - angleCircleEdge.intersection.y * this.scale,
 				3,
 				0,
 				2 * Math.PI,
@@ -372,7 +490,7 @@ class DrivewayCalculator {
 		}
 
 		// Fill ground
-		this.ctx.fillStyle = '#8b4513';
+		this.ctx.fillStyle = '#8b451388';
 		this.ctx.beginPath();
 		for (let x = -160; x <= 40; x += 2) {
 			const y = this.groundHeight(x, angle, radius);
