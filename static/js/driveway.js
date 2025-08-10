@@ -424,7 +424,7 @@ class DrivewayCalculator {
 		this.ctx.beginPath();
 
 		// Draw ground profile
-		for (let x = -160; x <= 40; x += 1) {
+		for (let x = -160; x <= this.canvas.width; x += 1) {
 			const y = this.groundHeight(x, angle, radius);
 			const screenX = this.offsetX + x * this.scale;
 			const screenY = this.offsetY - y * this.scale;
@@ -492,7 +492,7 @@ class DrivewayCalculator {
 		// Fill ground
 		this.ctx.fillStyle = '#8b451388';
 		this.ctx.beginPath();
-		for (let x = -160; x <= 40; x += 2) {
+		for (let x = -160; x <= this.canvas.width; x += 2) {
 			const y = this.groundHeight(x, angle, radius);
 			const screenX = this.offsetX + x * this.scale;
 			const screenY = this.offsetY - y * this.scale;
@@ -504,7 +504,7 @@ class DrivewayCalculator {
 			}
 		}
 
-		this.ctx.lineTo(this.offsetX + 40 * this.scale, this.canvas.height);
+		this.ctx.lineTo(this.offsetX + this.canvas.width * this.scale, this.canvas.height);
 		this.ctx.lineTo(this.offsetX - 160 * this.scale, this.canvas.height);
 		this.ctx.closePath();
 		this.ctx.fill();
@@ -616,7 +616,7 @@ class DrivewayCalculator {
 		this.ctx.lineWidth = 1;
 
 		// Vertical grid lines
-		for (let x = -160; x <= 40; x += 20) {
+		for (let x = -160; x <= this.canvas.width; x += 20) {
 			this.ctx.beginPath();
 			this.ctx.moveTo(this.offsetX + x * this.scale, 0);
 			this.ctx.lineTo(this.offsetX + x * this.scale, this.canvas.height);
@@ -630,12 +630,6 @@ class DrivewayCalculator {
 			this.ctx.lineTo(this.canvas.width, this.offsetY - y * this.scale);
 			this.ctx.stroke();
 		}
-
-		// Labels
-		this.ctx.fillStyle = '#666';
-		this.ctx.font = '12px Arial';
-		this.ctx.fillText('Road (0")', this.offsetX + 5, this.offsetY + 15);
-		this.ctx.fillText('Start of driveway', this.offsetX - 50, this.offsetY - 5);
 	}
 }
 
