@@ -8,14 +8,59 @@ class DrivewayCalculator {
 		this.offsetX = 400;
 		this.offsetY = 200;
 		this.wheelRadius = 10; // inches
+		this.baseScale = 4;
+		this.baseOffsetX = 400;
+		this.baseOffsetY = 200;
 	}
 
 	init() {
 		this.canvas = document.getElementById('drivewayCanvas');
 		this.ctx = this.canvas.getContext('2d');
+		this.setupCanvas();
 		this.setupEventListeners();
 		this.calculate();
 		this.draw();
+	}
+
+	setupCanvas() {
+		if (!this.canvas) return;
+
+		// Set responsive canvas size
+		this.resizeCanvas();
+
+		// Add window resize listener
+		window.addEventListener('resize', () => this.resizeCanvas());
+	}
+
+	resizeCanvas() {
+		if (!this.canvas) return;
+
+		const container = this.canvas.parentElement;
+		const isMobile = window.innerWidth <= 768;
+
+		// Get container dimensions
+		const containerWidth = container.clientWidth;
+		const maxHeight = isMobile ? 300 : 400;
+
+		// Set canvas size
+		this.canvas.width = containerWidth;
+		this.canvas.height = maxHeight;
+
+		// Calculate responsive scale and offsets
+		if (isMobile) {
+			this.scale = Math.min(this.baseScale * 0.6, containerWidth / 200);
+			this.offsetX = containerWidth * 0.7; // 70% from left
+			this.offsetY = maxHeight * 0.6; // 60% from top
+		} else {
+			this.scale = this.baseScale;
+			this.offsetX = Math.min(this.baseOffsetX, containerWidth * 0.5);
+			this.offsetY = this.baseOffsetY;
+		}
+
+		// Redraw if already initialized
+		if (this.ctx) {
+			this.draw();
+		}
 	}
 
 	setupEventListeners() {
@@ -423,13 +468,17 @@ class DrivewayCalculator {
 		this.ctx.lineWidth = 3;
 		this.ctx.beginPath();
 
+		// Calculate drawing bounds based on canvas size
+		const maxX = (this.canvas.width - this.offsetX) / this.scale;
+		const minX = -this.offsetX / this.scale;
+
 		// Draw ground profile
-		for (let x = -160; x <= this.canvas.width; x += 1) {
+		for (let x = Math.max(-160, minX); x <= Math.min(maxX, 100); x += 1) {
 			const y = this.groundHeight(x, angle, radius);
 			const screenX = this.offsetX + x * this.scale;
 			const screenY = this.offsetY - y * this.scale;
 
-			if (x === -160) {
+			if (x === Math.max(-160, minX)) {
 				this.ctx.moveTo(screenX, screenY);
 			} else {
 				this.ctx.lineTo(screenX, screenY);
@@ -475,8 +524,8 @@ class DrivewayCalculator {
 
 			// Tangent on slope
 			const angleCircleEdge = this.calculatePerpendicularLine([0, 0], m1, [h, k]);
-			console.log('angleCircleEdge');
-			console.log(angleCircleEdge);
+			// console.log('angleCircleEdge');
+			// console.log(angleCircleEdge);
 
 			this.ctx.beginPath();
 			this.ctx.arc(
@@ -492,20 +541,23 @@ class DrivewayCalculator {
 		// Fill ground
 		this.ctx.fillStyle = '#8b451388';
 		this.ctx.beginPath();
-		for (let x = -160; x <= this.canvas.width; x += 2) {
+		const minFillX = Math.max(-160, minX);
+		const maxFillX = Math.min(maxX, 100);
+
+		for (let x = minFillX; x <= maxFillX; x += 2) {
 			const y = this.groundHeight(x, angle, radius);
 			const screenX = this.offsetX + x * this.scale;
 			const screenY = this.offsetY - y * this.scale;
 
-			if (x === -160) {
+			if (x === minFillX) {
 				this.ctx.moveTo(screenX, screenY);
 			} else {
 				this.ctx.lineTo(screenX, screenY);
 			}
 		}
 
-		this.ctx.lineTo(this.offsetX + this.canvas.width * this.scale, this.canvas.height);
-		this.ctx.lineTo(this.offsetX - 160 * this.scale, this.canvas.height);
+		this.ctx.lineTo(this.offsetX + maxFillX * this.scale, this.canvas.height);
+		this.ctx.lineTo(this.offsetX + minFillX * this.scale, this.canvas.height);
 		this.ctx.closePath();
 		this.ctx.fill();
 	}
@@ -615,20 +667,43 @@ class DrivewayCalculator {
 		this.ctx.strokeStyle = '#ddd';
 		this.ctx.lineWidth = 1;
 
+		// Calculate responsive grid spacing
+		const isMobile = window.innerWidth <= 768;
+		const gridSpacing = isMobile ? 40 : 20; // Wider spacing on mobile
+		const verticalGridSpacing = isMobile ? 20 : 10;
+
+		// Calculate drawing bounds
+		const maxX = (this.canvas.width - this.offsetX) / this.scale;
+		const minX = -this.offsetX / this.scale;
+		const maxY = this.offsetY / this.scale;
+		const minY = -(this.canvas.height - this.offsetY) / this.scale;
+
 		// Vertical grid lines
-		for (let x = -160; x <= this.canvas.width; x += 20) {
-			this.ctx.beginPath();
-			this.ctx.moveTo(this.offsetX + x * this.scale, 0);
-			this.ctx.lineTo(this.offsetX + x * this.scale, this.canvas.height);
-			this.ctx.stroke();
+		const startX = Math.floor(minX / gridSpacing) * gridSpacing;
+		const endX = Math.ceil(maxX / gridSpacing) * gridSpacing;
+
+		for (let x = startX; x <= endX; x += gridSpacing) {
+			const screenX = this.offsetX + x * this.scale;
+			if (screenX >= 0 && screenX <= this.canvas.width) {
+				this.ctx.beginPath();
+				this.ctx.moveTo(screenX, 0);
+				this.ctx.lineTo(screenX, this.canvas.height);
+				this.ctx.stroke();
+			}
 		}
 
 		// Horizontal grid lines
-		for (let y = -60; y <= 20; y += 10) {
-			this.ctx.beginPath();
-			this.ctx.moveTo(0, this.offsetY - y * this.scale);
-			this.ctx.lineTo(this.canvas.width, this.offsetY - y * this.scale);
-			this.ctx.stroke();
+		const startY = Math.floor(minY / verticalGridSpacing) * verticalGridSpacing;
+		const endY = Math.ceil(maxY / verticalGridSpacing) * verticalGridSpacing;
+
+		for (let y = startY; y <= endY; y += verticalGridSpacing) {
+			const screenY = this.offsetY - y * this.scale;
+			if (screenY >= 0 && screenY <= this.canvas.height) {
+				this.ctx.beginPath();
+				this.ctx.moveTo(0, screenY);
+				this.ctx.lineTo(this.canvas.width, screenY);
+				this.ctx.stroke();
+			}
 		}
 	}
 }
