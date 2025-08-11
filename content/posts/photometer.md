@@ -55,7 +55,8 @@ is around $80.
 -   Experiment design and execution
 -   Data analysis
 
-    \*\* Related links:
+
+## Related links: {#related-links}
 
 -   [Build Instructions](/photometer/Building-Instructions.pdf)
 -   [Sample Procedure](/photometer/DIY-Photometer-Sample-Procedure.pdf)

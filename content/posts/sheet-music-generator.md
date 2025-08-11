@@ -7,6 +7,14 @@ categories = ["projects"]
 draft = false
 +++
 
+## update 2025-08-11: now available online! {#update-2025-08-11-now-available-online}
+
+view and use this project [here](https://lilypoint.mazzaella.com/)
+
+I converted the C++ code to Typescript and put it on a website that runs in the browser. I've been wanting to do this for a long time,
+but now with AI the process was much easier.
+
+
 ## counterpoint sheet music generator {#counterpoint-sheet-music-generator}
 
 using c++ and lilypond
@@ -131,7 +139,8 @@ super impressive xD
 
 ## links {#links}
 
--   [hacklily.org](https://www.hacklily.org/) preview .ly files online (and listen to them, in the wrongkey)
+-   [lilypoint.mazzaella.com](https://lilypoint.mazzaella.com/) my lilypond counterpoint generator
+-   [hacklily.org](https://www.hacklily.org/) preview .ly files online (and listen to them, in the wrong key)
 -   [lilypond.org](http://lilypond.org/) main lilypond site
--   [mutopiaproject.org](https://www.mutopiaproject.org/) free classical sheetmusic with .ly format available
+-   [mutopiaproject.org](https://www.mutopiaproject.org/) free classical sheet music with .ly format available
 -   [frescobaldi.org](https://frescobaldi.org/) downloadable lilypond editor

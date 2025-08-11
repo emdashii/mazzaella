@@ -197,6 +197,11 @@ how I like it, because it would mean that I would have to reach
 for the mouse less than I already do.
 
 
+## 2024 Update {#2024-update}
+
+You read all the way to here? Clearly you are interested in how this all went for me. See my update to this post [here](/posts/split-keyboard-v2/).
+
+
 ## Skills demonstrated: {#skills-demonstrated}
 
 -   Reading documentation

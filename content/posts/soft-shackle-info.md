@@ -62,3 +62,8 @@ I wrote about it [here](/posts/soft-shackle-how-to), though there are many bette
 Not many, but there are a few. First, they cannot take as much abrasion as a carabiner. Second, you cannot undo them if they are under load.
 Third, they are more fiddly than a carabiner. But I think that all the upsides outweight the downsides. They are much cheaper than carabiners (if you make them yourself),
 they are stronger and lighter, and you can make them the exact size that you need for a specific situation.
+
+
+## home made soft shackle {#home-made-soft-shackle}
+
+{{< figure src="/soft-shackle/complete.jpg" >}}

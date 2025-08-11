@@ -17,7 +17,6 @@
   display: none;
 }
 
-/* When body has darkmode class */
 body.darkmode .theme-aware-image .light-mode {
   display: none;
 }
@@ -36,31 +35,38 @@ body.darkmode .theme-aware-image .dark-mode {
 
 ## welcome!
 
-this is elliott's personal website, built from org-mode using hugo
+this is elliott's personal website
+
+on this site you can find links to all my internet things. it is written in org-mode and built with hugo. most of the
+posts are written because i have wanted a quick way to reference something, or becauser i had an idea and figured, why
+not make that?
 
 ---
 
-## projects
+## start here
 
--   [split keyboard v2](/posts/split-keyboard-v2/) - an update after two years of split keyboard use
--   [split keyboard v1](/posts/split-keyboard-v1/) - an intro to split keyboards
--   [junior developer projects](/posts/junior-developer-projects/) - an overview of what i worked on as a junior
-    developer
--   [photometer](/posts/photometer/) - my seminar project from undergrad at Walla Walla University
--   [sheet music generator](/posts/sheet-music-generator/) - counterpoint generator using lilypond
--   [about me](/posts/about/) - bio from 2022
--   [about this website](/posts/about-site/) - work in progress
+-   [split keyboard](/posts/split-keyboard-v1/), [v2](/posts/split-keyboard-v2/) - split keyboard intro and update
+-   [soft shackles!](/posts/soft-shackle-info/) - love me some soft shackles
+-   [counterpoint generator](/posts/sheet-music-generator/) - counterpoint generator using lilypond
 
 ---
 
-## other little sites i've made
+## other little sites i've built
 
+-   [lilypoint](https://lilypoint.mazzaella.com/) - a website for my counterpoint generator
 -   [worship songs](https://worship.mazzaella.com/) - a list of worship songs with links to chords and lyrics
 -   [soda](https://soda.mazzaella.com/) - silly site for selling soda
--   [the knot](https://theknot.clausclan.com/) - our wedding website, originally hosted by the knot, but now rehosted by
-    me
+-   [the knot](https://theknot.clausclan.com/) - our wedding website, originally built by the knot, now rehosted by me
 -   [rosario cabins](https://rosario-cabins.clausclan.com/) - a list of cabins at rosario, used for planning my wedding
 -   [v2 of this website](https://v2.mazzaella.com/) - the previous version of this site
+
+---
+
+## calculator/resource posts
+
+-   [driveway scraping calculator](/posts/driveway-calculator/) - can you drive down my driveway?
+-   [board games](/posts/board-games/) - what board games do I own?
+-   [diy soft shackle](/posts/soft-shackle-how-to/) - want to make a strong soft shackle?
 
 ---
 
