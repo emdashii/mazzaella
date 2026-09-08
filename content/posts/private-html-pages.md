@@ -219,6 +219,6 @@ Share magic links through an end-to-end encrypted channel. This is client-side e
 
 ## takeaway {#takeaway}
 
-Now, clearly [how I use AI](https://mazzaella.com/posts/on-ai/) has changed since last year when I published my brief article about it. I will write an update and when I do link it here. Also as I was typing I kept wondering, hmm I haven’t written anything in a while, I wonder if I sound like an AI now. (The answer is [no](https://www.pangram.com/history/d3d56397-792a-4bcb-a52a-b180ac998a9e?ucc=i7CfttfAUdj)).
+Now, clearly [how I use AI](https://mazzaella.com/posts/on-ai/) has changed since last year when I published my brief article about it. I will write an update and when I do link it here. Also as I was typing I kept wondering, hmm I haven’t written anything in a while, I wonder if I sound like an AI. (The answer is [no](https://www.pangram.com/history/d3d56397-792a-4bcb-a52a-b180ac998a9e?ucc=i7CfttfAUdj)). I did explicitly censor myself from a few very AI sounding phrasings when describing this project. xD
 
 {{< figure src="/images/pangram01.png" >}}
