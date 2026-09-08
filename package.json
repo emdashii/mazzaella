@@ -1,21 +1,27 @@
 {
-	"name": "mazzaella",
-	"version": "1.0.0",
-	"main": "index.js",
-	"dependencies": {
-		"sass": "^1.83.0"
-	},
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"description": "",
-	"devDependencies": {
-		"autoprefixer": "^10.4.20",
-		"postcss": "^8.4.49",
-		"postcss-cli": "^11.0.0",
-		"sass": "^1.83.0"
-	}
+  "name": "mazzaella",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "sass": "^1.83.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "postcss-cli": "^11.0.0",
+    "sass": "^1.83.0"
+  },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead"
+  ]
 }

@@ -3,7 +3,7 @@ disqusShortname = ""
 enableGitInfo = true
 enableRobotsTXT = true
 hasCJKLanguage = false
-languageCode = "en"
+locale = "en"
 rssLimit = 10
 theme = "hugo-texify3"
 title = "mazzaella"
@@ -78,6 +78,13 @@ telegram = false
 [markup.goldmark.renderer]
 unsafe = true
 
+# Hugo's default highlight style is monokai, which clashes with the gruvbox
+# palette. The theme sets noClasses = false in its own config, but that does not
+# survive config merging, so set the style explicitly here. Individual code
+# blocks can still override this with the ox-hugo `:syntax-style` header arg.
+[markup.highlight]
+style = "gruvbox"
+
 [mediaTypes]
 [mediaTypes."text/org"]
 suffixes = ["org"]
@@ -105,3 +112,11 @@ permalinkable = true
 [outputs]
 home = ["HTML", "RSS"]
 page = ["HTML", "MARKDOWN", "ORG"]
+
+# Hugo 0.161+ runs Node tools (PostCSS/autoprefixer) under Node's permission
+# model. Browserslist walks parent directories looking for config and stats,
+# so it needs read access above the project root.
+[security]
+[security.node]
+[security.node.permissions]
+allowRead = ["*"]

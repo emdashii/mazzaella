@@ -1,6 +1,6 @@
 [build]
 command = """
-    DART_SASS_VERSION=1.63.6 && \
+    DART_SASS_VERSION=1.102.0 && \
     curl -LJO https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz && \
     tar -xf dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz && \
     rm dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz && \
@@ -11,7 +11,8 @@ command = """
 publish = "public"
 
 [build.environment]
-HUGO_VERSION = "0.139.4"
+HUGO_VERSION = "0.165.0"
+NODE_VERSION = "22"
 
 # this will not work, see https://docs.netlify.com/routing/redirects/redirect-options/
 # [[redirects]]
@@ -31,7 +32,7 @@ status = 301
 
 [[redirects]]
 from = "/posts/about.org"
-to = "/posts/about/.org"
+to = "/posts/about/index.org"
 status = 301
 
 [[redirects]]
@@ -41,7 +42,7 @@ status = 301
 
 [[redirects]]
 from = "/posts/about-site.org"
-to = "/posts/about-site/.org"
+to = "/posts/about-site/index.org"
 status = 301
 
 [[redirects]]
@@ -51,7 +52,7 @@ status = 301
 
 [[redirects]]
 from = "/posts/card-games.org"
-to = "/posts/card-games/.org"
+to = "/posts/card-games/index.org"
 status = 301
 
 [[redirects]]
@@ -61,7 +62,7 @@ status = 301
 
 [[redirects]]
 from = "/posts/hammock-suspension.org"
-to = "/posts/hammock-suspension/.org"
+to = "/posts/hammock-suspension/index.org"
 status = 301
 
 [[redirects]]
@@ -71,7 +72,7 @@ status = 301
 
 [[redirects]]
 from = "/posts/hello-world.org"
-to = "/posts/hello-world/.org"
+to = "/posts/hello-world/index.org"
 status = 301
 
 [[redirects]]
@@ -81,7 +82,7 @@ status = 301
 
 [[redirects]]
 from = "/posts/hours-calculator.org"
-to = "/posts/hours-calculator/.org"
+to = "/posts/hours-calculator/index.org"
 status = 301
 
 [[redirects]]
@@ -91,7 +92,7 @@ status = 301
 
 [[redirects]]
 from = "/posts/junior-developer-projects.org"
-to = "/posts/junior-developer-projects/.org"
+to = "/posts/junior-developer-projects/index.org"
 status = 301
 
 [[redirects]]
@@ -101,7 +102,7 @@ status = 301
 
 [[redirects]]
 from = "/posts/keyboard-shortcuts.org"
-to = "/posts/keyboard-shortcuts/.org"
+to = "/posts/keyboard-shortcuts/index.org"
 status = 301
 
 [[redirects]]
@@ -111,7 +112,7 @@ status = 301
 
 [[redirects]]
 from = "/posts/photometer.org"
-to = "/posts/photometer/.org"
+to = "/posts/photometer/index.org"
 status = 301
 
 [[redirects]]
@@ -121,7 +122,7 @@ status = 301
 
 [[redirects]]
 from = "/posts/sheet-music-generator.org"
-to = "/posts/sheet-music-generator/.org"
+to = "/posts/sheet-music-generator/index.org"
 status = 301
 
 [[redirects]]
@@ -131,7 +132,7 @@ status = 301
 
 [[redirects]]
 from = "/posts/soft-shackle-how-to.org"
-to = "/posts/soft-shackle-how-to/.org"
+to = "/posts/soft-shackle-how-to/index.org"
 status = 301
 
 [[redirects]]
@@ -141,7 +142,7 @@ status = 301
 
 [[redirects]]
 from = "/posts/soft-shackle-info.org"
-to = "/posts/soft-shackle-info/.org"
+to = "/posts/soft-shackle-info/index.org"
 status = 301
 
 [[redirects]]
@@ -151,7 +152,7 @@ status = 301
 
 [[redirects]]
 from = "/posts/split-keyboard-v1.org"
-to = "/posts/split-keyboard-v1/.org"
+to = "/posts/split-keyboard-v1/index.org"
 status = 301
 
 [[redirects]]
@@ -161,7 +162,7 @@ status = 301
 
 [[redirects]]
 from = "/posts/split-keyboard-v2.org"
-to = "/posts/split-keyboard-v2/.org"
+to = "/posts/split-keyboard-v2/index.org"
 status = 301
 
 [[redirects]]
@@ -171,7 +172,7 @@ status = 301
 
 [[redirects]]
 from = "/posts/xplore-scripts.org"
-to = "/posts/xplore-scripts/.org"
+to = "/posts/xplore-scripts/index.org"
 status = 301
 
 # [[redirects]]
