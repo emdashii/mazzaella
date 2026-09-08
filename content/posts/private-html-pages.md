@@ -1,5 +1,5 @@
 +++
-title = "private html pages shareable"
+title = "private sharable html links"
 author = ["Elliott Claus"]
 date = 2026-09-08
 tags = ["code", "ai", "tools", "how to"]

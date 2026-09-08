@@ -1833,7 +1833,7 @@ from the calculations that I used to figure out the math
 :PROPERTIES:
 :EXPORT_FILE_NAME: private-html-pages
 :EXPORT_DATE: 2026-09-08
-:EXPORT_TITLE: private html pages shareable
+:EXPORT_TITLE: private sharable html links
 :EXPORT_HUGO_CATEGORIES: projects
 :END:
 
