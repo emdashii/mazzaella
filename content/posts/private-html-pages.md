@@ -1,20 +1,31 @@
 +++
-title = "private html pages that are still shareable"
+title = "private html pages shareable"
 author = ["Elliott Claus"]
 date = 2026-09-08
-tags = ["code", "ai", "tools"]
-categories = ["notes"]
+tags = ["code", "ai", "tools", "how to"]
+categories = ["projects"]
 draft = false
 +++
 
 ## html??? {#html}
 
-Since I started using agents to code (think Claude code, Codex, Opencode, ...) frequently I will create a plan, and then read, edit, and hand it off to a fresh agent to build the actual feature. The standard at first was to make these plans in markdown. Markdown is easy to read in plaintext files or editors, which is great. However, for complicated plans, outputting an HTML plan is both easier to read and easier to understand what the actual changes will be, because the agent can include snippets of mockups, which helps me quickly decide what direction I want to go, without building the whole feature. I got this idea from [@theo](https://x.com/theo) and [Thariq's article](https://x.com/trq212/status/2052809885763747935?s=20). After using this approach for a while, I realized that I wanted to share some of these plans with my team, to help us make joint decisions. Now, lots of these joint decisions involve information that is company sensitive, and should not be publicly hosted on the internet. So, what do you think is the best way to share an HTML file? Without publishing it on the internet or pushing it to a git repo (which for a lot of these plans I don't want to do as they are ephemeral), the most obvious way is to email it. However, modern email does not appreciate HTML attachments. So, the solution to that is to zip the file, send that, then the recipient has to download it, unzip it, and open it in a browser. This is WAY to many steps to make it worth the process. (I'm sure someone on here probably has an obvious solution I have not though of for this, however, this is my solution:) Instead, why not host it privately? Oh, great idea, except any private hosting service costs money. Claude will happily host pages for you, but anyone with a link can access them. So I asked the agent if there was an open source way to solve this problem. Of course there is. :)
+
+### the start {#the-start}
+
+Since I started using agents to code (think Claude code, Codex, Opencode, ...) frequently I will create a plan, and then read, edit, and hand it off to a fresh agent to build the actual feature. The standard at first was to make these plans in markdown. Markdown is easy to read in plaintext files or editors, which is great. However, for complicated plans, outputting an HTML plan is both easier to read and easier to understand what the actual changes will be, because the agent can include snippets of mockups, which helps me quickly decide what direction I want to go, without building the whole feature. I got this idea from [@theo](https://x.com/theo) and [Thariq's article](https://x.com/trq212/status/2052809885763747935?s=20).
+
+
+### the problem {#the-problem}
+
+After using this approach for a while, I realized that I wanted to share some of these plans with my team, to help us make joint decisions. Now, lots of these joint decisions involve information that is company sensitive, and should not be publicly hosted on the internet. So, what do you think is the best way to share an HTML file? Without publishing it on the internet or pushing it to a git repo (which for a lot of these plans I don't want to do as they are ephemeral), the most obvious way is to email it. However, modern email does not appreciate HTML attachments. So, the solution to that is to zip the file, send that, then the recipient has to download it, unzip it, and open it in a browser. This is WAY to many steps to make it worth the process. (I'm sure someone on here probably has an obvious solution I have not though of for this, however, this is my solution:) Instead, why not host it privately? Oh, great idea, except any private hosting service costs money. Claude will happily host pages for you, but anyone with a link can access them. So I asked the agent if there was an open source way to solve this problem. Of course there is. :)
+
+
+### the solution {#the-solution}
 
 My solution combines Netlify, a private github repo, and a custom skill for my agents. So when an agent generates an HTML file, it finds the skill and copies and pushes the file to GitHub, and Netlify runs pagecrypt to encrypt the page, and it hands me back a link with the key in the link. I can easily share that link with anyone who I want to be able to see it, and I have no worries about people who don't have the magic link being able to access the page. At the bottom of this page are instructions that you can hand your own agent to set up a similar system for you. I think this is my favorite mini project that I have created with agents so far, in terms of how giddy I get when I think of it or when I use it. Since I have set it up, I have not needed to go back and work on bug fixes to make it useable. The one improvement that I might want is that, if I want someone else to have their agent publish a private page for me, there is no real way to make that happen. Also, if I am talking to an agent and it is not on my computer, it cannot publish unless it has access to my GitHub credentials. However, improving those two things would completely change the project, afaict (or in actuality, as far as a llm can tell).
 
 
-### example {#example}
+### an example {#an-example}
 
 Here is an example so you can see how it works: [how this link works](https://view.mazzaella.com/how-this-link-works/#7jQLD4esBzsbsahk-6488QaCtu2OxgCb) (Note, this was built by Grok 4.6 if curious)
 
