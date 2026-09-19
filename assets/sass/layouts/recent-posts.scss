@@ -1,0 +1,47 @@
+// Homepage "newest posts" list. Mirrors the post-group styles in the
+// theme's list.scss, which are scoped to the /posts page's #main.
+@use "../vars" as *;
+
+.recent-posts {
+  & > ul {
+    border-left: 1px solid var(--fg4);
+    list-style-type: none;
+    margin-left: 0.5rem;
+    padding-left: $margin;
+
+    & > li {
+      border-radius: $radius;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: var(--bg_s);
+      }
+    }
+
+    @media screen and (min-width: $mobile-breakpoint) {
+      margin-left: 1rem;
+      padding-left: 2rem;
+    }
+  }
+
+  a.post-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $margin;
+    padding: 0.15rem 0.5rem;
+    line-height: 1.8;
+    color: var(--blue);
+
+    &:visited {
+      color: var(--blue-dim);
+    }
+
+    time {
+      color: var(--fg4);
+      text-align: right;
+      white-space: nowrap;
+    }
+  }
+}

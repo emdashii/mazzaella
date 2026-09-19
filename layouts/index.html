@@ -3,6 +3,9 @@
 {{ with resources.Get "sass/layouts/index.scss" | toCSS $options | postCSS | minify | fingerprint }}
   <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
 {{ end }}
+{{ with resources.Get "sass/layouts/recent-posts.scss" | toCSS (dict "transpiler" "dartsass" "targetPath" "css/recent-posts.css") | postCSS | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+{{ end }}
 {{ end }}
 
 {{ define "main" }}
@@ -10,6 +13,24 @@
     <div id="content" class="index">
         {{ with .Site.GetPage "_index.md" }}
             {{ .Content }}
+        {{ end }}
+
+        {{ with first 7 (where .Site.RegularPages "Type" "posts").ByDate.Reverse }}
+        <hr>
+        <h2 id="newest-posts">newest posts</h2>
+        <div class="recent-posts">
+            <ul>
+                {{ range . }}
+                <li>
+                    <a class="post-link" href="{{ .RelPermalink }}">
+                        <span>{{ .Title }}</span>
+                        <time datetime="{{ .PublishDate.Format "2006-01-02" }}">{{ .PublishDate.Format site.Params.dateFormat }}</time>
+                    </a>
+                </li>
+                {{ end }}
+            </ul>
+            <p><a href="{{ relref $ "/posts" }}">all posts</a></p>
+        </div>
         {{ end }}
     </div>
 
