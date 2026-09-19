@@ -1,0 +1,13 @@
+{{ define "main" }}
+<main id="main" class="post">
+  <article class="content">
+    <h1>page not found</h1>
+    <p>that url is not on this site.</p>
+    <p>
+      <a class="link" href="{{ "/" | relURL }}">home</a>
+      ·
+      <a class="link" href="{{ "posts/" | relURL }}">blog</a>
+    </p>
+  </article>
+</main>
+{{ end }}
