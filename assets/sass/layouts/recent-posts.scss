@@ -22,6 +22,17 @@
       margin-left: 1rem;
       padding-left: 2rem;
     }
+
+    // Touch screens get no hover highlight, so separate rows with a rule
+    // and give the titles the width the indent was using.
+    @media screen and (max-width: $mobile-breakpoint) {
+      margin-left: 0;
+      padding-left: 0.5rem;
+
+      & > li:not(:last-child) {
+        border-bottom: 1px solid var(--bg2);
+      }
+    }
   }
 
   a.post-link {
@@ -40,6 +51,8 @@
 
     time {
       color: var(--fg4);
+      flex-shrink: 0;
+      margin-left: 0;
       text-align: right;
       white-space: nowrap;
     }
