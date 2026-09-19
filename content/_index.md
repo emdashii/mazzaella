@@ -44,6 +44,7 @@ not make that?
 
 ## other little sites i've built
 
+-   [arc almanac](https://arcalmanac.com/) - an anime, light novel, and manga mapping/comparison site
 -   [lilypoint](https://lilypoint.mazzaella.com/) - a website for my counterpoint generator
 -   [worship songs](https://worship.mazzaella.com/) - a list of worship songs with links to chords and lyrics
 -   [soda](https://soda.mazzaella.com/) - silly site for selling soda

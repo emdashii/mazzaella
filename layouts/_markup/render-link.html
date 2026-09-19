@@ -1,0 +1,9 @@
+{{- $u := urls.Parse .Destination -}}
+{{- $siteHost := (urls.Parse .Page.Site.BaseURL).Host -}}
+{{- $host := $u.Host -}}
+{{- $openNewTab := and $host (ne $host "mazzaella.com") (ne $host "www.mazzaella.com") (ne $host $siteHost) -}}
+<a href="{{ .Destination | safeURL }}"
+  {{- with .Title }} title="{{ . }}"{{ end -}}
+  {{- if $openNewTab }} target="_blank" rel="noopener noreferrer"{{ end -}}
+>{{ .Text }}</a>
+{{- /* chomp trailing newline */ -}}
