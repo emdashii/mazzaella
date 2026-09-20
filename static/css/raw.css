@@ -3,7 +3,7 @@ pre {
   word-wrap: break-word;
   font-family: monospace;
   padding: 15px;
-  background: #f5f5f5;
+  background: #F2F0E5;
 }
 
 .skip-link {
@@ -12,8 +12,8 @@ pre {
   top: -3rem;
   z-index: 10;
   padding: 0.4rem 0.7rem;
-  background: #fbf1c7;
-  color: #282828;
+  background: #FFFCF0;
+  color: #282726;
 }
 
 .skip-link:focus {

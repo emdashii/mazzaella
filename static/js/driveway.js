@@ -434,7 +434,7 @@ class DrivewayCalculator {
 
 		if (elements.willScrape) {
 			elements.willScrape.textContent = willScrape ? 'YES' : 'NO';
-			elements.willScrape.style.color = willScrape ? '#e74c3c' : '#27ae60';
+			elements.willScrape.style.color = willScrape ? '#AF3029' : '#536907';
 		}
 
 		if (elements.centerClearance) {
@@ -465,7 +465,7 @@ class DrivewayCalculator {
 	}
 
 	drawGround(angle, radius) {
-		this.ctx.strokeStyle = '#333';
+		this.ctx.strokeStyle = '#282726';
 		this.ctx.lineWidth = 3;
 		this.ctx.beginPath();
 
@@ -501,7 +501,7 @@ class DrivewayCalculator {
 			const k = -radius;
 
 			// Draw the transition circle (dashed)
-			this.ctx.strokeStyle = '#666';
+			this.ctx.strokeStyle = '#878580';
 			this.ctx.lineWidth = 1;
 			this.ctx.setLineDash([3, 3]);
 			this.ctx.beginPath();
@@ -516,7 +516,7 @@ class DrivewayCalculator {
 			this.ctx.setLineDash([]);
 
 			// Mark tangent points
-			this.ctx.fillStyle = '#e74c3c';
+			this.ctx.fillStyle = '#AF3029';
 			// Tangent on flat road (y = 0)
 			const tangentPoint1 = this.calculateHorizontalCircleEdge(radius, m);
 			this.ctx.beginPath();
@@ -540,7 +540,7 @@ class DrivewayCalculator {
 		}
 
 		// Fill ground
-		this.ctx.fillStyle = '#8b451388';
+		this.ctx.fillStyle = '#71320D88';
 		this.ctx.beginPath();
 		const minFillX = Math.max(-160, minX);
 		const maxFillX = Math.min(maxX, 100);
@@ -572,7 +572,7 @@ class DrivewayCalculator {
 		const frontWheelCenter = this.getWheelCenter(frontAxleX, angle, radius);
 
 		// Draw wheels
-		this.ctx.strokeStyle = '#333';
+		this.ctx.strokeStyle = '#282726';
 		this.ctx.lineWidth = 2;
 
 		// Rear wheel
@@ -598,7 +598,7 @@ class DrivewayCalculator {
 		this.ctx.stroke();
 
 		// Draw axle line
-		this.ctx.strokeStyle = '#666';
+		this.ctx.strokeStyle = '#878580';
 		this.ctx.lineWidth = 2;
 		this.ctx.beginPath();
 		this.ctx.moveTo(this.offsetX + rearWheelCenter.x * this.scale, this.offsetY - rearWheelCenter.y * this.scale);
@@ -606,7 +606,7 @@ class DrivewayCalculator {
 		this.ctx.stroke();
 
 		// Car body line
-		this.ctx.strokeStyle = '#4a90e2';
+		this.ctx.strokeStyle = '#205EA6';
 		this.ctx.lineWidth = 4;
 		this.ctx.beginPath();
 		this.ctx.moveTo(this.offsetX + rearWheelCenter.x * this.scale, this.offsetY - rearWheelCenter.y * this.scale);
@@ -614,7 +614,7 @@ class DrivewayCalculator {
 		this.ctx.stroke();
 
 		// Car bottom (dashed line)
-		this.ctx.strokeStyle = '#2c3e50';
+		this.ctx.strokeStyle = '#575653';
 		this.ctx.lineWidth = 2;
 		this.ctx.setLineDash([5, 5]);
 		this.ctx.beginPath();
@@ -646,7 +646,7 @@ class DrivewayCalculator {
 
 				if (actualClearance < 0) {
 					// Draw scraping indicator
-					this.ctx.fillStyle = '#e74c3c';
+					this.ctx.fillStyle = '#AF3029';
 					this.ctx.fillRect(
 						this.offsetX + x * this.scale - 2,
 						this.offsetY - bottomY * this.scale,
@@ -659,7 +659,7 @@ class DrivewayCalculator {
 	}
 
 	drawGrid() {
-		this.ctx.strokeStyle = '#ddd';
+		this.ctx.strokeStyle = '#DAD8CE';
 		this.ctx.lineWidth = 1;
 
 		// Calculate responsive grid spacing

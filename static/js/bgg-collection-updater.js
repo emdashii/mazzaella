@@ -457,12 +457,12 @@ function addStyles() {
     }
 
     .collection-status.error {
-      background-color: rgba(255, 0, 0, 0.1);
-      color: #d32f2f;
+      background-color: rgba(175, 48, 41, 0.12);
+      color: var(--red);
     }
 
     .collection-status.success {
-      background-color: rgba(0, 255, 0, 0.05);
+      background-color: rgba(83, 105, 7, 0.10);
     }
 
     #updateCollection {

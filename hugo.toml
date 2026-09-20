@@ -88,12 +88,11 @@ telegram = false
 [markup.goldmark.renderer]
 unsafe = true
 
-# Hugo's default highlight style is monokai, which clashes with the gruvbox
-# palette. The theme sets noClasses = false in its own config, but that does not
-# survive config merging, so set the style explicitly here. Individual code
-# blocks can still override this with the ox-hugo `:syntax-style` header arg.
+# Class-based highlighting so both colour schemes share one Flexoki
+# stylesheet (themes/hugo-texify3/assets/sass/syntax.scss). Named Chroma
+# styles, including the ox-hugo `:syntax-style` override, do not apply.
 [markup.highlight]
-style = "gruvbox"
+noClasses = false
 
 [mediaTypes]
 [mediaTypes."text/org"]
