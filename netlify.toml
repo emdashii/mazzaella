@@ -233,6 +233,16 @@ from = "/posts/private-html-pages.org"
 to = "/posts/private-html-pages/index.org"
 status = 301
 
+[[redirects]]
+from = "/posts/codenames-key-card-finder.md"
+to = "/posts/codenames-key-card-finder/index.md"
+status = 301
+
+[[redirects]]
+from = "/posts/codenames-key-card-finder.org"
+to = "/posts/codenames-key-card-finder/index.org"
+status = 301
+
 # [[redirects]]
 # from = "/posts/:slug.md"
 # to = "/posts/:slug/index.md"
