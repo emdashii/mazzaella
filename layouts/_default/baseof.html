@@ -74,6 +74,11 @@
   <!-- twitter -->
   {{ template "_internal/twitter_cards.html" . }}
 
+  <!-- analytics: production builds only; data-domains skips deploy previews -->
+  {{ if hugo.IsProduction }}
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="05154cb7-f825-40a9-960c-13a6fcaed9f7" data-domains="mazzaella.com"></script>
+  {{ end }}
+
   {{ block "head" . }}{{ end }}
 </head>
 

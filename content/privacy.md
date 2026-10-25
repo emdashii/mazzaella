@@ -26,7 +26,9 @@ The board game pages fetch collection and play data from [BoardGameGeek](https:/
 
 ## Analytics
 
-There is no analytics on this site yet. A Google Analytics measurement ID exists in the repository for a later rollout; collection is disabled.
+Every page loads a script from [Umami Cloud](https://umami.is/), which records the page you visited, the referring site, and your browser, operating system, device type, screen size, language, and country. Umami does not set cookies. Its [privacy policy](https://umami.is/privacy) applies to that data. I use it to see which pages people read and where they came from.
+
+A Google Analytics measurement ID also exists in the repository; Google Analytics collection is disabled.
 
 ## Contact
 
