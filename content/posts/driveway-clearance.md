@@ -149,6 +149,8 @@ Elliott measured the left tire track with a 2 ft level and a tape measure. He re
 
 The old page's guess of 13° was about right for the middle. What it missed is the top: the street rises slightly to the hump, then the driveway drops 8° in the first 2 ft and 14° in the next 2. That's a sharp crest, and a sharp crest catches the underbody between the wheels.
 
+One real check: Elliott's 2004 Lexus ES330 scrapes in the middle of its underside every time it goes over the top, and it stops scraping when the wheels still on the street are lifted. That's the same spot the calculator finds. With the ES330's published numbers (107.1 in wheelbase, 6.1 in ground clearance), the calculator gives it 0.5 in to spare, which shows as _too close to call_. An older car with passengers sits lower than its spec sheet, so on this driveway, read _too close to call_ as _will probably scrape_.
+
 The readings stop 26 ft down, still sloping about 9°, where any car is well past the top. The calculator continues that slope, so it answers the question at the top only. The bottom, where the driveway levels out, isn't measured, and a long, low bumper could still scrape there.
 
 
