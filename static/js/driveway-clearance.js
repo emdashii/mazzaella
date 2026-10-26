@@ -17,13 +17,7 @@
 	};
 	const CAR_KEYS = ['wheelbase', 'tireDiameter', 'frontOverhang', 'rearOverhang', 'frontHeight', 'rearHeight', 'clearance'];
 
-	// Elliott's driveway, left tire track, measured 2026-10-26 with a 2 ft
-	// level: rest one end where the last reading landed, hold it level, and
-	// measure the drop at the far end. x = 0 is the top of a patch hump at the
-	// street edge, about 3/4 in above the street.
-	const HOME_DROPS = [3.5, 6, 5.25, 5.75, 5, 5.5, 6, 6, 5.5, 5, 4, 4, 3.75];
-	const HOME_POINTS = [{ x: -48, y: -0.75 }, { x: -24, y: -0.75 }, { x: 0, y: 0 }];
-	HOME_DROPS.forEach((d, i) => HOME_POINTS.push({ x: (i + 1) * 24, y: HOME_POINTS[HOME_POINTS.length - 1].y - d }));
+	const HOME_POINTS = G.HOME_POINTS;
 
 	const ORIENT = {
 		'nose-in': { label: 'nose first', note: 'driving in forward' },
@@ -93,6 +87,7 @@
 		if (rows.some(r => r.some(v => !Number.isFinite(v)))) throw new Error('every driveway cell needs a number');
 		if (state.mode === 'slopes') {
 			if (rows.some(r => r[0] <= 0)) throw new Error('board lengths must be positive');
+			if (rows.some(r => Math.abs(r[1]) >= 90)) throw new Error('angles must be between -90 and 90 degrees');
 			return G.pointsFromSlopes(rows.map(([length, degrees]) => ({ length, degrees })), state.points[0]);
 		}
 		return rows.map(([d, h]) => ({ x: d * 12, y: h }));
@@ -106,7 +101,10 @@
 			parts.push(`dw=${state.points.map(p => `${+fmt(p.x, 2)}:${+fmt(p.y, 2)}`).join(',')}`);
 		}
 		if (state.margin !== 1) parts.push(`m=${state.margin}`);
-		history.replaceState(null, '', `#${parts.join('&')}`);
+		// Leave the address alone until something differs from the defaults.
+		const isDefault = parts.length === 1 && matchPreset(state.car) === 'sedan';
+		if (isDefault && !location.hash) return;
+		history.replaceState(null, '', isDefault ? location.pathname + location.search : `#${parts.join('&')}`);
 	}
 
 	function readHash() {
@@ -147,18 +145,24 @@
 		return `${fmt(worst.clearance)} in to spare at the tightest spot (${worst.part}, ${place(worst.at)})`;
 	}
 
+	function showError(message) {
+		$('dc-error').textContent = message;
+		$('dc-headline').textContent = '';
+		$('dc-results').innerHTML = '';
+	}
+
 	function recompute() {
 		const problems = G.validateCar(state.car);
 		$('dc-error').textContent = '';
 		if (problems.length) {
-			$('dc-error').textContent = problems.includes('length') ? 'that car is longer than this tool handles.' : 'every car measurement needs a number (wheelbase and tire size above zero).';
+			showError(problems.includes('length') ? 'that car is longer than this tool handles.' : 'every car measurement needs a number (wheelbase and tire size above zero).');
 			return;
 		}
 		let result;
 		try {
 			result = G.analyze(state.points, state.car, 1);
 		} catch (e) {
-			$('dc-error').textContent = e.message + '.';
+			showError(e.message + '.');
 			return;
 		}
 		const prevMid = state.result ? currentSample().mid : null;
@@ -176,7 +180,9 @@
 	}
 
 	function currentSample() {
-		return sweepFor(state.orientation).samples[state.index];
+		const samples = sweepFor(state.orientation).samples;
+		state.index = Math.max(0, Math.min(samples.length - 1, state.index));
+		return samples[state.index];
 	}
 
 	function worstIndex(o) {
@@ -210,7 +216,9 @@
 		else if (a === 'scrape' && b === 'scrape') head = 'this car scrapes, whichever way it goes in.';
 		else if (a === 'scrape' || b === 'scrape') {
 			const ok = a === 'scrape' ? 'tail-in' : 'nose-in';
-			head = `this car scrapes one way. go in ${ORIENT[ok].label} (${ORIENT[ok].note}).`;
+			head = (a === 'tight' || b === 'tight')
+				? `this car scrapes ${ORIENT[a === 'scrape' ? 'nose-in' : 'tail-in'].label}, and ${ORIENT[ok].label} is too close to call.`
+				: `this car scrapes one way. go in ${ORIENT[ok].label} (${ORIENT[ok].note}).`;
 		} else head = 'this car makes it, but with less than ' + fmt(state.margin) + ' in to spare. go slowly.';
 		$('dc-headline').textContent = head;
 	}
@@ -413,7 +421,7 @@
 		ctx.font = '12px sans-serif';
 		ctx.fillText('1 ft', 12, h - 20);
 
-		$('dc-position-label').textContent = `car centre ${ft(sample.mid)} past the street edge`;
+		$('dc-position-label').textContent = `car centre ${place(sample.mid)}. ${label}.`;
 	}
 
 	// Clearance chart: x = where the car's centre is, y = smallest gap.
@@ -567,12 +575,14 @@
 			btn.textContent = 'drive';
 			return;
 		}
-		const n = sweepFor(state.orientation).samples.length;
-		if (state.index >= n - 1) state.index = 0;
+		const count = () => sweepFor(state.orientation).samples.length;
+		if (state.index >= count() - 1) state.index = 0;
 		state.playing = true;
 		btn.textContent = 'pause';
 		const step = () => {
 			if (!state.playing) return;
+			// Read the length each frame: editing the car mid-drive changes it.
+			const n = count();
 			state.index = Math.min(n - 1, state.index + 2);
 			syncSlider();
 			draw();
@@ -657,6 +667,7 @@
 		$('dc-mode').value = state.mode;
 		$('dc-mode').addEventListener('change', e => {
 			state.mode = e.target.value;
+			$('dc-error').textContent = '';
 			renderProfileTable();
 		});
 		$('dc-profile-body').addEventListener('input', () => {
@@ -670,7 +681,9 @@
 		$('dc-profile-body').addEventListener('click', e => {
 			const b = e.target.closest('.dc-remove');
 			if (!b) return;
-			if ($('dc-profile-body').rows.length <= 2) return;
+			// Keep at least two driveway points (slope rows are one fewer than points).
+			const rows = $('dc-profile-body').rows.length;
+			if (rows - 1 + (state.mode === 'slopes' ? 1 : 0) < 2) return;
 			b.closest('tr').remove();
 			try {
 				state.points = readProfileTable();

@@ -126,6 +126,7 @@
 		return [
 			{ x: -trail.overhang, y: trail.height, part: trail.name },
 			{ x: 0, y: car.clearance, part: 'underbody' },
+			// Names the leading overhang that starts here (see segmentName).
 			{ x: L, y: car.clearance, part: lead.name },
 			{ x: L + lead.overhang, y: lead.height, part: null },
 		];
@@ -195,7 +196,8 @@
 		const nonNegative = ['frontOverhang', 'rearOverhang', 'frontHeight', 'rearHeight', 'clearance'];
 		for (const k of positive) if (!(car[k] > 0)) problems.push(k);
 		for (const k of nonNegative) if (!(car[k] >= 0)) problems.push(k);
-		if (car.wheelbase + car.frontOverhang + car.rearOverhang > 2 * RUN_OUT - 60) problems.push('length');
+		// The wheels must stay on the run-out at both ends of travelRange.
+		if (car.wheelbase + Math.max(car.frontOverhang, car.rearOverhang) + car.tireDiameter / 2 + 6 > RUN_OUT) problems.push('length');
 		return problems;
 	}
 
@@ -231,8 +233,19 @@
 		return out;
 	}
 
+	// Elliott's driveway, left tire track, measured 2026-10-26 with a 2 ft
+	// level: rest one end where the last reading landed, hold it level, and
+	// measure the drop at the far end. x = 0 is the top of a patch hump at the
+	// street edge. The two street points (about 3/4 in below the hump) are
+	// assumed, not measured.
+	const HOME_DROPS = [3.5, 6, 5.25, 5.75, 5, 5.5, 6, 6, 5.5, 5, 4, 4, 3.75];
+	const HOME_POINTS = [{ x: -48, y: -0.75 }, { x: -24, y: -0.75 }, { x: 0, y: 0 }];
+	HOME_DROPS.forEach((d, i) => HOME_POINTS.push({ x: (i + 1) * 24, y: HOME_POINTS[HOME_POINTS.length - 1].y - d }));
+	Object.freeze(HOME_POINTS.map(Object.freeze));
+
 	return {
 		RUN_OUT,
+		HOME_POINTS,
 		buildGround,
 		heightAt,
 		slopeAt,

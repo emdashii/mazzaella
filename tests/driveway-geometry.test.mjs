@@ -74,6 +74,42 @@ test('a profile that stops mid-slope keeps going at that slope', () => {
 	}
 });
 
+test('validateCar rejects any car whose wheels would leave the run-out', () => {
+	const pts = [{ x: -100, y: 0 }, { x: 0, y: 0 }, { x: 240, y: -40 }];
+	for (const wheelbase of [200, 300, 380, 400]) {
+		const c = car({ wheelbase, frontOverhang: 30, rearOverhang: 30, tireDiameter: 30 });
+		if (G.validateCar(c).length) continue;
+		const r = G.analyze(pts, c, 2);
+		for (const o of ['nose-in', 'tail-in']) {
+			assert.ok(r[o].samples.every(s => Number.isFinite(s.clearance)), `wheelbase ${wheelbase} ${o}`);
+			// Starting on the flat run-out, the trailing wheel sits at full tire height.
+			const first = G.pose(r.ground, c, o, r[o].from);
+			assert.ok(Math.abs(first.trailing.y - G.heightAt(r.ground, first.trailing.x) - 15) < 1e-6, `wheelbase ${wheelbase} ${o}`);
+		}
+	}
+	assert.deepEqual(G.validateCar(car({ wheelbase: 400, frontOverhang: 30, rearOverhang: 30, tireDiameter: 30 })), ['length']);
+});
+
+test("published answer for Elliott's driveway: a midsize sedan scrapes its underbody at the top", () => {
+	const sedan = { wheelbase: 111, tireDiameter: 26, frontOverhang: 38, rearOverhang: 42, frontHeight: 6.5, rearHeight: 11, clearance: 5.5 };
+	const r = G.analyze(G.HOME_POINTS, sedan, 1);
+	for (const o of ['nose-in', 'tail-in']) {
+		const w = r[o].worst;
+		assert.equal(w.part, 'underbody');
+		assert.ok(Math.abs(w.clearance + 0.34) < 0.05, `${o}: ${w.clearance}`);
+		assert.ok(Math.abs(w.at) < 6, `${o}: at ${w.at}`);
+	}
+});
+
+test('one-inch steps find the same worst gap as finer steps', () => {
+	const a = deg(13);
+	const pts = [{ x: -100, y: 0 }, { x: 0, y: 0 }, { x: 400 * Math.cos(a), y: -400 * Math.sin(a) }];
+	const c = car({ tireDiameter: 26 });
+	const coarse = G.analyze(pts, c, 1)['nose-in'].worst.clearance;
+	const fine = G.analyze(pts, c, 0.25)['nose-in'].worst.clearance;
+	assert.ok(Math.abs(coarse - fine) < 0.1);
+});
+
 test('slope readings and points convert both ways', () => {
 	const readings = [{ length: 24, degrees: 0 }, { length: 24, degrees: 5 }, { length: 24, degrees: 13 }];
 	const back = G.slopesFromPoints(G.pointsFromSlopes(readings));

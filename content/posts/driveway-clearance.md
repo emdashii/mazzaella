@@ -123,12 +123,13 @@ The geometry code has tests against the textbook formulas. Over a sharp crest wi
 
 -   Suspension. The car is rigid at its parked ride height. That's what the safety margin is for.
 -   Side-to-side tilt. If you enter the driveway at an angle, one wheel drops before the other and a corner of the bumper sits lower than its centre. Entering at an angle sometimes saves a scraping car, and sometimes makes a tight one scrape.
+-   Anything past the last reading. The profile continues at the last slope, so a dip or level-out beyond your measurements isn't checked.
 -   Bumper shape. The underside is straight lines between the four points. A lip that hangs below the line from the bumper to the axle needs its own overhang and height.
 
 
 ## my driveway {#my-driveway}
 
-Elliott measured the left tire track with a 2 ft level and a tape measure. He rested one end of the level on the driveway, held it level pointing downhill, and measured the drop from the free end to the ground. Then he moved the level to where the tape landed and repeated. The first reading starts on a patch hump at the street edge, less than 1 in above the street.
+Elliott measured the left tire track with a 2 ft level and a tape measure. He rested one end of the level on the driveway, held it level pointing downhill, and measured the drop from the free end to the ground. Then he moved the level to where the tape landed and repeated. The first reading starts on a patch hump at the street edge, less than 1 in above the street. The calculator assumes the street is flat and 3/4 in below the hump; that part wasn't measured.
 
 | step | along (ft) | drop (in) | below the hump (in) | slope |
 |------|------------|-----------|---------------------|-------|
@@ -146,18 +147,20 @@ Elliott measured the left tire track with a 2 ft level and a tape measure. He re
 | 12   | 22–24      | 4         | 61.5                | 9.5°  |
 | 13   | 24–26      | 3.75      | 65.25               | 8.9°  |
 
-The old page's guess of 13° was about right for the middle. What it missed is the top: the street rises slightly to the hump, then the driveway drops 8° in the first 2 ft and 14° in the next 2. That's a sharp crest, and a sharp crest catches the underbody between the wheels. The bottom of the driveway eases off gradually, so bumpers aren't the problem here.
+The old page's guess of 13° was about right for the middle. What it missed is the top: the street rises slightly to the hump, then the driveway drops 8° in the first 2 ft and 14° in the next 2. That's a sharp crest, and a sharp crest catches the underbody between the wheels.
+
+The readings stop 26 ft down, still sloping about 9°, where any car is well past the top. The calculator continues that slope, so it answers the question at the top only. The bottom, where the driveway levels out, isn't measured, and a long, low bumper could still scrape there.
 
 
 ## measuring a driveway {#measuring-a-driveway}
 
-The same method works on any driveway, and it needs one tool you probably own:
+The same method works on any driveway. You need a level and a tape measure:
 
 1.  Start on the street, a few feet before the driveway, on the line the tires follow.
 2.  Rest one end of a 2 ft level on the ground, point it down the driveway, and hold it level.
 3.  Measure straight down from the free end to the ground. Write it down.
 4.  Move the resting end to where the tape touched, and repeat until the driveway levels out, or until a car would be all the way past the top.
-5.  In the calculator, open _the driveway_, choose _heights_, and enter each point: 2 ft further along and that much lower.
+5.  In the calculator, open _the driveway_, choose _heights_, and enter one point per reading: each point is 2 ft further along than the last, and its height is the previous height minus the drop you measured.
 
 In the flat middle of a driveway, a 4 ft level is fine. Near the top and bottom, use the short one; a long level bridges over the sharp edges that cause scrapes.
 
