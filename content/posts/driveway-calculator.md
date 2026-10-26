@@ -7,6 +7,9 @@ categories = ["notes"]
 draft = false
 +++
 
+> there is a [rebuilt version of this calculator](/posts/driveway-clearance/) that models the whole car, both directions, and a measured driveway.
+
+
 ## what? {#what}
 
 this page calculates whether a car will scrape on a steep driveway transition and visualizes the car's movement through the slope.

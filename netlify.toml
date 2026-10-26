@@ -243,6 +243,16 @@ from = "/posts/codenames-key-card-finder.org"
 to = "/posts/codenames-key-card-finder/index.org"
 status = 301
 
+[[redirects]]
+from = "/posts/driveway-clearance.md"
+to = "/posts/driveway-clearance/index.md"
+status = 301
+
+[[redirects]]
+from = "/posts/driveway-clearance.org"
+to = "/posts/driveway-clearance/index.org"
+status = 301
+
 # [[redirects]]
 # from = "/posts/:slug.md"
 # to = "/posts/:slug/index.md"

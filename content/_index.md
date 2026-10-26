@@ -57,7 +57,8 @@ not make that?
 
 ## calculator/resource posts
 
--   [driveway scraping calculator](/posts/driveway-calculator/) - can you drive down my driveway?
+-   [driveway clearance calculator](/posts/driveway-clearance/) - will your car scrape my driveway? (rebuilt by opus 5.5)
+-   [driveway scraping calculator](/posts/driveway-calculator/) - the original version
 -   [board games](/posts/board-games/) - what board games do I own?
 -   [diy soft shackle](/posts/soft-shackle-how-to/) - want to make a strong soft shackle?
 
