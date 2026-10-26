@@ -28,7 +28,7 @@ test('flat ground: the lowest point is the lowest input height', () => {
 test('sharp crest: belly clearance matches c - (L/2) tan(angle/2)', () => {
 	const a = deg(13);
 	// Flat street, then a 13 degree drop that runs well past the wheelbase.
-	const pts = [{ x: 0, y: 0 }, { x: 400 * Math.cos(a), y: -400 * Math.sin(a) }];
+	const pts = [{ x: -100, y: 0 }, { x: 0, y: 0 }, { x: 400 * Math.cos(a), y: -400 * Math.sin(a) }];
 	const r = G.analyze(pts, car({ frontHeight: 50, rearHeight: 50 }), 0.25);
 	const expected = 5 - 54 * Math.tan(a / 2);
 	assert.equal(r['nose-in'].worst.part, 'underbody');
@@ -38,7 +38,7 @@ test('sharp crest: belly clearance matches c - (L/2) tan(angle/2)', () => {
 test('sharp sag: bumper clearance matches h - overhang tan(angle)', () => {
 	const a = deg(10);
 	// Flat, then a 10 degree climb: the leading bumper meets the rise first.
-	const pts = [{ x: 0, y: 0 }, { x: 400 * Math.cos(a), y: 400 * Math.sin(a) }];
+	const pts = [{ x: -100, y: 0 }, { x: 0, y: 0 }, { x: 400 * Math.cos(a), y: 400 * Math.sin(a) }];
 	const r = G.analyze(pts, car({ clearance: 50 }), 0.25);
 	const nose = r['nose-in'].worst;
 	const tail = r['tail-in'].worst;
@@ -55,10 +55,23 @@ test('sharp sag: bumper clearance matches h - overhang tan(angle)', () => {
 
 test('real tires roll over a sharp crest and add clearance', () => {
 	const a = deg(13);
-	const pts = [{ x: 0, y: 0 }, { x: 400 * Math.cos(a), y: -400 * Math.sin(a) }];
+	const pts = [{ x: -100, y: 0 }, { x: 0, y: 0 }, { x: 400 * Math.cos(a), y: -400 * Math.sin(a) }];
 	const point = G.analyze(pts, car({ frontHeight: 50, rearHeight: 50 }))['nose-in'].worst.clearance;
 	const tire = G.analyze(pts, car({ frontHeight: 50, rearHeight: 50, tireDiameter: 26 }))['nose-in'].worst.clearance;
 	assert.ok(tire > point);
+});
+
+test('a profile that stops mid-slope keeps going at that slope', () => {
+	// Stopping on a steady 10 degree drop must not add a sag that bumpers hit.
+	const a = deg(10);
+	const pts = [{ x: -100, y: 0 }, { x: 0, y: 0 }, { x: 240, y: -240 * Math.tan(a) }];
+	assert.ok(Math.abs(G.heightAt(G.buildGround(pts), 400) + 400 * Math.tan(a)) < 1e-9);
+	// Bumpers only gain clearance going over a crest, so the tightest moment
+	// is parked on the flat street with the front bumper at its own height.
+	for (const o of ['nose-in', 'tail-in']) {
+		const worst = G.analyze(pts, car({ clearance: 50 }), 0.25)[o].worst;
+		assert.ok(Math.abs(worst.clearance - 7) < 1e-6, `${o}: ${worst.clearance}`);
+	}
 });
 
 test('slope readings and points convert both ways', () => {

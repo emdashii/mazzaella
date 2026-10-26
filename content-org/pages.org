@@ -2212,7 +2212,7 @@ Hosting on Netlify: the user said "I will want to host this at codenames.mazzael
 #+begin_quote
 *This post was written by AI, not by Elliott.* Claude (Opus 5.5) rebuilt the [[/posts/driveway-calculator/][original driveway calculator]] from scratch and drafted this page. Elliott plans to rewrite the words in his own voice.
 
-*The driveway shape below is still an estimate* (a 13° slope with rounded ends, from the old page). It will be replaced with real measurements.
+The driveway profile is measured: Elliott's numbers, taken with a 2 ft level and a tape measure (see [[*my driveway][my driveway]]).
 #+end_quote
 
 ** what it does
@@ -2274,12 +2274,12 @@ Pick a car, or type in your own measurements. The calculator drives that car thr
 
   <details>
     <summary>the driveway</summary>
-    <p class="dc-note">the profile runs from the street edge toward the garage, with flat ground added before the first reading and after the last. edit it to check a different driveway.</p>
+    <p class="dc-note">the profile runs from the street toward the house. past the first and last reading it continues at the same slope. edit it to check a different driveway.</p>
     <div class="dc-row">
       <label>enter as
         <select id="dc-mode">
-          <option value="slopes">slope readings (board + level)</option>
-          <option value="heights">heights (string line)</option>
+          <option value="heights">heights (level and tape)</option>
+          <option value="slopes">slope readings (board and level app)</option>
         </select>
       </label>
       <button type="button" id="dc-add-row">add row</button>
@@ -2312,7 +2312,7 @@ The line under the inputs shows the approach, departure, and breakover angles th
 
 The old version modelled a straight slope meeting the street with one rounded corner, and treated the car as a line between the axles. This one works from a measured profile and a car with real dimensions.
 
-- *the driveway* is a list of points. You can enter it as slope readings (a level on a board laid end to end down the driveway) or as heights (a level string line and a tape measure). Flat ground extends past both ends so the car starts and finishes level.
+- *the driveway* is a list of points. You can enter it as heights (a level and a tape measure) or as slope readings (a level app on a board). Past the first and last reading, the profile continues at the same slope, so a driveway measured only partway down doesn't grow a fake dip at the end.
 - *the tires* are circles that roll on that profile. At a sharp edge, a tire rides over the corner instead of dropping into it, so a real tire scrapes a little less than a point would.
 - *the wheels* are a wheelbase apart. For each rear-wheel position, the calculator searches (by bisection) for the spot where the other tire touches the ground at exactly that distance. This replaces the circle-and-line algebra that the old page solved by hand in Desmos and Wolfram Alpha, and it works on any profile shape, not only a slope plus one arc.
 - *the underside* is four points in the car's frame: rear bumper, underbody at each axle, front bumper. The calculator rotates them with the car, checks the vertical gap to the ground every inch along the car, and keeps the smallest.
@@ -2326,14 +2326,39 @@ The geometry code has tests against the textbook formulas. Over a sharp crest wi
 - Side-to-side tilt. If you enter the driveway at an angle, one wheel drops before the other and a corner of the bumper sits lower than its centre. Entering at an angle sometimes saves a scraping car, and sometimes makes a tight one scrape.
 - Bumper shape. The underside is straight lines between the four points. A lip that hangs below the line from the bumper to the axle needs its own overhang and height.
 
-** measuring the driveway
+** my driveway
 
-For anyone who wants to use this on their own driveway (and for me, since mine is still an estimate):
+Elliott measured the left tire track with a 2 ft level and a tape measure. He rested one end of the level on the driveway, held it level pointing downhill, and measured the drop from the free end to the ground. Then he moved the level to where the tape landed and repeated. The first reading starts on a patch hump at the street edge, less than 1 in above the street.
 
-1. Pick the line that tires actually follow, starting at the street edge where the gutter meets the driveway.
-2. /Slope readings:/ lay a straight 12 in board on the driveway and read the angle with a level app on your phone (downhill is positive). Move the board forward by its own length and repeat until you reach flat ground. Use a short board: a long one averages out the sharp edges that cause scrapes.
-3. /Heights:/ tie a string at the street end, level it with a line level, and measure from the string down to the driveway every 6–12 in. Subtract the first reading from each one, and enter the result as a negative height.
-4. Include a few readings on the street before the edge if there is a gutter dip, and keep going until the driveway has been flat for at least the length of a car.
+| step | along (ft) | drop (in) | below the hump (in) | slope |
+|------+------------+-----------+---------------------+-------|
+|    1 | 0–2        |       3.5 |                 3.5 | 8.3°  |
+|    2 | 2–4        |         6 |                 9.5 | 14.0° |
+|    3 | 4–6        |      5.25 |               14.75 | 12.3° |
+|    4 | 6–8        |      5.75 |                20.5 | 13.5° |
+|    5 | 8–10       |         5 |                25.5 | 11.8° |
+|    6 | 10–12      |       5.5 |                  31 | 12.9° |
+|    7 | 12–14      |         6 |                  37 | 14.0° |
+|    8 | 14–16      |         6 |                  43 | 14.0° |
+|    9 | 16–18      |       5.5 |                48.5 | 12.9° |
+|   10 | 18–20      |         5 |                53.5 | 11.8° |
+|   11 | 20–22      |         4 |                57.5 | 9.5°  |
+|   12 | 22–24      |         4 |                61.5 | 9.5°  |
+|   13 | 24–26      |      3.75 |               65.25 | 8.9°  |
+
+The old page's guess of 13° was about right for the middle. What it missed is the top: the street rises slightly to the hump, then the driveway drops 8° in the first 2 ft and 14° in the next 2. That's a sharp crest, and a sharp crest catches the underbody between the wheels. The bottom of the driveway eases off gradually, so bumpers aren't the problem here.
+
+** measuring a driveway
+
+The same method works on any driveway, and it needs one tool you probably own:
+
+1. Start on the street, a few feet before the driveway, on the line the tires follow.
+2. Rest one end of a 2 ft level on the ground, point it down the driveway, and hold it level.
+3. Measure straight down from the free end to the ground. Write it down.
+4. Move the resting end to where the tape touched, and repeat until the driveway levels out, or until a car would be all the way past the top.
+5. In the calculator, open /the driveway/, choose /heights/, and enter each point: 2 ft further along and that much lower.
+
+In the flat middle of a driveway, a 4 ft level is fine. Near the top and bottom, use the short one; a long level bridges over the sharp edges that cause scrapes.
 
 ** the prompt
 

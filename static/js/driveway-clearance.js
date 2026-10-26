@@ -17,11 +17,13 @@
 	};
 	const CAR_KEYS = ['wheelbase', 'tireDiameter', 'frontOverhang', 'rearOverhang', 'frontHeight', 'rearHeight', 'clearance'];
 
-	// Elliott's driveway, as 12-inch slope readings from the street edge.
-	// PLACEHOLDER: shaped from the old page's numbers (13 degrees, rounded
-	// crest) until the driveway is measured.
-	const HOME_READINGS = [0, 2, 5, 8, 11, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 11, 8, 5, 2, 0].map(degrees => ({ length: 12, degrees }));
-	const HOME_POINTS = G.pointsFromSlopes(HOME_READINGS);
+	// Elliott's driveway, left tire track, measured 2026-10-26 with a 2 ft
+	// level: rest one end where the last reading landed, hold it level, and
+	// measure the drop at the far end. x = 0 is the top of a patch hump at the
+	// street edge, about 3/4 in above the street.
+	const HOME_DROPS = [3.5, 6, 5.25, 5.75, 5, 5.5, 6, 6, 5.5, 5, 4, 4, 3.75];
+	const HOME_POINTS = [{ x: -48, y: -0.75 }, { x: -24, y: -0.75 }, { x: 0, y: 0 }];
+	HOME_DROPS.forEach((d, i) => HOME_POINTS.push({ x: (i + 1) * 24, y: HOME_POINTS[HOME_POINTS.length - 1].y - d }));
 
 	const ORIENT = {
 		'nose-in': { label: 'nose first', note: 'driving in forward' },
@@ -35,7 +37,7 @@
 	const state = {
 		car: { ...PRESETS.sedan },
 		points: HOME_POINTS.map(p => ({ ...p })),
-		mode: 'slopes',
+		mode: 'heights',
 		margin: 1,
 		orientation: 'nose-in',
 		index: 0,
@@ -91,7 +93,7 @@
 		if (rows.some(r => r.some(v => !Number.isFinite(v)))) throw new Error('every driveway cell needs a number');
 		if (state.mode === 'slopes') {
 			if (rows.some(r => r[0] <= 0)) throw new Error('board lengths must be positive');
-			return G.pointsFromSlopes(rows.map(([length, degrees]) => ({ length, degrees })));
+			return G.pointsFromSlopes(rows.map(([length, degrees]) => ({ length, degrees })), state.points[0]);
 		}
 		return rows.map(([d, h]) => ({ x: d * 12, y: h }));
 	}
@@ -135,10 +137,14 @@
 		return { kind: 'clear', icon: '✓', word: 'clears' };
 	}
 
+	function place(x) {
+		if (Math.abs(x) < 6) return 'at the street edge';
+		return x < 0 ? `${ft(-x)} before the street edge` : `${ft(x)} past the street edge`;
+	}
+
 	function describe(worst) {
-		const where = `${worst.part} at ${ft(worst.at)} from the street edge`;
-		if (worst.clearance < 0) return `${worst.part} hits by ${fmt(-worst.clearance)} in, ${ft(worst.at)} from the street edge`;
-		return `${fmt(worst.clearance)} in to spare at the tightest spot (${where})`;
+		if (worst.clearance < 0) return `${worst.part} hits by ${fmt(-worst.clearance)} in, ${place(worst.at)}`;
+		return `${fmt(worst.clearance)} in to spare at the tightest spot (${worst.part}, ${place(worst.at)})`;
 	}
 
 	function recompute() {
@@ -329,7 +335,7 @@
 		ctx.fillStyle = col.fg2;
 		ctx.font = '12px sans-serif';
 		ctx.textAlign = 'center';
-		for (const [x, label] of [[ground.start, 'street edge'], [ground.end, 'last reading']]) {
+		for (const [x, label] of [[0, 'street edge'], [ground.end, 'last reading']]) {
 			if (x < xMin || x > xMax) continue;
 			const yy = Y(G.heightAt(ground, x));
 			ctx.fillRect(X(x) - 1, yy, 2, 8);

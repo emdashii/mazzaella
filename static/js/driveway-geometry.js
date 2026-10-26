@@ -2,7 +2,8 @@
 //
 // Units are inches. x runs along the driveway from the street (low x) toward
 // the garage (high x); y is height. The driveway is a polyline of measured
-// points, extended flat at both ends so the car can start and finish level.
+// points, extended past both ends at the slope of the end segments, so a
+// profile that stops mid-slope does not grow a fake sag or crest.
 //
 // The car is rigid (no suspension travel). Each tire is a circle that rolls on
 // the polyline, so a wheel centre is the highest point a circle of the tire's
@@ -18,7 +19,7 @@
 })(typeof self !== 'undefined' ? self : this, function () {
 	'use strict';
 
-	// Flat run added before the first and after the last measured point.
+	// Horizontal run added before the first and after the last measured point.
 	const RUN_OUT = 420;
 
 	function buildGround(points) {
@@ -29,8 +30,10 @@
 		}
 		const first = pts[0];
 		const last = pts[pts.length - 1];
-		pts.unshift({ x: first.x - RUN_OUT, y: first.y });
-		pts.push({ x: last.x + RUN_OUT, y: last.y });
+		const startSlope = (pts[1].y - first.y) / (pts[1].x - first.x);
+		const endSlope = (last.y - pts[pts.length - 2].y) / (last.x - pts[pts.length - 2].x);
+		pts.unshift({ x: first.x - RUN_OUT, y: first.y - startSlope * RUN_OUT });
+		pts.push({ x: last.x + RUN_OUT, y: last.y + endSlope * RUN_OUT });
 		return { pts, start: first.x, end: last.x, minX: pts[0].x, maxX: pts[pts.length - 1].x };
 	}
 
@@ -208,8 +211,8 @@
 	// Profile helpers. A slope reading is a board laid along the driveway:
 	// its length (inches) and the angle a level reads on it, positive downhill
 	// when walking from the street toward the garage.
-	function pointsFromSlopes(readings, startY = 0) {
-		const out = [{ x: 0, y: startY }];
+	function pointsFromSlopes(readings, start = { x: 0, y: 0 }) {
+		const out = [{ x: start.x, y: start.y }];
 		for (const { length, degrees } of readings) {
 			const prev = out[out.length - 1];
 			const a = (degrees * Math.PI) / 180;
