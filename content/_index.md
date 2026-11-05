@@ -46,7 +46,7 @@ not make that?
 
 -   [arc almanac](https://arcalmanac.com/) - an anime, light novel, and manga mapping/comparison site
 -   [key card finder](https://codenames.mazzaella.com/) - works out the codenames key card from revealed tiles ([post](/posts/codenames-key-card-finder/))
--   [sinister](https://sinister.mazzaella.com/) - finds words you can type with one hand (or [dexter](https://sinister.mazzaella.com/?hand=right), the other one)
+-   [sinister](https://sinister.mazzaella.com/) - finds words you can type with one hand (or [dexter](https://sinister.mazzaella.com/?hand=right), the other one) ([post](/posts/sinister/))
 -   [lilypoint](https://lilypoint.mazzaella.com/) - a website for my counterpoint generator ([post](/posts/sheet-music-generator/))
 -   [worship songs](https://worship.mazzaella.com/) - a list of worship songs with links to chords and lyrics
 -   [soda](https://soda.mazzaella.com/) - silly site for selling soda

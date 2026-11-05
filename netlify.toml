@@ -253,6 +253,16 @@ from = "/posts/driveway-clearance.org"
 to = "/posts/driveway-clearance/index.org"
 status = 301
 
+[[redirects]]
+from = "/posts/sinister.md"
+to = "/posts/sinister/index.md"
+status = 301
+
+[[redirects]]
+from = "/posts/sinister.org"
+to = "/posts/sinister/index.org"
+status = 301
+
 # [[redirects]]
 # from = "/posts/:slug.md"
 # to = "/posts/:slug/index.md"
