@@ -2404,7 +2404,7 @@ Switch to the right hand and the site becomes *Dexter*, with a new name, logo, c
 
 ** where the idea came from
 
-The idea came out of a thread about something else. Elliott had just been given a MacBook to use for travel. He asked Claude to suggest names for it (he picked *ella*). Then he asked whether Bitwarden could generate a password using only left-hand keys. It can't, so Claude gave him a one-line shell command that does. His next message turned that into a project:
+Elliott asked Claude for words he could type with only his left hand. His next message turned that into a project:
 
 #+begin_quote
 okay can you make me a little utility that I can run to generate words that only use the left handed side of the keyboard? actually this is a cool idea, maybe I can add it as a page on mazzaella.com, write up a better prompt for me to create it. basically I want words generated and I want to be able to pick categories. so like if I wanted animal words, and then filter that down to reptile names, or latin names for animals, however I want the output to only be words that can be easily typed with one hand. and as part of it you can choose the hand, and if the user has custom letters they want then they can pick the letters to use. but the cool part should be the filtering, basically I want, if possible, like an ai filtering system. so the user can pick their first filter, like type it in, and the words are reduced. then the second one, and so on. hmm maybe this should be it's own project, like at xxx.mazzaella.com. but it needs a better name. and also ideally can run in the browser without a server in the background, so I can host on netlify the way my other sites are. can you write me a prompt for this project?
@@ -2412,7 +2412,13 @@ okay can you make me a little utility that I can run to generate words that only
 
 ** how the prompt was made
 
-Elliott didn't write the build prompt himself. He described what he wanted, as above, and asked Claude to turn it into a better prompt. Claude did, suggested the name Sinister, and saved the prompt to his prompt backlog. On the way from his message to the prompt, it added:
+Elliott didn't write the build prompt himself. The words "better prompt" in his message load a skill in his Claude setup called =better-prompt=. Its core is a prompt by joshp123, from [[https://gist.github.com/joshp123/a1443d30fa1b7c577e74882895cea61b][this gist]]:
+
+#+begin_quote
+I want a deeper version of this task, not a bigger one. Before rewriting it: (1) say what a top professional in this field would do here that I'm not asking for; (2) name the rawest material they would start from instead of what has already been digested for me; (3) name the specific methods and tools they would use; (4) say what, other than you or me, would show the result is right. Then rewrite my prompt to ask for exactly that.
+#+end_quote
+
+Elliott's copy adds a short section on how to apply it: improve a prompt without running it, or redo work already in progress. Claude answered the four questions for this idea, suggested the name Sinister, and saved the rewritten prompt to Elliott's prompt backlog. Answering the questions added:
 
 - *a definition of "one hand"*: the standard touch-typing split for each layout, plus a switch for whether the index finger's reach column (T G B / Y H N) counts.
 - *better source data*: Open English WordNet instead of a flat word list. WordNet already sorts words into categories, so the category filter is exact and doesn't need AI. A word-frequency list (wordfreq) puts common words first. GBIF provides the Latin names, which load only when you turn them on.
@@ -2430,6 +2436,11 @@ Elliott read it and added one idea of his own: right-hand mode should become Dex
 ** the prompt
 
 This is the prompt that started the build, unedited.
+
+#+begin_export html
+<details>
+<summary>show the prompt</summary>
+#+end_export
 
 #+begin_src markdown
 Build a new static site, Sinister (sinister.mazzaella.com): it finds real words typable with one hand, then narrows them with chained category and free-text filters. It runs entirely in the browser, with no server, hosted on Netlify. Work in C:/Projects/sinister (an empty git repo on branch main, no remote yet) and copy the stack, netlify.toml, headers, Umami tag, and AGENTS.md finish line from C:/Projects/codenames-solver (Key Card Finder: Bun, Vite, TypeScript).
@@ -2454,6 +2465,10 @@ Checks that don't rely on your judgment:
 Stop and give Elliott exact steps for the GitHub repo, the Netlify project, and the GoDaddy CNAME plus Netlify TXT record (copy what triage.mazzaella.com did in C:/Projects/NetworkSetup/CURRENT.md). Before then, finish per the new AGENTS.md: bun test and bun run build pass, commit. Once the repo exists, push to it and verify the Netlify deploy preview at phone width.
 #+end_src
 
+#+begin_export html
+</details>
+#+end_export
+
 ** what it cost
 
 Everything happened on 2026-11-05, on Claude Opus 5.5 at high effort.
@@ -2464,7 +2479,7 @@ Everything happened on 2026-11-05, on Claude Opus 5.5 at high effort.
 | the build, plus the deploy follow-ups   | 63 min + ~3 min |      149 |       176,630 | 26.69 M     |      336,833 | ~$11.50       |
 | total                                   | ~70 min         |      173 |       192,553 | 28.42 M     |      445,050 | ~$13          |
 
-- The prompt row covers that whole thread, including the laptop names.
+- The prompt row covers that whole thread, including some unrelated questions earlier in it.
 - The token counts come from the Claude Code session logs, with each API response counted once.
 - The dollar figures use Opus 5.5 list prices:
   - $20 per million output tokens;
@@ -2487,13 +2502,6 @@ Elliott's own work was: writing the original message, adding the Dexter idea, cr
   - The model's own recommended query prompt made short queries much worse (0.25 instead of 0.71).
 - *It is still approximate.* Across the 10 test categories, the AI filter's top 30 words were 71% correct on average: 100% for birds, but 40% for fish. On the live site, "things in a kitchen" returned /dresser/ and /garbage/ first, and the Dexter screenshot above shows /kill/ under "food and drink". For an exact answer, use the category filter.
 - *It's all static.* Until you use the AI filter, a visit downloads about 570 KB, mostly the word list. The first description filter downloads about 31 MB (model, runtime and vectors). After that it works offline.
-
-** what went sideways
-
-- =sinister.netlify.app= already belonged to someone else's site, also called Sinister. The Netlify project is =sinister-dexter=.
-- Vite bundled a 27 MB WebAssembly file the app never loads. The build removes it.
-- Chrome's CPU throttling doesn't reach the Web Worker that runs the model. So the "about 0.2 s on a mid-range phone" figure is an estimate, and nobody has tested it on a real phone yet.
-- The optional "ask Claude" re-rank wasn't built.
 
 ** links
 
