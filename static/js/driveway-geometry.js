@@ -153,19 +153,35 @@
 		const world = poly.map(p => toWorld(p.x, p.y));
 		let min = { clearance: Infinity };
 		for (let i = 0; i < poly.length - 1; i++) {
-			const a = world[i];
-			const b = world[i + 1];
-			const n = Math.max(2, Math.ceil(Math.hypot(b.x - a.x, b.y - a.y)));
-			for (let k = 0; k <= n; k++) {
-				const t = k / n;
-				const x = a.x + t * (b.x - a.x);
-				const y = a.y + t * (b.y - a.y);
-				const clearance = y - heightAt(ground, x);
-				if (clearance < min.clearance) min = { clearance, x, y, part: segmentName(poly, i) };
-			}
+			const m = segmentMin(ground, world[i], world[i + 1]);
+			if (m.clearance < min.clearance) min = { ...m, part: segmentName(poly, i) };
 		}
 		const pitch = Math.atan2(uy, ux);
 		return { trailing, leading, r, pitch, underside: world, toWorld, min };
+	}
+
+	// Smallest vertical gap between one straight underside segment and the
+	// ground. Both are straight between the ground's vertices, so the gap is
+	// too, and its minimum is at a segment end or at a ground vertex inside the
+	// segment's span. Checking exactly those points is exact for this pose.
+	function segmentMin(ground, a, b) {
+		const lo = a.x <= b.x ? a : b;
+		const hi = a.x <= b.x ? b : a;
+		const gap = (x, y) => ({ clearance: y - heightAt(ground, x), x, y });
+		// A segment that is vertical in the world spans no ground, so only its
+		// lower end can be closest.
+		if (hi.x - lo.x < 1e-9) return gap(lo.x, Math.min(lo.y, hi.y));
+		let best = gap(lo.x, lo.y);
+		const end = gap(hi.x, hi.y);
+		if (end.clearance < best.clearance) best = end;
+		const p = ground.pts;
+		for (let k = segmentIndex(ground, lo.x) + 1; k < p.length && p[k].x < hi.x; k++) {
+			if (p[k].x <= lo.x) continue;
+			const y = lo.y + ((p[k].x - lo.x) / (hi.x - lo.x)) * (hi.y - lo.y);
+			const c = { clearance: y - p[k].y, x: p[k].x, y };
+			if (c.clearance < best.clearance) best = c;
+		}
+		return best;
 	}
 
 	// Trailing-axle positions that take the car from fully on the street to

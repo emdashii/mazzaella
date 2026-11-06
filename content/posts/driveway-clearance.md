@@ -42,6 +42,7 @@ Pick a car, or type in your own measurements. The calculator drives that car thr
   </fieldset>
 
   <p id="dc-error" class="dc-error" role="alert"></p>
+  <div id="dc-output">
   <p id="dc-headline" class="dc-headline" aria-live="polite"></p>
   <table class="dc-results"><tbody id="dc-results"></tbody></table>
 
@@ -68,6 +69,7 @@ Pick a car, or type in your own measurements. The calculator drives that car thr
   </div>
 
   <p class="dc-row dc-share"><button type="button" id="dc-copy">copy link to this car</button></p>
+  </div>
 
   <details>
     <summary>the driveway</summary>
@@ -113,10 +115,10 @@ The old version modelled a straight slope meeting the street with one rounded co
 -   **the driveway** is a list of points. You can enter it as heights (a level and a tape measure) or as slope readings (a level app on a board). Past the first and last reading, the profile continues at the same slope, so a driveway measured only partway down doesn't grow a fake dip at the end.
 -   **the tires** are circles that roll on that profile. At a sharp edge, a tire rides over the corner instead of dropping into it, so a real tire scrapes a little less than a point would.
 -   **the wheels** are a wheelbase apart. For each rear-wheel position, the calculator searches (by bisection) for the spot where the other tire touches the ground at exactly that distance. This replaces the circle-and-line algebra that the old page solved by hand in Desmos and Wolfram Alpha, and it works on any profile shape, not only a slope plus one arc.
--   **the underside** is four points in the car's frame: rear bumper, underbody at each axle, front bumper. The calculator rotates them with the car, checks the vertical gap to the ground every inch along the car, and keeps the smallest.
+-   **the underside** is four points in the car's frame: rear bumper, underbody at each axle, front bumper. The calculator rotates them with the car and checks the vertical gap to the ground at those points and at every driveway point underneath. Between those, the underside and the ground are both straight, so that finds the smallest gap at each position exactly. The car moves an inch at a time, so a gap that closes only between two positions could be missed; on my driveway, tenth-inch steps change the presets' answers by less than 0.01 in.
 -   **both directions**: driving in nose first and backing in are different problems, because the front and rear overhangs differ. A long, low bumper usually hits where downhill changes to flat (the sag). The underbody usually hits where the street tips over into the slope (the crest).
 
-The geometry code has tests against the textbook formulas. Over a sharp crest with point tires, the underbody gap must equal c − (L/2)·tan(θ/2). At a sharp sag, the bumper gap must equal h − overhang·tan(θ). The model matches both to within 0.05 in.
+The geometry code has tests against the textbook formulas. Over a sharp crest with point tires, the underbody gap must equal c − (L/2)·tan(θ/2). At a sharp sag, the bumper gap must equal h − overhang·tan(θ). The model matches both to within 0.05 in. That checks the method on two shapes with known answers; it isn't an error bound for every driveway.
 
 
 ## what it doesn't model {#what-it-doesn-t-model}

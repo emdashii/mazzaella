@@ -27,6 +27,8 @@
 	const $ = id => document.getElementById(id);
 	const fmt = (v, d = 1) => (Math.round(v * 10 ** d) / 10 ** d).toFixed(d);
 	const ft = inches => `${fmt(inches / 12)} ft`;
+	// aria-invalid="" means false, so set the word.
+	const markInvalid = (el, bad) => (bad ? el.setAttribute('aria-invalid', 'true') : el.removeAttribute('aria-invalid'));
 
 	const state = {
 		car: { ...PRESETS.sedan },
@@ -36,6 +38,10 @@
 		orientation: 'nose-in',
 		index: 0,
 		result: null,
+		// Set while the driveway table holds something that is not a profile.
+		profileError: null,
+		// Car centre to return to once an invalid edit is corrected.
+		resumeMid: null,
 		playing: false,
 		hover: null,
 	};
@@ -66,24 +72,34 @@
 		return state.points.map(p => [fmt(p.x / 12, 2), fmt(p.y, 1)]);
 	}
 
+	function profileHead() {
+		return state.mode === 'slopes' ? ['board length (in)', 'angle (°, + = downhill)'] : ['distance from street edge (ft)', 'height (in, − = below street)'];
+	}
+
 	function renderProfileTable() {
-		const head = state.mode === 'slopes' ? ['board length (in)', 'angle (°, + = downhill)'] : ['distance from street edge (ft)', 'height (in, − = below street)'];
+		const head = profileHead();
 		$('dc-profile-head').innerHTML = `<tr><th>#</th><th>${head[0]}</th><th>${head[1]}</th><th></th></tr>`;
+		$('dc-profile-body').innerHTML = '';
+		profileRows().forEach(appendProfileRow);
+	}
+
+	function appendProfileRow(row) {
 		const body = $('dc-profile-body');
-		body.innerHTML = '';
-		profileRows().forEach((row, i) => {
-			const tr = document.createElement('tr');
-			tr.innerHTML =
-				`<td>${i + 1}</td>` +
-				`<td><input type="number" step="any" value="${row[0]}" aria-label="${head[0]}, row ${i + 1}"></td>` +
-				`<td><input type="number" step="any" value="${row[1]}" aria-label="${head[1]}, row ${i + 1}"></td>` +
-				`<td><button type="button" class="dc-remove" aria-label="remove row ${i + 1}">×</button></td>`;
-			body.appendChild(tr);
-		});
+		const head = profileHead();
+		const n = body.rows.length + 1;
+		const tr = document.createElement('tr');
+		tr.innerHTML =
+			`<td>${n}</td>` +
+			`<td><input type="number" step="any" value="${row[0]}" aria-label="${head[0]}, row ${n}"></td>` +
+			`<td><input type="number" step="any" value="${row[1]}" aria-label="${head[1]}, row ${n}"></td>` +
+			`<td><button type="button" class="dc-remove" aria-label="remove row ${n}">×</button></td>`;
+		body.appendChild(tr);
 	}
 
 	function readProfileTable() {
-		const rows = [...$('dc-profile-body').querySelectorAll('tr')].map(tr => [...tr.querySelectorAll('input')].map(i => parseFloat(i.value)));
+		const inputs = [...$('dc-profile-body').querySelectorAll('tr')].map(tr => [...tr.querySelectorAll('input')]);
+		for (const i of inputs.flat()) markInvalid(i, !Number.isFinite(parseFloat(i.value)));
+		const rows = inputs.map(r => r.map(i => parseFloat(i.value)));
 		if (rows.some(r => r.some(v => !Number.isFinite(v)))) throw new Error('every driveway cell needs a number');
 		if (state.mode === 'slopes') {
 			if (rows.some(r => r[0] <= 0)) throw new Error('board lengths must be positive');
@@ -145,17 +161,36 @@
 		return `${fmt(worst.clearance)} in to spare at the tightest spot (${worst.part}, ${place(worst.at)})`;
 	}
 
+	// Anything that stops the inputs on screen from describing one car on one
+	// driveway. Checked as a whole, so fixing one input never brings back an
+	// answer computed from another input's old value.
+	function inputProblem() {
+		const problems = G.validateCar(state.car);
+		for (const k of CAR_KEYS) markInvalid($(`dc-${k}`), problems.includes(k));
+		markInvalid($('dc-margin'), !(state.margin >= 0));
+		if (problems.includes('length')) return 'that car is longer than this tool handles.';
+		if (problems.length) return 'every car measurement needs a number (wheelbase and tire size above zero).';
+		if (!(state.margin >= 0)) return 'the safety margin needs a number, 0 or more.';
+		return state.profileError;
+	}
+
+	// No answer for these inputs: take the old one off the page and out of
+	// reach (results, drawing, playback, share link) until they are fixed.
 	function showError(message) {
+		if (state.result) state.resumeMid = currentSample().mid;
+		state.result = null;
+		stop();
 		$('dc-error').textContent = message;
 		$('dc-headline').textContent = '';
 		$('dc-results').innerHTML = '';
+		$('dc-output').inert = true;
+		$('dc-output').classList.add('dc-stale');
 	}
 
 	function recompute() {
-		const problems = G.validateCar(state.car);
-		$('dc-error').textContent = '';
-		if (problems.length) {
-			showError(problems.includes('length') ? 'that car is longer than this tool handles.' : 'every car measurement needs a number (wheelbase and tire size above zero).');
+		const problem = inputProblem();
+		if (problem) {
+			showError(problem);
 			return;
 		}
 		let result;
@@ -165,9 +200,13 @@
 			showError(e.message + '.');
 			return;
 		}
-		const prevMid = state.result ? currentSample().mid : null;
+		const prevMid = state.result ? currentSample().mid : state.resumeMid;
 		state.result = result;
+		state.resumeMid = null;
 		state.index = prevMid === null ? worstIndex(state.orientation) : nearestIndex(state.orientation, prevMid);
+		$('dc-error').textContent = '';
+		$('dc-output').inert = false;
+		$('dc-output').classList.remove('dc-stale');
 		renderResults();
 		renderAngles();
 		syncSlider();
@@ -203,24 +242,29 @@
 		const rows = Object.keys(ORIENT).map(o => {
 			const w = sweepFor(o).worst;
 			const v = verdict(w);
-			return `<tr class="dc-${v.kind}"><th scope="row">${ORIENT[o].label}<span class="dc-sub">${ORIENT[o].note}</span></th>` +
-				`<td><span class="dc-badge" aria-hidden="true">${v.icon}</span> ${v.word}</td>` +
-				`<td>${describe(w)}</td>` +
-				`<td><button type="button" class="dc-show" data-o="${o}">show me</button></td></tr>`;
+			// Explicit roles keep the table's meaning when narrow screens
+			// lay the rows out as grids.
+			return `<tr class="dc-${v.kind}" role="row"><th scope="row" role="rowheader">${ORIENT[o].label}<span class="dc-sub">${ORIENT[o].note}</span></th>` +
+				`<td role="cell" class="dc-verdict"><span class="dc-badge" aria-hidden="true">${v.icon}</span> ${v.word}</td>` +
+				`<td role="cell" class="dc-detail">${describe(w)}</td>` +
+				`<td role="cell" class="dc-action"><button type="button" class="dc-show" data-o="${o}" aria-label="show me ${ORIENT[o].label}">show me</button></td></tr>`;
 		});
 		$('dc-results').innerHTML = rows.join('');
+		$('dc-headline').textContent = headline(Object.fromEntries(Object.keys(ORIENT).map(o => [o, verdict(sweepFor(o).worst).kind])));
+	}
 
-		const [a, b] = Object.keys(ORIENT).map(o => verdict(sweepFor(o).worst).kind);
-		let head;
-		if (a === 'clear' && b === 'clear') head = 'this car makes it, either direction.';
-		else if (a === 'scrape' && b === 'scrape') head = 'this car scrapes, whichever way it goes in.';
-		else if (a === 'scrape' || b === 'scrape') {
-			const ok = a === 'scrape' ? 'tail-in' : 'nose-in';
-			head = (a === 'tight' || b === 'tight')
-				? `this car scrapes ${ORIENT[a === 'scrape' ? 'nose-in' : 'tail-in'].label}, and ${ORIENT[ok].label} is too close to call.`
-				: `this car scrapes one way. go in ${ORIENT[ok].label} (${ORIENT[ok].note}).`;
-		} else head = 'this car makes it, but with less than ' + fmt(state.margin) + ' in to spare. go slowly.';
-		$('dc-headline').textContent = head;
+	// One sentence that never says more than the two verdict rows do.
+	function headline(kind) {
+		const of = k => Object.keys(ORIENT).filter(o => kind[o] === k);
+		const [scrape, tight, clear] = ['scrape', 'tight', 'clear'].map(of);
+		const name = o => ORIENT[o].label;
+		const spare = `less than ${fmt(state.margin)} in to spare`;
+		if (clear.length === 2) return 'this car makes it, either direction.';
+		if (scrape.length === 2) return 'this car scrapes, whichever way it goes in.';
+		if (tight.length === 2) return `too close to call either way: ${spare}.`;
+		if (scrape.length && tight.length) return `this car scrapes ${name(scrape[0])}, and ${name(tight[0])} is too close to call.`;
+		if (scrape.length) return `this car scrapes one way. go in ${name(clear[0])} (${ORIENT[clear[0]].note}).`;
+		return `this car makes it ${name(clear[0])}. ${name(tight[0])} is too close to call: ${spare}.`;
 	}
 
 	function renderAngles() {
@@ -454,6 +498,7 @@
 	}
 
 	function drawChart() {
+		if (!state.result) return;
 		const canvas = $('dc-chart');
 		const { ctx, w, h } = fitCanvas(canvas);
 		const col = colors();
@@ -568,11 +613,15 @@
 		draw();
 	}
 
+	function stop() {
+		state.playing = false;
+		$('dc-play').textContent = 'drive';
+	}
+
 	function play() {
 		const btn = $('dc-play');
 		if (state.playing) {
-			state.playing = false;
-			btn.textContent = 'drive';
+			stop();
 			return;
 		}
 		const count = () => sweepFor(state.orientation).samples.length;
@@ -619,11 +668,10 @@
 
 		$('dc-margin').value = state.margin;
 		$('dc-margin').addEventListener('input', e => {
+			// NaN (blank or negative) is an input problem, not "keep the last one".
 			const m = parseFloat(e.target.value);
-			if (Number.isFinite(m) && m >= 0) {
-				state.margin = m;
-				recompute();
-			}
+			state.margin = Number.isFinite(m) && m >= 0 ? m : NaN;
+			recompute();
 		});
 
 		$('dc-position').addEventListener('input', e => {
@@ -665,19 +713,26 @@
 
 		// Driveway table.
 		$('dc-mode').value = state.mode;
+		// Switching units redraws the table from the last profile that worked.
 		$('dc-mode').addEventListener('change', e => {
 			state.mode = e.target.value;
-			$('dc-error').textContent = '';
+			state.profileError = null;
 			renderProfileTable();
+			recompute();
 		});
-		$('dc-profile-body').addEventListener('input', () => {
+		const profileEdited = () => {
 			try {
 				state.points = readProfileTable();
-				recompute();
+				state.profileError = null;
+				return true;
 			} catch (err) {
-				$('dc-error').textContent = err.message + '.';
+				state.profileError = err.message + '.';
+				return false;
+			} finally {
+				recompute();
 			}
-		});
+		};
+		$('dc-profile-body').addEventListener('input', profileEdited);
 		$('dc-profile-body').addEventListener('click', e => {
 			const b = e.target.closest('.dc-remove');
 			if (!b) return;
@@ -685,15 +740,15 @@
 			const rows = $('dc-profile-body').rows.length;
 			if (rows - 1 + (state.mode === 'slopes' ? 1 : 0) < 2) return;
 			b.closest('tr').remove();
-			try {
-				state.points = readProfileTable();
-				renderProfileTable();
-				recompute();
-			} catch (err) {
-				$('dc-error').textContent = err.message + '.';
-			}
+			if (profileEdited()) renderProfileTable();
 		});
 		$('dc-add-row').addEventListener('click', () => {
+			// Leave a half-typed table alone; add a blank row to it.
+			if (state.profileError) {
+				appendProfileRow(['', '']);
+				profileEdited();
+				return;
+			}
 			const last = state.points[state.points.length - 1];
 			const prev = state.points[state.points.length - 2];
 			// Continue the last slope for another 12 inches of run.
@@ -704,10 +759,12 @@
 		});
 		$('dc-reset-driveway').addEventListener('click', () => {
 			state.points = HOME_POINTS.map(p => ({ ...p }));
+			state.profileError = null;
 			renderProfileTable();
 			recompute();
 		});
 		$('dc-copy').addEventListener('click', async () => {
+			if (!state.result) return;
 			writeHash();
 			try {
 				await navigator.clipboard.writeText(location.href);

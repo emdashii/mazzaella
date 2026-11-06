@@ -3,6 +3,7 @@
 .dc {
 	--dc-gap: 0.75rem;
 	font-variant-numeric: tabular-nums;
+	container: dc / inline-size;
 }
 
 .dc fieldset {
@@ -90,6 +91,16 @@
 	color: var(--red);
 	min-height: 1.2em;
 	margin: 0;
+}
+
+.dc input[aria-invalid='true'] {
+	border-color: var(--red);
+}
+
+/* No answer for the inputs on screen. Keep the space so the page doesn't
+   jump under someone mid-edit. */
+.dc-stale {
+	visibility: hidden;
 }
 
 .dc-headline {
@@ -215,25 +226,37 @@
 	accent-color: var(--blue);
 }
 
-.dc-profile {
+/* The theme makes every table its own sideways scroller; this one scrolls
+   in .dc-profile-scroll instead, so its headings can stick. */
+.dc .dc-profile {
+	display: table;
+	overflow: visible;
 	border-collapse: collapse;
 	margin: 0.5rem 0;
 }
 
-.dc-profile th,
-.dc-profile td {
+.dc .dc-profile th,
+.dc .dc-profile td {
 	padding: 0.15rem 0.4rem;
 	text-align: left;
 	font-size: 0.9em;
 }
 
 .dc-profile input[type='number'] {
-	width: 7rem;
+	/* Fits four columns in a 320px screen; full width from about 32rem. */
+	inline-size: clamp(4.5rem, 22cqi, 7rem);
 }
 
 .dc-profile-scroll {
-	max-height: 22rem;
+	max-block-size: 22rem;
 	overflow: auto;
+}
+
+.dc-profile thead th {
+	position: sticky;
+	inset-block-start: 0;
+	background: var(--bg);
+	vertical-align: bottom;
 }
 
 .dc details > summary {
@@ -264,6 +287,55 @@
 
 .dc-results button {
 	white-space: nowrap;
+}
+
+@media (pointer: coarse) {
+	.dc-results button {
+		min-block-size: 2.75rem;
+	}
+}
+
+/* Narrow: each direction becomes a block, with its action beside the name
+   and the detail on its own line, so nothing runs past the edge. */
+@container dc (width < 36rem) {
+	.dc-results,
+	.dc-results tbody {
+		display: block;
+	}
+
+	.dc-results tr {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto;
+		grid-template-areas: 'dir action' 'verdict verdict' 'detail detail';
+		gap: 0.2rem 0.75rem;
+		padding-block: 0.5rem;
+		border-block-start: 1px solid var(--bg2);
+	}
+
+	/* Beats the theme's boxed table cells; the row draws the rule. */
+	.dc .dc-results th,
+	.dc .dc-results td {
+		padding: 0;
+		border: 0;
+		background: none;
+	}
+
+	.dc-results th {
+		grid-area: dir;
+	}
+
+	.dc-verdict {
+		grid-area: verdict;
+	}
+
+	.dc-detail {
+		grid-area: detail;
+	}
+
+	.dc-action {
+		grid-area: action;
+		align-self: center;
+	}
 }
 
 .dc fieldset {
