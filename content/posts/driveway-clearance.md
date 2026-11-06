@@ -176,3 +176,12 @@ This is the request that started the rebuild, unedited:
 ```markdown
 I have a driveway calculator page, and I want you to use that as inspiration for a new page, completely redone from scratch. I used some hand math and the agents available at the time to make it, and I want to remake it with the current state of the art agents, which you are, opus 5.5. so this should be a new post. if you need me to give you any additional information to be able to do a better job, I can take measurements and stuff on the driveway.
 ```
+
+
+## the november 6 revision {#november-6-revision}
+
+A launch-readiness review found three blockers: the underside checks could miss a narrow ground peak, invalid inputs left an old answer visible, and phone results clipped the "show me" buttons. The fixes check ground vertices under every underside segment, withdraw results while inputs are invalid, and reflow the phone rows. Invalid safety margins now show an error, and "too close to call" stays uncertain in the headline.
+
+Claude Opus 5.5 wrote the fixes and regression tests. Two GPT-6.1 Sol agents did the launch review and final code, browser, and evidence checks. There was no separate fact-checking agent.
+
+T3 recorded about 27 minutes of agent turn time for that review and repair: 18 minutes for Opus, 9 for Sol. That's summed finished provider turns, including one failed turn, not elapsed time or a dollar bill. T3 records no token or dollar counts. The original rebuild and this publication follow-up aren't included.
